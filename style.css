@@ -1,9 +1,17 @@
 /*This makes the slides fill the entire viewport area*/
 
 slides > slide {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   margin: 0;
   top: 0;
   left: 0;
+  overflow-y: scroll;
+}
+
+article > img {
+  max-height: 100%; 
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
