@@ -3120,29 +3120,99 @@ slide:not(.current) .plotly.html-widget{
           </hgroup>
   </slide>
 
-<slide class=""><hgroup><h2>What is R?</h2></hgroup><article  id="what-is-r">
+<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Introduction</h2></hgroup><article  id="introduction">
 
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href='http://rmarkdown.rstudio.com' title=''>http://rmarkdown.rstudio.com</a>.</p>
+</article></slide><slide class=""><hgroup><h2>What is R?</h2></hgroup><article  id="what-is-r">
 
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<ul>
+<li>According to <a href='https://www.r-project.org/' title=''>official R Project website</a>, <em>&ldquo;R is a free software environment for statistical computing and graphics.&rdquo;</em></li>
+<li>While the typical R environment is typically called just &ldquo;R&rdquo;, it is actually made of several components from different sources
 
-<pre class = 'prettyprint lang-r'>summary(cars)</pre>
+<ul>
+<li><strong>R Language and Interpreter</strong>
 
-<pre >##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</pre>
+<ul>
+<li>These define the rules and syntax for the language, and converts R code into code your computer can understand</li>
+<li>Distributed by the R Project on The Comprehensive R Archive Network (CRAN) repository</li>
+</ul></li>
+<li><strong>R Packages</strong>
 
-</article></slide><slide class=""><hgroup><h2>Including Plots</h2></hgroup><article  id="including-plots">
+<ul>
+<li>These include first and third party software additions to add functionality to the language</li>
+<li>Distributed in the base installation of R, on the CRAN repository, on Git Hub, and by other means</li>
+</ul></li>
+<li><strong>R Integrated Development Environment (IDE)</strong>
 
-<p>You can also embed plots, for example:</p>
+<ul>
+<li>This allows you to interact with the language and more easily produce, test, and understand code</li>
+<li>The R base installation includes a very rudimentary IDE (this is almost never used)
 
-<p><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtAAAAGwCAMAAAC3laJpAAAAXVBMVEUAAAAAADoAAGYAOjoAOpAAZrY6AAA6ADo6AGY6Ojo6kNtmAABmADpmkJBmtrZmtv+QOgCQkGaQtpCQ2/+2ZgC225C2///bkDrb/7bb////tmb/25D//7b//9v///93nJJvAAAACXBIWXMAAA7DAAAOwwHHb6hkAAANXklEQVR4nO3di3biyBVGYbljcAKdMQnEimXg/R9zdAfsFrqdUyp+9rdWejmDXVLbezRFCVPJGRCSLH0CgCWChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChhSChpRxQZ92SenXh9PpAPOMCjpNNtUHWfPBj+EAFx5Bn3Ztxunr5+zhgMFcgj5u35sPs45JB0HDBVdoSHEJOp9D15fo7jn0mOGAoXyCzicd1Qy94/pM0HDiFHTo4YAKQeMxdazQOQXde2OFoDFLcv5zRF5PCntvrIwZDvgmufrzDw8MHmEYlu3gLGzQ3TdWxt+hBP6AKzS0hJ5Dc2MFvsKucnBjBctgHRpSCBpSnII+JMmqvLny3vEJBA0XTk8K87nzIVkVc2meFCIkv2W77GV/ZtkOgfndWKluqfAbKwiKKzSkOM+hr+4ZzhgOGIpVDkhhHRpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSCBpSnIIut6PIdeyBRdBw4rRpUFLvFZQlbBqEkPy2dauwrRuC8tt4s8LGmwiKKzSkeM2h60s0c2iE5bTKcdxWqxwd12eChhPWoSGFoCGFGyuQwo0VSGHZDlIC31hJWiOGAwbjCg0p3FiBFG6sQArr0JBC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' title=''/><!-- --></p>
+<ul>
+<li>R Studio is a third party open source IDE that is widely considered the best (and default) IDE for R</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
 
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p></article></slide>
+</article></slide><slide class=""><hgroup><h2>What is so great about R?</h2></hgroup><article  id="what-is-so-great-about-r">
+
+<table class = 'rmdtable'>
+<tr class="header">
+<th align="left">Pros</th>
+<th align="left">Cons</th>
+</tr>
+<tr class="odd">
+<td align="left">Open Source</td>
+<td align="left">Provides a specific tool-set</td>
+</tr>
+<tr class="even">
+<td align="left">Free to use</td>
+<td align="left">Not always intuitive</td>
+</tr>
+<tr class="odd">
+<td align="left">Rich package ecosystem</td>
+<td align="left">Variance in quality</td>
+</tr>
+</table>
+
+</article></slide><slide class=""><hgroup><h2>Who is R for? (and how do I get started)</h2></hgroup><article  id="who-is-r-for-and-how-do-i-get-started">
+
+<ul>
+<li>R is primarily for researchers in the data science realm
+
+<ul>
+<li>However, R includes tools for working with a wide range of data, even more qualitative methods</li>
+<li>The <code>ggplot2</code> package in R is often referred to as the &ldquo;gold standard&rdquo; for data visualization</li>
+</ul></li>
+<li>Due in part to their open source nature, R and R Studio are available for macOS, Windows, Linux and web(!?)
+
+<ul>
+<li>On a personal computer you can install the appropriate r-base files from <a href='https://cran.r-project.org/' title=''>the CRAN</a> and R Studio from <a href='https://www.rstudio.com/products/rstudio/download/#download' title=''>the R Studio website</a></li>
+<li>You can also use R and R Studio from any web browser using <a href='https://rstudio.cloud' title=''>R Studio Cloud</a>
+
+<ul>
+<li>This does mean any data used for analysis is stored in the cloud <strong><em>NOT</em></strong> on your computer</li>
+<li>R Studio Cloud is built off of <a href='https://www.rstudio.com/products/rstudio/download-server/' title=''>R Studio Server</a> which anyone (with the right motivation and technical skills) can use to run their own browser-accessible R Studio experience</li>
+</ul></li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Additional Resources</h2></hgroup><article  id="additional-resources">
+
+<ul>
+<li>This presentation is geared to providing a sturdy base to get you working in R and R Studio</li>
+<li>However, the world of R is immense, with many more topics and packages than we could ever hope to cover</li>
+<li>Many references will be made to <a href='https://r4ds.had.co.nz/' title=''>R for Data Science</a> by Garrett Grolemund and Hadley Wickham
+
+<ul>
+<li>Links to relevant sections will be provided whenever possible, but feel free to read the entire eBook at your leisure (it’s free)!</li>
+</ul></li>
+<li>Modeling in R will only be touched on very briefly and broadly, as the modeling process is highly dependent on the package used
+
+<ul>
+<li>The help documentation will be your best friend, which goes for other packages and topics as well</li>
+</ul></li>
+</ul></article></slide>
 
 
   <slide class="backdrop"></slide>
