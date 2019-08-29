@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo = TRUE)
 tibble(Pros = c("Open Source", "Highly reproducible", "Free to use", "Rich package ecosystem"), Cons = c("Provides a specific tool-set", "Not always intuitive", "Variance in quality", "Performance can be slower")) %>% kable()
 ```
 
-## Who is R for? (and how do I get started)
+## Who is R for? (and where do I get it?)
 
 - R is primarily for researchers in the data science realm
   - However, R includes tools for working with a wide range of data, even more qualitative methods
