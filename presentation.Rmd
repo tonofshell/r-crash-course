@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = TRUE)
       
 ## What is so great about R?
 ```{r pros-cons-table, echo=FALSE, message=FALSE, warning=FALSE}
-tibble(Pros = c("Open Source", "Free to use", "Rich package ecosystem"), Cons = c("Provides a specific tool-set", "Not always intuitive", "Variance in quality")) %>% kable()
+tibble(Pros = c("Open Source", "Highly reproducible", "Free to use", "Rich package ecosystem"), Cons = c("Provides a specific tool-set", "Not always intuitive", "Variance in quality", "Performance can be slower")) %>% kable()
 ```
 
 ## Who is R for? (and how do I get started)
@@ -55,3 +55,92 @@ tibble(Pros = c("Open Source", "Free to use", "Rich package ecosystem"), Cons = 
 - Modeling in R will only be touched on very briefly and broadly, as the modeling process is highly dependent on the package used
   - The help documentation will be your best friend, which goes for other packages and topics as well
 - You can page through the content of this presentation in the form of a regular webpage [here](presentation.md)
+
+# Getting Started
+
+## R Studio's User Interface
+- R Studio is split into four main panes
+- The tabs in each pane depend on the current context, with additional tabs appearing when other features have been activated
+
+![R Studio Default Screen](graphics/rstudio-default.png)
+
+## Upper Left Pane - Source
+![Upper Left Pane](graphics/rstudio-pane1.png)
+
+- Shows the source code for your open files
+- Each open file gets a tab
+- Tabs get different buttons as applicable (like the `Run` button for R files)
+
+## Lower Left Pane - Command Line
+![Lower Left Pane](graphics/rstudio-pane2.png)
+
+- The `Console` tab shows the R console allowing you to issue and view the output of R commands
+- The `Terminal` tab gives access to the system terminal
+- Other tabs appear depending on the context of what you are doing and generally show the statuses of other relevant systems (e.g knitting of an R Markdown document)
+
+## Upper Right Pane - Environment et. al. 
+![Upper Right Pane](graphics/rstudio-pane3.png)
+
+- The `Environment` tab shows all the variables in your current environment and allows you to view them
+- The `History` tab shows all the commands you have run this session
+- The `Connections` tab allows you to connect to a database
+
+## Lower Right Pane - Everything Else
+![Lower Right Pane](graphics/rstudio-pane4.png)
+
+- The `File` tab shows files in the current directory and allow for moving, copying, deleting, and renaming files
+- The `Packages` tab allows for the installation, loading, and unloading of packages
+- The `Help` tab provides searchable access to the help files for all installed packages
+- The `Plots` and `Viewer` tabs display certain objects and files, they are automatically selected when an object to be plotted or viewed is generated
+
+## Your First R Script
+- __Make a new project__
+  - Go to `File` > `New Project...` > `New Directory` > `New Project`
+  - Give your first project a name, like *"First Project"*
+  - Select the folder you want to save this project in
+  - Keep all other options unchecked
+  - Click `Create Project`
+- __Create a new R script__
+  - Go to `File` > `New File` > `R Script`
+  - In the source editor for the script type `"Hello world"`
+  - Save the script under a meaningful name like `hello_world`
+  - In the upper right corner of the source tab, click `Run` > `Run All`
+  - "Hello world" should print out in the `Console` tab below
+- __The Result__
+```{r hello-world, echo=FALSE}
+"Hello world"
+```
+
+## More Things to Try
+- Enter each of these into a line in your script and run it or type each into the console and hit enter to run each command individually
+```{r samples-1}
+# Arithmetic
+(2 + 2) * 4^2
+
+# Create a variable for your favorite number
+fav_num = 7
+
+# ...or your favorite color
+fav_color = "blue"
+fav_color
+
+# Save a vector (a group) of numbers
+evens = c(2, 4, 6, 8, 10)
+
+# Use a function
+mean(evens)
+
+# Use variables
+fav_num + evens
+```
+
+## What did we learn?
+- Whether you run a command from a script or the console the result is the same
+  - A script is just a way to save a sequence of commands to be reproduced later
+- Arithmetic works mostly the way you would expect it to
+  - Any expression that returns a result is displayed in the console
+- Variables allow you to preserve a value to use later in the session
+  - Setting a variable does not return a result, although we can see the value of our variable in the `Environment` tab or by entering the name of the variable as a command
+- Vectors can be created using the `c()` function and hold any number of the same type of object (e.g all numbers or all text)
+- Functions can be applied over vectors
+  - However, how they are applied will vary (e.g. mean vs. +)
