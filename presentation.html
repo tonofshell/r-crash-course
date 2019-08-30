@@ -3179,7 +3179,7 @@ slide:not(.current) .plotly.html-widget{
 </tr>
 </table>
 
-</article></slide><slide class=""><hgroup><h2>Who is R for? (and how do I get started)</h2></hgroup><article  id="who-is-r-for-and-how-do-i-get-started">
+</article></slide><slide class=""><hgroup><h2>Who is R for? (and where do I get it?)</h2></hgroup><article  id="who-is-r-for-and-where-do-i-get-it">
 
 <ul>
 <li>R is primarily for researchers in the data science realm
@@ -3353,6 +3353,219 @@ fav_num + evens</pre>
 
 <ul>
 <li>However, how they are applied will vary (e.g. mean vs. +)</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Data Structures</h2></hgroup><article  id="data-structures">
+
+</article></slide><slide class=""><hgroup><h2>Vector Basics</h2></hgroup><article  id="vector-basics">
+
+<ul>
+<li>Vectors are a collection of the same type of object (e.g. <code>c(1, 2, 3)</code> or <code>c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</code> )</li>
+<li>Scalars are a single object (e.g. <code>1</code> or <code>&quot;a&quot;</code>)
+
+<ul>
+<li>However in R scalars are just vectors of length one, so <code>1</code> is the same as <code>c(1)</code></li>
+</ul></li>
+<li>Vectors have two properties
+
+<ul>
+<li>A length</li>
+<li>A type</li>
+</ul></li>
+<li>While vectors can have any length, there are six basic types called Atomic Vectors
+
+<ul>
+<li>Numeric (e.g. <code>1</code> or <code>5.37</code>)
+
+<ul>
+<li>There are two types of numeric vectors
+
+<ul>
+<li>Integer (e.g. <code>1</code>)</li>
+<li>Double (e.g. <code>5.37</code>)</li>
+</ul></li>
+</ul></li>
+<li>Character (e.g. <code>&quot;hello&quot;</code> or <code>&#39;hello&#39;</code>)</li>
+<li>Logical (e.g. <code>TRUE</code> or <code>FALSE</code>)</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Working with Atomic Vectors</h2></hgroup><article  id="working-with-atomic-vectors">
+
+<ul>
+<li>Vectors can be converted or coereced to a different compatible type</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>as.logical(c(1, 0, 0, 1))</pre>
+
+<pre >## [1]  TRUE FALSE FALSE  TRUE</pre>
+
+<pre class = 'prettyprint lang-r'>as.logical(c(&quot;TRUE&quot;, &quot;FALSE&quot;, &quot;F&quot;, &quot;T&quot;))</pre>
+
+<pre >## [1]  TRUE FALSE FALSE  TRUE</pre>
+
+<pre class = 'prettyprint lang-r'>as.numeric(c(TRUE, FALSE, F, T))</pre>
+
+<pre >## [1] 1 0 0 1</pre>
+
+<pre class = 'prettyprint lang-r'>as.numeric(c(&quot;1&quot;, &quot;0&quot;, &quot;0&quot;, &quot;1&quot;))</pre>
+
+<pre >## [1] 1 0 0 1</pre>
+
+<pre class = 'prettyprint lang-r'>as.character(c(TRUE, FALSE, F, T))</pre>
+
+<pre >## [1] &quot;TRUE&quot;  &quot;FALSE&quot; &quot;FALSE&quot; &quot;TRUE&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>as.character(c(1, 0, 0, 1))</pre>
+
+<pre >## [1] &quot;1&quot; &quot;0&quot; &quot;0&quot; &quot;1&quot;</pre>
+
+</article></slide><slide class=""><hgroup><h2>Finding the Type of a Vector</h2></hgroup><article  id="finding-the-type-of-a-vector">
+
+<ul>
+<li>You can test the type of a vector using the <code>typeof()</code> function</li>
+</ul>
+
+<pre class = 'prettyprint lang-r'>typeof(&quot;hello&quot;)</pre>
+
+<pre >## [1] &quot;character&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>typeof(6)</pre>
+
+<pre >## [1] &quot;double&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>typeof(TRUE)</pre>
+
+<pre >## [1] &quot;logical&quot;</pre>
+
+</article></slide><slide class=""><hgroup><h2>Vector-ception</h2></hgroup><article  id="vector-ception">
+
+<ul>
+<li>Other objects are made up vectors
+
+<ul>
+<li>Lists
+
+<ul>
+<li>A list can contain an unlimited number of vectors or other lists (multi-dimensional)</li>
+</ul></li>
+<li>Dataframe / Tibble / Matrix
+
+<ul>
+<li>A list of vectors, where each vector is the same length and represents a column of values (two-dimensional)</li>
+<li>Dataframes or Tibbles can have different types for each column</li>
+<li>For matrices all columns must be the same type (typically numeric)</li>
+</ul></li>
+</ul></li>
+<li>To learn more about vectors and vector-based objects in <a href='https://r4ds.had.co.nz/vectors.html' title=''>R for Data Science: Chapter 20</a></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Tibbles</h2></hgroup><article  id="tibbles">
+
+<ul>
+<li>Data is usually distributed / imported in the form of a dataframe or tibble
+
+<ul>
+<li>A tibble is an updated version of the dataframe included in the <code>tidyverse</code> package
+
+<ul>
+<li>Tibbles only display the first 10 rows when printed to the console and do not convert column types, unlike dataframes</li>
+<li>A dataframe can be coerced to a tibble with the <code>as_tibble()</code> function</li>
+</ul></li>
+</ul></li>
+<li>Since the tibble is <strong>NOT</strong> included with the base R packages we must install and load the <code>tidyverse</code> package
+
+<ul>
+<li>In the <code>Packages</code> tab there is an <code>Install</code> button, click that and type &ldquo;tidyverse&rdquo; and install it</li>
+<li>Once a package is installed you can load it using the <code>library()</code> function, run <code>library(tidyverse)</code> from a script or the console to load the <code>tidyverse</code> package</li>
+<li>The <code>tidyverse</code> package is actually several data science packages that follow a common &ldquo;tidy&rdquo; analysis philosophy and are all installed and loaded together
+
+<ul>
+<li>You can learn more about it on the <a href='https://www.tidyverse.org/' title=''>tidyverse website</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Using a Tibble</h2></hgroup><article  id="using-a-tibble">
+
+<ul>
+<li>Now that the <code>tidyverse</code> package is loaded we can begin to use tibbles for storing data
+
+<ul>
+<li>Use the <code>tibble()</code> function to create a new tibble</li>
+<li>Specify the name and data for each column as a new named argument (e.g. <code>tibble(grades = c(&quot;A&quot;, &quot;B&quot;, &quot;A&quot;, &quot;D&quot;), age = age_vector</code>))
+
+<ul>
+<li>Notice that you can pass in a variable that refers to a vector that has been previously defined</li>
+</ul></li>
+</ul></li>
+<li>Calling the name of a tibble variable prints out the first 10 rows of the tibble
+
+<ul>
+<li>View all of the tibble by clicking on its information in the <code>Environment</code> tab</li>
+</ul></li>
+<li>There are a few ways to select rows and / or columns to view / use
+
+<ul>
+<li>Get a column with <code>my_tibble$col_name</code>, <code>select(my_tibble, &quot;col_name&quot;)</code>, <code>my_tibble[&quot;col_name&quot;]</code>, or <code>my_tibble[col_index]</code></li>
+<li>Get a row with <code>my_tibble[row_index, ]</code> (notice the comma after <code>row_index</code>)</li>
+<li>Get a value at a location as a tibble with <code>my_tibble[row_index, col_index]</code></li>
+</ul></li>
+<li>Get the dimensions of a tibble with <code>nrow(my_tibble)</code> for the number of rows and <code>ncol(my_tibble)</code> for the number of columns</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Trying a Tibble</h2></hgroup><article  id="trying-a-tibble">
+
+<ul>
+<li>The <code>iris</code> dataset gives different measurements for 150 different irises of 3 species</li>
+<li>Create a tibble of the iris dataset using <code>as_tibble(iris)</code> with the variable name <code>iris_data</code></li>
+<li>Answer the following questions:
+
+<ol>
+<li>What is the mean sepal length?</li>
+<li>What is the median petal width?</li>
+<li>What is the mean petal area? (Hint: Vectors of same lengths can be multiplied by each other)</li>
+<li>Are there an equal number of each species? (Hint: the <code>table()</code> function might be useful)</li>
+</ol></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Trying a Tibble </h2><h3> Answers</h3></hgroup><article  id="trying-a-tibble-answers">
+
+<pre class = 'prettyprint lang-r'>iris_data = as_tibble(iris)
+mean(iris_data$Sepal.Length)</pre>
+
+<pre >## [1] 5.843333</pre>
+
+<pre class = 'prettyprint lang-r'>median(iris_data$Petal.Width)</pre>
+
+<pre >## [1] 1.3</pre>
+
+<pre class = 'prettyprint lang-r'>mean((iris_data$Petal.Length * iris_data$Petal.Length))</pre>
+
+<pre >## [1] 17.21807</pre>
+
+<pre class = 'prettyprint lang-r'>table(iris_data$Species)</pre>
+
+<pre >## 
+##     setosa versicolor  virginica 
+##         50         50         50</pre>
+
+</article></slide><slide class=""><hgroup><h2>Trying a Tibble </h2><h3> Takeaways</h3></hgroup><article  id="trying-a-tibble-takeaways">
+
+<ul>
+<li>Oftentimes there are many ways to do the same thing</li>
+<li>There are <strong><em>MANY</em></strong> different packages and functions to make your life easier
+
+<ul>
+<li>To learn more about a function, package, or included dataset, search for it in the <code>Help</code> tab or, if you know the name, use the <code>?</code> function (e.g. <code>?iris</code>)</li>
+</ul></li>
+<li>The <code>iris</code> dataset contains a special kind of vector for the species variable - called a factor
+
+<ul>
+<li>This is essentially a categorical variable</li>
+<li>Factors have levels (categories) which each have a label assigned to them</li>
+<li>Can be unordered (as in the case of species) or ordered (as in the case of a Likert scale)</li>
 </ul></li>
 </ul></article></slide>
 

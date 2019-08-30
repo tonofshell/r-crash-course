@@ -144,3 +144,102 @@ fav_num + evens
 - Vectors can be created using the `c()` function and hold any number of the same type of object (e.g all numbers or all text)
 - Functions can be applied over vectors
   - However, how they are applied will vary (e.g. mean vs. +)
+
+# Data Structures
+
+## Vector Basics
+- Vectors are a collection of the same type of object (e.g. `c(1, 2, 3)` or `c("a", "b", "c")` )
+- Scalars are a single object (e.g. `1` or `"a"`)
+  - However in R scalars are just vectors of length one, so `1` is the same as `c(1)`
+- Vectors have two properties
+  - A length
+  - A type
+- While vectors can have any length, there are six basic types called Atomic Vectors
+  - Numeric (e.g. `1` or `5.37`)
+    - There are two types of numeric vectors
+      - Integer (e.g. `1`)
+      - Double  (e.g. `5.37`)
+  - Character (e.g. `"hello"` or `'hello'`)
+  - Logical (e.g. `TRUE` or `FALSE`)
+
+## Working with Atomic Vectors
+- Vectors can be converted or coereced to a different compatible type
+```{r working-vectors}
+as.logical(c(1, 0, 0, 1))
+as.logical(c("TRUE", "FALSE", "F", "T"))
+
+as.numeric(c(TRUE, FALSE, F, T))
+as.numeric(c("1", "0", "0", "1"))
+
+as.character(c(TRUE, FALSE, F, T))
+as.character(c(1, 0, 0, 1))
+```
+
+## Finding the Type of a Vector
+- You can test the type of a vector using the `typeof()` function
+```{r test-vector-type}
+typeof("hello")
+typeof(6)
+typeof(TRUE)
+```
+
+## Vector-ception
+- Other objects are made up vectors
+  - Lists 
+    - A list can contain an unlimited number of vectors or other lists (multi-dimensional)
+  - Dataframe / Tibble / Matrix
+    - A list of vectors, where each vector is the same length and represents a column of values (two-dimensional)
+    - Dataframes or Tibbles can have different types for each column
+    - For matrices all columns must be the same type (typically numeric)
+- To learn more about vectors and vector-based objects in [R for Data Science: Chapter 20](https://r4ds.had.co.nz/vectors.html)
+
+## Tibbles
+- Data is usually distributed / imported in the form of a dataframe or tibble
+  - A tibble is an updated version of the dataframe included in the `tidyverse` package
+    - Tibbles only display the first 10 rows when printed to the console and do not convert column types, unlike dataframes
+    - A dataframe can be coerced to a tibble with the `as_tibble()` function 
+- Since the tibble is __NOT__ included with the base R packages we must install and load the `tidyverse` package
+  - In the `Packages` tab there is an `Install` button, click that and type "tidyverse" and install it
+  - Once a package is installed you can load it using the `library()` function, run `library(tidyverse)` from a script or the console to load the `tidyverse` package
+  - The `tidyverse` package is actually several data science packages that follow a common "tidy" analysis philosophy and are all installed and loaded together 
+    - You can learn more about it on the [tidyverse website](https://www.tidyverse.org/)
+    
+## Using a Tibble
+- Now that the `tidyverse` package is loaded we can begin to use tibbles for storing data
+  - Use the `tibble()` function to create a new tibble
+  - Specify the name and data for each column as a new named argument (e.g. `tibble(grades = c("A", "B", "A", "D"), age = age_vector`))
+    - Notice that you can pass in a variable that refers to a vector that has been previously defined
+- Calling the name of a tibble variable prints out the first 10 rows of the tibble
+  - View all of the tibble by clicking on its information in the `Environment` tab
+- There are a few ways to select rows and / or columns to view / use
+  - Get a column with `my_tibble$col_name`, `select(my_tibble, "col_name")`, `my_tibble["col_name"]`, or `my_tibble[col_index]`
+  - Get a row with `my_tibble[row_index, ]` (notice the comma after `row_index`)
+  - Get a value at a location as a tibble with `my_tibble[row_index, col_index]`
+- Get the dimensions of a tibble with `nrow(my_tibble)` for the number of rows and `ncol(my_tibble)` for the number of columns
+
+## Trying a Tibble
+- The `iris` dataset gives different measurements for 150 different irises of 3 species
+- Create a tibble of the iris dataset using `as_tibble(iris)` with the variable name `iris_data`
+- Answer the following questions:
+  1. What is the mean sepal length?
+  1. What is the median petal width?
+  1. What is the mean petal area? (Hint: Vectors of same lengths can be multiplied by each other)
+  1. Are there an equal number of each species? (Hint: the `table()` function might be useful)
+
+## Trying a Tibble | Answers
+```{r trying-tibble}
+iris_data = as_tibble(iris)
+mean(iris_data$Sepal.Length)
+median(iris_data$Petal.Width)
+mean((iris_data$Petal.Length * iris_data$Petal.Length))
+table(iris_data$Species)
+```
+
+## Trying a Tibble | Takeaways
+- Oftentimes there are many ways to do the same thing
+- There are __*MANY*__ different packages and functions to make your life easier
+  - To learn more about a function, package, or included dataset, search for it in the `Help` tab or, if you know the name, use the `?` function (e.g. `?iris`)
+- The `iris` dataset contains a special kind of vector for the species variable - called a factor
+  - This is essentially a categorical variable
+  - Factors have levels (categories) which each have a label assigned to them
+  - Can be unordered (as in the case of species) or ordered (as in the case of a Likert scale)
