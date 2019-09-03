@@ -1,0 +1,501 @@
+first,middle,last,grade,age,school,math_grade_2015,english_grade_2015,science_grade_2015,social_studies_grade_2015,math_grade_2016,english_grade_2016,science_grade_2016,social_studies_grade_2016,math_grade_2017,english_grade_2017,science_grade_2017,social_studies_grade_2017,math_grade_2018,english_grade_2018,science_grade_2018,social_studies_grade_2018
+Vérène,Cayley,Kunz,10,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,71,55,59,48,69,60,58,53
+Dorita,Jafet,Wang,11,17,Shady Willow,NA,NA,NA,NA,73,66,60,82,76,63,56,75,76,64,63,73
+Gratia,Christabella,Schuster,12,19,Pine Field,74,70,71,73,72,65,71,73,77,62,67,65,70,66,66,67
+Hoshi,Amery,Rosales,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,67,76,49,66,68,74,51,64
+Krystine,Lars,Quirós,11,16,Oakwood,NA,NA,NA,NA,72,41,68,64,72,45,65,54,73,45,72,61
+Elroy,Björn,Kirk,12,17,Pine Field,68,50,68,68,75,56,65,63,70,49,68,65,74,55,70,66
+Jan,Tammara,Santiago,12,17,Shady Willow,82,70,63,61,84,70,67,65,82,70,68,59,87,77,64,61
+Esmund,Paula,Beltz,11,18,Oakwood,NA,NA,NA,NA,77,79,76,72,80,81,74,70,86,75,78,75
+Ada,Dorian,Lebeau,9,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,77,73,84,70
+Mort,Arne,Leon,10,14,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,49,38,40,31,52,40,48,32
+Carleton,Sammi,Pletcher,10,17,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,57,40,58,49,60,47,57,50
+Rosalind,Fredrick,Romilly,11,15,Shady Willow,NA,NA,NA,NA,70,60,67,67,72,61,63,74,69,61,64,70
+Delaney,Abner,Victor,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,74,57,75,71,69,67,67,70
+Ami,Cate,Dale,12,17,Pine Field,88,73,91,86,86,72,85,87,88,80,86,89,81,77,90,89
+Chinasa,Sheena,Hampson,9,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,70,55,56,57
+Evie,Delano,Böhler,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,59,35,54,44,58,29,57,40
+Akpofure,Shanene,De,11,17,Oakwood,NA,NA,NA,NA,66,47,71,57,65,49,70,62,65,50,66,58
+Liam,Grégoire,Puerta,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,60,45,52,58,55,47,49,57
+Saturnina,Limbikani,Jin,11,17,Shady Willow,NA,NA,NA,NA,88,71,63,76,81,78,62,79,88,71,62,81
+Jase,Reyna,Gallo,11,15,Shady Willow,NA,NA,NA,NA,69,69,56,71,73,68,54,70,69,68,54,68
+Marva,Alf,Hayes,12,18,Oakwood,65,63,67,72,67,71,64,70,71,59,67,76,65,66,63,70
+Nan,Therese,Kopp,11,17,Oakwood,NA,NA,NA,NA,71,66,66,67,70,62,66,69,70,61,58,70
+Wren,Hermann,Bäcker,9,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,75,63,74,70
+Ashlyn,Elliana,Hutmacher,12,17,Shady Willow,82,72,83,68,83,64,87,73,82,71,87,67,86,65,80,78
+Nelly,Steffie,Cookson,11,17,Oakwood,NA,NA,NA,NA,67,74,58,77,71,67,58,71,67,69,62,70
+Oda,Titilayo,Caro,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,60,64,51,55,69,60,45,57
+Roydon,Sheridan,Blecher,11,17,Pine Field,NA,NA,NA,NA,82,56,79,67,76,61,80,70,74,58,79,75
+Aurora,Imogen,Fischer,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,70,54,74,59,69,53,82,60
+Gunner,Dorita,Waller,9,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,67,53,56,53
+Emma,Bernardita,Mills,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,79,63,66,63,79,61,72,60
+Eliott,Dan,Süß,11,17,Shady Willow,NA,NA,NA,NA,59,62,55,64,61,61,57,62,58,58,53,62
+Annick,Hamnet,Ackerman,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,78,43,85,59,83,45,84,62
+Omar,Chanelle,Sherburn,9,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,60,53,56,53
+Benjamin,Bennie,Coburn,11,17,Pine Field,NA,NA,NA,NA,69,43,57,51,61,49,56,59,63,40,58,52
+Florentin,Oluwakanyinsola,Harden,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,67,65,58,64,68,57,66,65
+Qiang,Brünhild,Landon,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,79,75,73,86,79,80,66,85
+Marie-Laure,Valeria,Wescott,11,17,Shady Willow,NA,NA,NA,NA,77,81,65,64,70,80,67,63,72,73,63,60
+Bartolomé,África,Aston,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,67,47,64,54,72,50,59,59
+Efraín,Grimaldo,Shelby,11,17,Shady Willow,NA,NA,NA,NA,79,78,70,88,73,72,77,86,79,74,77,89
+Svenja,Elías,Womack,9,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,72,57,74,58
+Idelle,Ifa,Wesley,11,16,Shady Willow,NA,NA,NA,NA,70,69,59,65,69,62,56,67,71,62,59,68
+Richmal,Dana,Vásquez,12,17,Shady Willow,83,68,80,81,89,64,81,80,85,69,83,78,82,75,81,83
+Alfonso,Elfreda,Mingo,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,75,56,67,79,72,48,69,72
+Furaha,Crispian,Wood,9,14,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,91,76,83,89
+Nevada,Maisy,Liao,11,16,Shady Willow,NA,NA,NA,NA,50,50,50,53,53,54,54,54,62,48,55,60
+Maralyn,Christophe,Skeates,11,16,Oakwood,NA,NA,NA,NA,75,57,69,62,71,58,69,63,70,59,64,64
+Odelia,Delano,Courtenay,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,78,72,58,62
+Skyla,Katashi,Große,9,14,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,97,79,83,89
+Naël,Tatum,Schlender,12,18,Pine Field,70,56,69,61,74,57,67,59,70,55,68,64,75,59,64,59
+Nikole,Trista,Kempf,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,73,71,72,76,75,68,70,82
+Glenda,Gisèle,Andrewson,11,18,Shady Willow,NA,NA,NA,NA,86,88,82,88,88,82,85,89,86,85,83,87
+Wilburn,Noemi,Coburn,9,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,58,57,49,54
+Abidemi,Emilia,Soto,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,63,65,70,83,68,59,69,87
+Sherri,Haydée,Richardson,11,16,Pine Field,NA,NA,NA,NA,68,38,65,50,70,45,60,50,68,43,62,48
+Jenn,Doria,Gorbold,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,64,55,57,46,65,56,56,46
+Napier,Mickey,Jeanes,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,61,48,58,59
+Keighley,Ralf,Lawson,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,66,46,75,69,73,53,78,77
+Ejiroghene,Naoko,Böcker,11,18,Shady Willow,NA,NA,NA,NA,85,74,68,74,84,70,71,77,82,81,66,72
+Carl,Hardy,Ecclestone,12,19,Oakwood,68,61,64,58,69,68,58,61,74,61,63,61,74,65,64,57
+Andie,Alban,Huffmann,11,16,Shady Willow,NA,NA,NA,NA,53,50,55,36,60,40,51,42,57,50,52,39
+Akio,Emy,Gibson,12,17,Shady Willow,84,72,71,69,77,76,75,65,80,74,77,66,83,79,73,65
+Dene,Soan,Leclercq,9,13,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,90,75,85,78
+Alberte,Tobias,Beverly,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,59,43,49,59,62,46,49,55
+Iris,Chinweike,Pender,9,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,77,69,67,82
+Renata,Deana,Mathews,11,17,Pine Field,NA,NA,NA,NA,75,58,76,75,83,61,75,73,78,64,71,69
+Edwyn,Bryana,Bureau,12,17,Shady Willow,58,59,56,55,64,55,50,51,59,59,50,55,61,54,49,50
+Teresita,Lena,Achterberg,12,18,Shady Willow,81,69,68,79,79,67,71,73,84,72,79,74,78,70,75,70
+Colombe,Emma,Oliver,11,17,Shady Willow,NA,NA,NA,NA,63,55,68,66,64,56,63,63,66,51,70,58
+Magali,Takondwa,Dirks,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,69,58,63,63,70,60,61,64
+Deana,Vivienne,Leblanc,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,68,48,51,45
+Ruprecht,Adegoke,Park,12,17,Shady Willow,85,66,84,83,82,74,80,91,82,67,80,90,83,65,83,88
+Gayla,Driskoll,Dyer,11,15,Oakwood,NA,NA,NA,NA,71,76,69,66,75,79,73,65,76,74,66,70
+Adam,Jerrie,Pettigrew,11,18,Pine Field,NA,NA,NA,NA,88,78,89,85,85,73,91,84,89,78,94,81
+Wanda,Jonathan,Walton,11,16,Shady Willow,NA,NA,NA,NA,78,71,66,79,76,68,67,80,78,67,66,79
+Chima,Tajeddigt,Jacques,9,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,76,76,64,63
+Nneka,Odell,Roy,12,18,Shady Willow,86,75,67,74,89,80,76,75,88,74,68,72,89,70,73,76
+Tatiana,Merrill,Agua,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,73,64,77,74,82,65,72,70
+Earnest,Twila,Dunkel,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,68,52,71,64,67,51,61,65
+Lupita,Linsey,Derichs,12,18,Shady Willow,57,55,50,36,59,55,47,40,68,52,50,39,64,53,48,40
+Rebekah,Lyndsey,Tos,11,18,Pine Field,NA,NA,NA,NA,74,54,65,53,70,49,68,59,69,52,66,58
+Ansley,Ed,Dane,9,16,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,37,56,60
+Adélard,Mathéo,Comstock,11,17,Pine Field,NA,NA,NA,NA,74,52,61,57,72,61,54,56,70,53,56,58
+Placide,Aidan,Martz,11,16,Shady Willow,NA,NA,NA,NA,87,73,85,74,90,73,84,77,89,66,89,80
+Beatrice,Anthony,Emerson,12,18,Pine Field,74,58,72,73,71,54,71,75,72,53,69,76,71,52,75,70
+Asuka,Joëlle,Kaufer,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,56,54,60,47,56,51,51,55
+Yamilé,Nsonowa,Pender,11,15,Shady Willow,NA,NA,NA,NA,70,56,55,51,74,55,56,58,71,52,59,56
+Guanyu,Tacey,Jans,10,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,82,67,70,81,81,71,66,79
+Olyvia,Philippe,Killam,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,52,46,52,46,57,44,50,44
+Jennica,Hollie,Mendoza,9,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,75,78,62,82
+Arline,Emmy,Bélanger,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,73,52,74,46,71,50,73,44
+Marigold,Paquita,Sauter,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,75,57,77,70,79,58,82,69
+Devin,Helmut,Dupond,12,17,Shady Willow,73,70,57,72,76,61,56,72,76,66,63,71,75,66,60,69
+Cree,Glanville,Gotti,11,16,Oakwood,NA,NA,NA,NA,73,68,63,65,67,65,64,59,73,57,60,71
+Amelia,Chas,Haumann,10,17,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,73,58,62,62,76,57,65,67
+Marita,Leta,York,11,17,Pine Field,NA,NA,NA,NA,66,52,64,57,64,54,68,60,68,51,64,66
+Marty,Viktor,Bauer,11,16,Pine Field,NA,NA,NA,NA,72,66,59,50,74,71,65,55,74,62,58,58
+Albin,Tichaona,Merrill,9,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,63,45,43,49
+Amandine,Travis,Tasse,12,17,Oakwood,72,69,67,71,69,68,62,71,70,70,63,68,71,73,66,71
+Azure,Shania,Rivers,10,17,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,55,43,49,40,62,47,49,38
+Cyndi,Braelyn,Kidd,11,16,Shady Willow,NA,NA,NA,NA,58,44,42,35,55,42,41,37,58,44,42,32
+Betony,Fulk,Lovell,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,88,62,78,87,85,65,78,84
+Cece,Ansel,Kay,12,17,Oakwood,67,53,69,69,71,65,67,70,73,59,75,76,76,66,68,72
+Audrea,Águeda,Bertrand,12,16,Oakwood,76,62,76,75,69,64,78,75,72,62,80,77,68,68,74,77
+Maximilien,Alease,Gutiérrez,11,16,Oakwood,NA,NA,NA,NA,72,57,53,64,67,58,54,64,66,58,55,64
+Rina,Rosaire,Summerfield,11,16,Shady Willow,NA,NA,NA,NA,82,74,74,88,91,75,74,89,78,68,74,91
+Michaela,Cohen,Shelton,9,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,76,75,73,76
+Mary,Jo,Lorri,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,69,68,62,69,65,72,60,72
+Emmalyn,Vanessa,Eichel,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,78,64,77,71,77,62,73,65
+Hamilton,Gisselle,Arthur,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,64,71,62,63,67,72,65,63
+Aretha,Melvin,Rey,9,13,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,78,59,83,67
+Paulette,Rosamond,Dufort,11,17,Shady Willow,NA,NA,NA,NA,75,49,55,43,75,54,62,53,77,51,64,54
+Claribel,Tiffani,Bray,11,14,Pine Field,NA,NA,NA,NA,65,52,56,56,65,52,51,55,66,51,48,56
+Mamie,Isebella,Siegel,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,68,59,51,48,63,53,46,47
+Laura,Benita,Paquet,12,19,Shady Willow,85,78,75,77,84,73,68,79,82,75,69,73,86,69,68,74
+Aubrey,Juliana,Statham,12,18,Shady Willow,69,61,65,73,74,60,69,72,72,62,67,66,72,63,66,73
+Esta,Madonna,Readdie,11,16,Pine Field,NA,NA,NA,NA,67,72,66,78,77,77,68,71,75,67,67,73
+Sarah,Kasey,Sargent,11,19,Shady Willow,NA,NA,NA,NA,69,62,67,71,72,58,63,75,70,59,57,76
+Ernest,Brock,Abbott,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,52,54,54,53,57,48,56,55
+Trinity,Fred,Orellana,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,89,80,81,81,88,80,73,82
+Rosalind,Lutz,Chadwick,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,77,76,84,80,84,71,82,85
+Tammy,Hlengiwe,Enns,11,15,Shady Willow,NA,NA,NA,NA,72,58,60,72,75,65,61,69,67,62,68,64
+Alaba,Wasswa,Walter,9,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,69,56,55,53
+Ozzie,Ivan,Marchand,11,15,Shady Willow,NA,NA,NA,NA,85,69,82,87,89,70,83,82,86,72,81,83
+Lois,Martín,Dustin,9,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,84,75,99,95
+Celinda,Félicienne,Simoneit,11,17,Pine Field,NA,NA,NA,NA,74,52,74,63,71,44,72,62,67,52,73,58
+Rigby,Antonia,St,11,16,Shady Willow,NA,NA,NA,NA,80,73,69,82,77,69,65,83,80,66,73,78
+Mtendere,Melyssa,Klein,10,14,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,73,57,82,55,87,61,80,50
+Tinashe,Guiomar,Rider,11,16,Pine Field,NA,NA,NA,NA,53,41,50,38,55,31,51,49,57,40,53,44
+Luitger,Kole,Jones,11,15,Shady Willow,NA,NA,NA,NA,86,62,74,70,86,59,76,64,85,54,76,65
+Temitope,Minty,Montaña,10,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,71,58,59,68,72,54,62,66
+Michel,Maleah,Hobson,11,16,Pine Field,NA,NA,NA,NA,58,45,55,48,60,39,59,48,58,43,49,50
+Joaquina,Dixie,Fleischer,9,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,65,45,69,70
+Jair,Ciriaco,Arbeit,10,17,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,78,64,76,77,81,63,76,75
+Annett,Ifa,Grünewald,11,15,Pine Field,NA,NA,NA,NA,72,80,71,73,79,80,71,77,74,71,72,73
+Susann,Flavien,Gutermuth,11,17,Shady Willow,NA,NA,NA,NA,82,76,86,93,85,77,92,84,88,77,89,89
+Jeptha,Marisa,Gore,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,70,63,77,70,71,67,71,77
+Joy,Angus,Babcock,11,18,Shady Willow,NA,NA,NA,NA,67,55,64,65,68,58,63,61,63,55,64,61
+Barbara,Thelma,Bellerose,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,78,53,73,43,79,52,76,51
+Garry,Ashlee,Schnoor,12,17,Shady Willow,75,70,75,73,73,69,65,77,76,67,76,74,76,67,70,71
+Landen,Craig,Corey,11,15,Shady Willow,NA,NA,NA,NA,78,61,70,52,75,63,66,57,73,59,66,56
+Isabelle,Hideaki,Caldwell,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,61,44,46,50,62,50,50,48
+Caroline,Flossie,Marston,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,61,55,59,54,63,55,53,49
+Miguel,Lilianne,Eliott,10,17,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,74,69,75,74,74,69,75,73
+Barbie,Skyla,Junge,11,18,Shady Willow,NA,NA,NA,NA,75,86,64,88,76,76,60,88,80,79,63,83
+Garland,Tex,Moreau,12,17,Pine Field,61,45,63,58,60,43,61,60,59,47,65,56,58,40,61,54
+Yannic,Will,Nichols,9,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,62,64,68,70
+Aurèle,Korrine,Morriss,11,17,Shady Willow,NA,NA,NA,NA,79,72,57,59,75,73,61,58,78,74,63,57
+Giselle,Irmentrud,Mayer,9,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,76,60,77,70
+Kalla,Abbi,Pocock,11,16,Shady Willow,NA,NA,NA,NA,55,58,39,43,55,53,38,48,53,53,37,45
+Jenny,Jakob,Baxter,9,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,58,46,59,54
+Dwain,Tu,Lewin,9,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,76,65,65,74
+Hortensia,Elton,Geisler,12,18,Shady Willow,73,63,64,75,70,61,62,85,66,74,68,83,72,64,66,80
+Parsifal,Jeanne,Hoefler,11,17,Pine Field,NA,NA,NA,NA,64,46,57,69,67,47,51,66,68,48,54,66
+Josué,Trevelyan,Witherspoon,11,15,Oakwood,NA,NA,NA,NA,58,49,62,60,62,48,63,58,52,46,58,61
+Seble,Phillip,Kunz,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,74,66,66,73,74,72,60,68
+Rosalina,Ryoichi,Wendell,9,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,73,51,66,72
+Gisela,Jessica,Glazier,11,16,Shady Willow,NA,NA,NA,NA,72,66,66,75,74,77,67,78,70,74,65,77
+Cairo,Claude,Babcock,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,42,45,29,22,42,43,31,24
+Aimée,Matthieu,Love,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,68,54,59,64,68,63,64,62
+Laurence,Oliver,Irving,11,17,Shady Willow,NA,NA,NA,NA,93,93,91,88,85,87,95,96,85,91,91,90
+Basilio,Noemi,Wheeler,12,17,Pine Field,94,100,89,97,93,100,88,93,96,99,89,95,91,95,84,96
+Rodrigo,Suzanne,Sands,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,67,63,76,72,71,62,79,74
+Dianne,Libbie,Travis,11,17,Shady Willow,NA,NA,NA,NA,61,64,56,68,65,64,48,69,69,56,53,70
+Tyrrell,Mélissa,Newman,11,17,Shady Willow,NA,NA,NA,NA,85,65,84,70,83,70,86,65,81,69,85,66
+Kaolin,Kristia,Ureña,11,18,Pine Field,NA,NA,NA,NA,52,49,49,29,49,44,49,33,52,46,44,35
+Xanthia,Haregewoin,Villaverde,12,18,Oakwood,70,55,69,59,65,55,76,58,67,57,72,58,66,52,78,63
+Alfonso,Fallon,Charron,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,62,52,47,54,59,53,50,55
+Rebeckah,Daichi,Chandler,9,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,76,80,74,84
+Arline,Desiree,Parsons,11,17,Shady Willow,NA,NA,NA,NA,70,68,68,75,73,68,74,76,67,60,77,81
+Aaren,Olumide,Verity,11,16,Shady Willow,NA,NA,NA,NA,87,83,74,81,82,82,72,80,81,81,77,74
+Georgine,Rosalinda,Beitel,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,64,58,69,79,69,63,66,72
+Eliseo,Tennyson,Wehnert,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,49,46,50,55,53,42,56,55
+Jean-Baptiste,Leopold,Hass,10,18,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,59,44,56,58,67,46,56,58
+Vernon,Ozzy,Nishimura,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,84,67,79,79,86,73,77,82
+Mathilde,Karenza,Tos,9,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,83,51,76,72
+Gordon,Sévérine,Hardy,11,17,Oakwood,NA,NA,NA,NA,58,47,60,48,57,43,54,50,54,39,59,49
+Roxane,Chloe,Warner,11,16,Shady Willow,NA,NA,NA,NA,86,79,74,87,85,78,81,85,87,70,74,84
+Felipe,Estefanía,Trujillo,11,16,Pine Field,NA,NA,NA,NA,66,49,59,46,70,49,64,53,72,50,64,51
+Harmonie,Maegan,Lewin,11,14,Shady Willow,NA,NA,NA,NA,68,51,61,59,71,51,67,61,66,54,63,58
+Antonette,Genoveva,Montagne,12,17,Shady Willow,70,58,64,65,76,58,60,63,72,55,63,64,73,59,60,66
+Sascha,Cyndi,Hirschel,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,62,46,55,49,59,51,53,52
+Ekene,Isabella,Jarvis,11,16,Pine Field,NA,NA,NA,NA,75,54,75,70,63,46,72,68,71,57,74,60
+Fenton,Manuela,Chaves,11,16,Pine Field,NA,NA,NA,NA,69,59,58,56,60,56,61,54,66,56,65,55
+Calista,Kate,Garey,12,17,Shady Willow,68,66,55,60,68,57,58,62,67,65,57,65,73,65,56,60
+Aiko,Othmar,Thompsett,12,17,Oakwood,73,80,80,85,80,77,78,79,82,74,76,81,74,72,73,82
+Xue,Alisya,Vargas,11,15,Oakwood,NA,NA,NA,NA,62,35,41,48,62,37,42,52,57,34,38,43
+Aimée,Jennie,Richardson,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,74,60,62,73,73,68,63,70
+Chester,Ralphie,Brune,11,15,Oakwood,NA,NA,NA,NA,62,43,58,41,67,44,54,37,60,42,55,39
+Uduak,Thea,Bähr,11,17,Pine Field,NA,NA,NA,NA,80,58,65,63,76,59,68,53,76,66,61,55
+Knox,Susan,Albrecht,12,16,Pine Field,60,33,62,51,61,37,59,56,61,34,57,60,64,32,58,51
+Luanne,Marlène,Manz,11,18,Oakwood,NA,NA,NA,NA,56,48,60,54,63,50,60,55,59,47,63,59
+Londyn,Ilbert,Krüger,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,99,88,92,97,96,93,100,98
+Nazario,Ivonne,Hargrave,12,18,Pine Field,95,63,93,94,89,75,96,92,94,73,88,95,95,72,92,96
+Gena,Rosine,Lynton,10,17,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,63,51,65,69,67,52,64,59
+Ulrich,Akane,Brooke,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,80,69,68,68
+Calisto,Livvy,Bristow,10,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,83,68,79,84,82,69,78,79
+Gina,Nicéphore,Bronson,11,17,Shady Willow,NA,NA,NA,NA,79,71,76,57,85,70,73,58,83,64,75,61
+Jolene,Teresa,Thomas,11,17,Oakwood,NA,NA,NA,NA,77,58,75,64,74,63,79,64,69,57,76,66
+Miles,Leta,Robert,11,16,Shady Willow,NA,NA,NA,NA,59,49,53,49,61,43,50,45,60,44,49,47
+Emigdia,Zackery,Bumgarner,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,79,59,55,53,80,59,56,55
+Ava,Elias,Gotti,11,14,Pine Field,NA,NA,NA,NA,68,48,65,57,70,47,63,57,73,42,64,63
+Flora,Romane,Roldán,9,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,60,51,53,50
+Cruz,Haley,Pickle,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,87,70,79,72,89,73,79,69
+Jordan,Jonette,Chance,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,71,62,72,65,73,63,75,62
+Bertina,Thandi,Ingram,9,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,81,68,77,83
+Roy,Na,Griffin,11,15,Pine Field,NA,NA,NA,NA,87,67,84,81,86,69,82,86,74,68,85,82
+Rosenda,Takahiro,Knopp,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,72,48,47,50,67,50,59,50
+Roxane,Shufen,Lamar,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,62,42,67,64,66,43,57,66
+Gaël,Vonda,Sitz,12,18,Oakwood,69,57,59,60,72,54,64,58,77,51,68,63,68,57,62,56
+Cicely,Nicole,Hildebrand,12,18,Shady Willow,96,71,85,75,92,67,87,70,92,70,90,76,91,68,88,77
+Nkechi,Emy,Blythe,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,72,78,57,76,76,80,58,81
+Kailey,Zhi,Brooks,12,17,Pine Field,65,58,73,69,71,59,70,69,64,60,67,69,68,58,64,69
+Conrado,Prosper,Rousseau,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,77,69,63,58,75,69,72,62
+Eliott,Janina,Irwin,9,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,61,55,53,67
+Kingsley,Abegail,Sydney,12,15,Pine Field,75,61,72,65,74,56,74,70,70,58,77,76,73,66,80,69
+Chibuike,Chema,Wade,12,20,Shady Willow,78,67,66,62,71,63,66,54,70,70,68,55,72,62,64,57
+Tafadzwa,Salome,Bennett,9,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,63,39,69,62
+Merten,Reinaldo,Harvey,10,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,56,38,43,51,65,37,45,45
+Camélia,Aretha,Jeffers,11,16,Shady Willow,NA,NA,NA,NA,82,73,65,78,82,75,72,77,77,72,66,80
+Eryn,Anne-Laure,Bunker,11,17,Pine Field,NA,NA,NA,NA,61,58,62,57,61,51,58,60,63,60,58,55
+Sandra,Brandy,Humphrey,11,16,Oakwood,NA,NA,NA,NA,67,59,67,56,72,62,66,59,63,57,66,66
+Toño,Fulke,Rye,11,14,Shady Willow,NA,NA,NA,NA,65,52,54,60,58,48,50,62,64,48,42,65
+Bertrand,Keiko,Gonzales,10,16,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,80,77,64,76,77,78,66,74
+Kurtis,Arnaud,Dresdner,12,17,Shady Willow,74,66,66,67,78,71,68,65,76,69,66,68,74,67,70,70
+Dominga,Luc,Reeve,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,75,55,64,66,75,54,65,59
+Fen,Marceau,Tirrell,9,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,83,77,68,70
+Silke,Cassandra,Hofmann,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,64,51,65,54,67,51,65,55
+Lorene,Ozzy,Guzmán,11,17,Shady Willow,NA,NA,NA,NA,84,67,73,72,83,65,69,66,87,65,73,66
+Nuan,Tameka,Clément,11,16,Pine Field,NA,NA,NA,NA,65,67,92,75,71,67,88,78,75,65,79,81
+Frieda,Harald,Wörnhör,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,76,64,56,63
+Jeri,Florine,Hogarth,10,17,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,70,59,73,77,75,52,79,79
+Rolph,Derren,Blecher,9,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,85,72,69,66
+Héctor,Earline,Christophers,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,70,66,68,70,77,71,59,61
+Niki,Harrison,George,11,15,Shady Willow,NA,NA,NA,NA,64,47,69,55,61,49,68,64,64,48,70,60
+Léon,Augustin,Snider,11,19,Oakwood,NA,NA,NA,NA,68,50,64,54,64,49,61,59,67,60,62,53
+Marguerite,Ifiok,Farnham,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,78,60,79,62,73,67,83,66
+Thibaut,Torben,Blumenthal,12,18,Shady Willow,52,43,45,46,61,47,47,45,56,42,49,50,61,45,44,46
+Chip,Ashlynn,Mondy,10,17,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,85,64,86,82,82,63,80,79
+Eric,Francisco,Salmon,11,17,Shady Willow,NA,NA,NA,NA,85,72,77,90,81,75,77,79,80,77,69,86
+Hilda,Oghenero,Putnam,11,18,Pine Field,NA,NA,NA,NA,79,83,87,100,80,80,84,98,78,79,91,94
+Linsay,Kim,Martel,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,78,68,76,71,77,66,73,66
+Delia,Maura,Carman,11,17,Pine Field,NA,NA,NA,NA,70,71,71,71,71,81,73,74,70,79,70,78
+Jeremiah,Marcus,Martínez,9,13,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,71,54,66,62
+Wayland,Daly,Henderson,11,15,Pine Field,NA,NA,NA,NA,71,62,74,66,65,68,77,68,64,64,82,67
+Narcisa,Estrella,Bloodworth,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,70,63,64,61,62,59,59,65
+Eneida,Nikole,Oelberg,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,63,52,60,56,63,56,60,55
+Charis,Coriander,Ellison,12,16,Pine Field,76,50,70,63,70,56,66,64,67,51,72,62,70,47,71,58
+Dyson,Oghenekevwe,Romilly,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,71,54,64,62,73,56,62,54
+Flanagan,Aline,Mwangi,11,15,Pine Field,NA,NA,NA,NA,77,54,75,76,75,57,77,78,79,59,78,76
+Ottokar,Raelene,Amador,11,16,Shady Willow,NA,NA,NA,NA,84,67,77,71,81,69,76,64,76,65,77,72
+Akuchi,Stephanie,Isaacson,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,56,38,51,37
+Ligia,Tallulah,Peter,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,69,57,64,77,73,63,60,77
+Emelia,Madison,Elwin,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,69,56,61,62,68,57,60,65
+Annis,Sievert,Basurto,11,16,Pine Field,NA,NA,NA,NA,71,72,61,62,78,69,59,68,74,67,63,67
+Henning,Cari,Harper,12,18,Shady Willow,76,59,48,67,77,59,49,63,75,63,52,66,77,59,49,63
+Maxi,Jessie,Abt,11,17,Shady Willow,NA,NA,NA,NA,57,58,54,71,55,60,60,76,62,57,60,67
+Trafford,Dan,Mutton,11,16,Pine Field,NA,NA,NA,NA,65,59,58,63,69,53,61,64,62,55,57,63
+Starr,Adeline,Mayer,12,18,Shady Willow,67,56,66,84,67,62,67,79,63,63,71,79,71,64,68,87
+Marie-Laure,Yao,Peel,9,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,66,68,64
+Maurice,Sindy,Rasch,12,17,Shady Willow,78,59,76,69,81,62,79,68,78,65,76,68,76,58,82,66
+Francis,Shannon,Jacobs,11,18,Shady Willow,NA,NA,NA,NA,83,74,70,75,79,70,71,78,80,66,74,75
+Kiley,Clara,Faerber,9,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,58,67,57
+Luitger,Delight,Lukeson,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,72,52,58,49
+Fleur,Albina,Willis,11,15,Oakwood,NA,NA,NA,NA,73,70,64,69,70,68,64,71,78,66,65,70
+Sukie,Trinity,Braun,11,16,Shady Willow,NA,NA,NA,NA,77,65,62,80,80,73,61,81,82,71,65,76
+Vanessa,Severo,Vincent,9,13,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,73,64,69,89
+Conrado,Jonelle,Alvarado,9,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,77,56,77,70
+Erma,Burke,Haley,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,78,59,73,80,75,59,70,79
+Izem,Kelley,Henderson,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,59,49,46,58,61,51,52,58
+Marlin,Sapphire,Ihejirika,10,16,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,58,56,57,55,64,63,51,55
+Rosaire,Martín,Vicario,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,74,52,73,71,71,60,67,64
+Angelika,Yu,Peter,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,85,68,99,92,93,71,86,95
+Drake,Sara,Roberts,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,62,59,57,61,68,56,57,63
+Xun,Bryson,Marchand,11,17,Oakwood,NA,NA,NA,NA,73,55,77,71,69,49,80,69,75,51,80,67
+Dominik,Primula,Henryson,11,17,Shady Willow,NA,NA,NA,NA,76,57,76,66,80,61,78,65,78,55,83,66
+Letitia,Kenshin,Gutermuth,11,17,Shady Willow,NA,NA,NA,NA,78,68,73,83,73,63,70,89,77,66,81,86
+Cletis,Wambui,Hafner,11,16,Shady Willow,NA,NA,NA,NA,68,68,74,85,76,70,77,79,71,74,68,84
+Morty,Félicienne,Adcock,9,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,92,66,88,74
+Liliane,Jools,Alfaro,11,16,Shady Willow,NA,NA,NA,NA,62,59,49,57,60,63,44,51,62,60,45,57
+Airi,Coleman,Hanson,11,18,Oakwood,NA,NA,NA,NA,69,62,72,71,77,68,66,72,87,61,69,73
+Christina,Olujimi,Protz,11,17,Pine Field,NA,NA,NA,NA,74,68,75,87,72,69,77,83,72,67,71,83
+Nicolasa,Etsuko,Pelley,11,16,Shady Willow,NA,NA,NA,NA,71,63,69,70,72,64,66,69,75,65,59,71
+Beryl,Cristian,Outlaw,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,72,66,81,66,71,57,78,68
+Fiona,Kennard,Royston,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,61,58,52,67,64,57,60,70
+Aishatu,Tel,Nielson,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,77,53,74,68,75,59,70,66
+Macario,Heiner,Idowu,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,75,60,75,59
+Cristen,Alaina,Lovell,11,16,Shady Willow,NA,NA,NA,NA,70,69,67,64,62,69,68,62,70,69,68,63
+Gaëtane,Hua,Lachapelle,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,61,54,43,51,59,48,37,54
+Aletha,Lambert,Boon,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,72,62,56,63,70,61,54,67
+Jenni,Oluwafunmilayo,Seymour,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,77,69,83,69,84,74,78,73
+Edgar,Aberash,Spannagel,11,16,Oakwood,NA,NA,NA,NA,73,62,78,70,75,60,75,78,72,67,76,66
+Kondwani,Molly,Turnbull,12,15,Pine Field,74,57,65,78,84,57,66,70,74,54,70,71,76,56,67,73
+Nicodème,Morgane,Whinery,11,18,Shady Willow,NA,NA,NA,NA,50,30,29,44,49,25,36,39,47,26,31,35
+Christel,Rolph,Trujillo,11,18,Pine Field,NA,NA,NA,NA,80,73,75,74,83,75,74,68,80,63,74,76
+Belle,Kristina,Goode,10,17,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,86,70,93,85,89,64,97,86
+Eloy,Yann,Wickham,12,18,Shady Willow,72,59,65,57,70,58,59,60,68,58,59,61,66,56,66,59
+Yuuki,Aberash,Cummins,11,15,Oakwood,NA,NA,NA,NA,62,42,60,55,63,44,62,54,64,44,59,54
+Andrea,Jakob,Akiyama,12,19,Shady Willow,90,76,89,90,86,70,95,92,93,69,85,85,84,71,90,90
+Zak,Manyara,Granger,11,16,Shady Willow,NA,NA,NA,NA,60,52,67,50,56,56,61,55,62,49,59,50
+An,Aureliano,Tailler,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,76,49,65,60,78,48,70,56
+Emilie,Judit,Quick,11,17,Shady Willow,NA,NA,NA,NA,73,60,68,63,71,62,61,69,76,55,62,60
+Carmella,Celandine,Lacey,11,19,Shady Willow,NA,NA,NA,NA,61,61,60,64,69,58,57,72,70,56,63,66
+Michaela,Hildebrand,Guan,9,14,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,65,57,60,68
+Blas,Christopher,Montagne,10,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,75,67,72,64,75,62,73,67
+Vilma,Lorinda,Hudson,11,13,Shady Willow,NA,NA,NA,NA,70,54,55,64,66,50,58,57,66,49,59,58
+Konrad,Isidora,Pettigrew,10,16,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,63,55,59,50,68,57,60,48
+Kirabo,Judith,Gibbs,11,15,Shady Willow,NA,NA,NA,NA,67,56,60,55,65,55,64,58,65,54,65,55
+Anabella,Kariuki,Lockwood,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,68,51,87,71,75,50,83,72
+Kouji,Clarissa,Ma,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,74,56,62,72,70,56,72,69
+Suzie,Babs,Gerig,11,19,Pine Field,NA,NA,NA,NA,87,64,70,75,86,55,74,71,79,57,68,75
+Jayna,Annalee,Hodges,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,71,62,69,65,67,59,62,61
+Chukwuemeka,Brent,Spence,11,16,Pine Field,NA,NA,NA,NA,53,42,48,36,47,38,45,38,49,39,52,36
+Lalo,Alyson,Forst,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,72,53,57,51,67,53,58,54
+Vikki,Emalee,Meléndez,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,62,40,60,47,64,44,64,51
+Emmerson,Nosipho,Sommer,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,73,76,63,76,74,75,73,75
+Ern,Cameron,Ebner,9,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,75,62,58,61
+Custodio,Sarita,Crawford,9,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,75,58,62,69
+Deanna,Dumisani,Richard,11,16,Shady Willow,NA,NA,NA,NA,62,47,55,49,63,51,54,49,62,48,49,51
+Lazare,Willoughby,Howard,12,16,Shady Willow,73,62,70,74,71,62,74,66,67,58,73,69,72,58,65,72
+Elfrida,Divina,Grosser,11,16,Shady Willow,NA,NA,NA,NA,71,58,84,76,72,65,81,73,68,65,82,75
+Gordie,Amelia,Lewin,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,75,66,57,70,69,65,57,65
+Danita,Sherley,Dick,11,17,Oakwood,NA,NA,NA,NA,69,70,63,72,74,70,68,72,68,68,59,74
+Cailin,Daiki,Witherspoon,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,87,84,86,91,89,87,89,95
+Placide,Hortense,Chow,10,14,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,79,64,72,60,81,64,74,65
+Tristan,Kirby,Ashley,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,64,53,74,60,73,50,72,68
+Mwangi,Gwendolyn,Casal,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,80,55,67,57,78,59,67,59
+Sieghild,Piers,Afolabi,9,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,78,72,72,68
+Joel,Alphonse,Yamazaki,11,17,Shady Willow,NA,NA,NA,NA,75,55,68,78,76,59,71,80,73,57,68,76
+Ed,Vinnie,Himura,9,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,75,55,71,56
+Annora,Magnolia,Horsfall,12,19,Shady Willow,80,72,74,90,71,75,71,81,75,62,72,85,78,66,76,85
+Annabel,Odelia,Jardine,9,13,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,67,66,72,70
+Catherine,Kerry,Carpenter,10,18,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,80,75,66,85,77,74,65,81
+Isabela,Wanyonyi,Michel,11,18,Shady Willow,NA,NA,NA,NA,72,70,58,73,76,71,61,70,78,71,56,69
+Lulit,Simón,Strickland,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,65,55,48,52,66,58,55,53
+Arsène,Shota,Goldschmidt,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,70,78,53,60,67,71,59,61
+Gladwyn,Ash,Howse,9,13,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,77,64,78,69
+Viktor,Juro,Pryor,11,16,Shady Willow,NA,NA,NA,NA,81,68,72,85,77,65,72,89,84,69,68,89
+Boniface,Esther,Schenck,11,17,Pine Field,NA,NA,NA,NA,78,60,67,71,72,61,69,72,69,55,70,68
+Toby,Pearce,Duke,9,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,69,60,44,47
+Domingo,Babirye,Halle,11,16,Shady Willow,NA,NA,NA,NA,73,63,59,62,68,63,61,64,66,62,57,62
+Cherryl,Laurel,Braband,12,17,Shady Willow,71,61,58,49,65,59,62,47,68,59,59,47,67,66,56,48
+Takehiko,Gernot,Yu,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,69,69,55,55,68,66,58,65
+Kerstin,Irene,Tirrell,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,49,35,53,54,49,40,49,54
+Sandrine,Yakubu,Clément,10,18,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,68,67,62,62,62,65,62,65
+Jesse,Haroldo,Wilkie,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,60,41,39,48,58,37,41,47
+Amalia,Lorayne,Becke,12,16,Shady Willow,88,75,75,93,85,71,78,93,90,77,74,92,86,78,70,88
+Adèle,Severo,Long,11,17,Pine Field,NA,NA,NA,NA,87,65,81,86,83,66,85,86,88,66,84,87
+Konstanze,Merrill,Bowman,11,15,Oakwood,NA,NA,NA,NA,78,59,70,68,73,60,69,71,77,60,70,71
+Knox,Georgie,Pascal,10,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,70,50,62,70,71,49,68,65
+Rilla,Kreszentia,Mills,10,13,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,65,49,55,48,58,54,48,54
+Aveline,Tamara,Saylor,11,16,Pine Field,NA,NA,NA,NA,71,47,74,71,79,49,78,66,76,47,80,66
+Barrie,Richelle,Allard,12,17,Shady Willow,67,73,67,68,71,62,60,71,71,71,65,72,70,70,61,73
+Ibbie,Cordell,Espina,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,73,66,56,71,70,68,60,66
+Carmelita,Alfonso,Roberts,9,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,81,70,73,73
+Théa,Stephanie,De,9,13,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,78,60,67,58
+Rafael,Abigayle,Walter,11,18,Shady Willow,NA,NA,NA,NA,65,60,71,72,69,57,72,71,72,52,76,73
+Mirjam,Louella,Roy,11,17,Oakwood,NA,NA,NA,NA,66,51,60,52,71,56,62,53,61,51,63,52
+Archer,Bodhi,Boone,11,17,Shady Willow,NA,NA,NA,NA,76,61,80,77,73,59,78,71,73,59,85,73
+Oakley,Eneida,Dalí,11,17,Oakwood,NA,NA,NA,NA,56,51,52,58,57,45,57,59,69,40,51,54
+Parsifal,Richard,Westbrook,9,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,77,76,74,60
+Temperance,Albino,Vernon,11,15,Shady Willow,NA,NA,NA,NA,84,60,69,73,79,56,68,73,79,59,67,68
+Wright,Farrell,Sierra,11,16,Pine Field,NA,NA,NA,NA,88,63,78,69,88,66,74,68,77,64,77,75
+Dionisio,Dortha,Geiger,11,18,Shady Willow,NA,NA,NA,NA,62,59,57,51,61,57,64,53,61,59,57,58
+Pacey,Fabián,Botha,12,17,Pine Field,82,68,62,62,81,64,70,67,76,62,65,65,77,67,62,67
+Zoie,Elvin,Jack,11,17,Oakwood,NA,NA,NA,NA,63,44,51,41,55,48,47,42,56,48,49,47
+Tobias,Alhaji,Foerstner,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,75,65,60,59,75,60,57,60
+Brunilda,Evvie,Peck,9,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,85,92,69,76
+Upton,Rumbidzai,Philips,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,71,58,74,67,75,61,73,70
+Marietjie,Sampson,Berger,9,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,72,57,63,66
+Zack,Martin,Martel,9,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,70,70,62,68
+Odetta,Vicky,Lynton,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,73,55,69,73,75,54,75,67
+Amaka,Wayne,Linville,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,68,59,69,61,69,55,64,64
+Chuck,Jaslyn,Herbert,10,16,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,65,67,57,53,69,58,56,63
+Olumide,Alemayehu,Von,11,17,Oakwood,NA,NA,NA,NA,64,52,57,52,67,42,49,57,70,47,53,53
+Lenox,Mamie,Banner,11,17,Oakwood,NA,NA,NA,NA,57,64,41,64,57,61,39,62,59,63,45,67
+Marie-Claude,Susie,Willoughby,11,16,Shady Willow,NA,NA,NA,NA,71,47,52,50,74,45,54,47,65,50,52,47
+Clotilda,Journee,Badcock,11,17,Shady Willow,NA,NA,NA,NA,75,57,70,81,70,60,69,77,70,58,69,74
+Cayetano,Justine,Marley,10,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,71,49,69,59,83,49,69,66
+Trafford,London,Parris,9,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,84,70,87,75
+Egon,Tiphaine,Vincent,12,18,Pine Field,63,56,60,43,63,50,57,43,59,52,63,41,59,51,56,48
+Clemens,Kiarra,Stevenson,11,17,Oakwood,NA,NA,NA,NA,55,54,45,43,56,51,45,38,53,48,49,46
+Denis,Hotaru,Hampton,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,73,52,62,63,67,48,65,71
+Arno,Ngozi,Lafrenz,9,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,68,64,62,66
+Rayen,Kazuki,Leigh,11,18,Shady Willow,NA,NA,NA,NA,67,61,63,69,71,63,67,75,70,60,68,73
+Garnet,Käthe,Thurstan,11,17,Shady Willow,NA,NA,NA,NA,72,71,67,84,76,66,67,82,75,69,71,85
+Koharu,Muriel,Lécuyer,10,16,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,76,63,72,64,74,53,71,66
+Albina,Chema,Duchamps,11,16,Shady Willow,NA,NA,NA,NA,76,70,72,68,78,71,71,72,79,68,61,68
+Elisabet,Isebella,Meier,12,17,Pine Field,74,44,70,54,73,48,69,54,68,42,69,55,66,48,72,58
+Celio,Maverick,Giffard,11,18,Shady Willow,NA,NA,NA,NA,57,50,52,66,57,54,46,65,61,50,53,63
+Jianhong,Rickie,Lacey,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,83,71,76,64,79,75,77,66
+Bruce,Chita,Wong,11,17,Oakwood,NA,NA,NA,NA,76,71,57,77,74,68,57,74,76,72,57,77
+Harmonie,Sommer,Abascal,11,17,Shady Willow,NA,NA,NA,NA,66,67,66,66,69,63,75,66,73,61,72,65
+Stéphane,Fátima,Losa,12,16,Shady Willow,75,61,81,75,72,58,82,72,67,61,82,72,68,58,75,74
+Mickaël,Emmet,Danniell,12,18,Shady Willow,60,59,59,60,62,58,59,61,68,55,58,55,63,55,55,57
+Setsuko,Eckhard,Huffmann,9,13,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,48,49,46,58
+Dada,Encarna,Aust,11,17,Pine Field,NA,NA,NA,NA,66,47,52,44,65,46,55,41,68,50,52,40
+Sherley,Consuela,Martinez,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,84,92,79,96,82,83,87,93
+McKenzie,Caelie,Weiß,12,17,Oakwood,67,64,54,44,66,65,53,51,77,64,57,45,71,57,51,45
+Brigitte,Ernest,Boatwright,11,17,Pine Field,NA,NA,NA,NA,74,61,60,62,63,56,67,61,70,52,61,63
+Honora,Orval,Schröter,9,14,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,77,70,70,72
+Thema,Katlyn,Rennell,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,66,47,62,50
+Landen,Annett,Kamau,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,70,62,54,66,73,67,57,63
+Acacia,Gytha,Süss,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,69,59,68,57,65,55,63,55
+Joceline,Pollie,Martin,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,87,65,80,75,84,67,81,74
+Jemmy,Sergio,Schlösser,11,15,Shady Willow,NA,NA,NA,NA,96,85,87,88,97,90,85,90,96,84,84,89
+Ciriaco,Jaimie,Bouchard,12,17,Shady Willow,81,67,60,68,81,67,61,68,79,70,59,71,81,67,56,66
+Nina,Ashton,Hutson,11,20,Oakwood,NA,NA,NA,NA,56,44,46,32,53,44,47,33,52,45,49,36
+Joel,Balfour,Christopherson,11,16,Shady Willow,NA,NA,NA,NA,68,62,60,66,76,59,65,79,72,61,72,81
+Renate,Perrine,Habicht,11,18,Pine Field,NA,NA,NA,NA,53,43,42,40,56,43,44,38,55,46,43,46
+Eva,Loan,Ely,12,18,Oakwood,76,76,76,80,76,79,70,76,77,76,71,80,74,76,74,83
+Zoie,Beata,Gibson,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,65,66,62,76,69,69,58,72
+Annika,Clancy,Strange,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,56,46,52,65,54,50,66,61
+Mat,Ileen,Gabrielson,11,16,Pine Field,NA,NA,NA,NA,66,54,49,54,65,52,52,54,68,59,47,53
+Hugues,Krystle,Leigh,11,17,Pine Field,NA,NA,NA,NA,70,70,61,65,65,66,61,67,72,68,68,71
+Colin,Alice,Castro,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,63,63,41,46,60,60,45,53
+Shanna,Ludwig,Couture,11,15,Shady Willow,NA,NA,NA,NA,82,56,71,86,73,56,68,86,75,53,74,81
+Al,Dezi,Tanaka,11,17,Shady Willow,NA,NA,NA,NA,75,74,77,77,71,78,74,82,76,76,78,78
+Dene,Hyacinth,Edwards,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,68,57,61,61,71,58,59,67
+Nikola,Danita,Okorie,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,94,88,90,97,95,92,86,89
+Richie,Lili,Power,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,67,51,63,62,59,55,65,61
+Bautista,Christal,Purcell,9,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,69,63,59,66
+Marianne,Pastor,Bosque,11,15,Oakwood,NA,NA,NA,NA,78,58,67,67,75,54,71,69,72,60,75,66
+Fulgencio,Rex,Welch,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,73,62,64,62,72,58,64,67
+Munashe,Gord,Law,9,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,78,69,81,81
+Seymour,Dwain,Gehrig,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,78,65,64,67,74,63,67,65
+Cailin,Krista,Cole,10,17,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,68,60,66,64,68,53,67,60
+Nafula,Mary,Ann,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,77,63,62,75,72,65,62,75
+Yewande,Madelynn,Böttcher,12,18,Pine Field,77,66,74,70,78,63,68,75,79,71,72,68,81,65,70,73
+Jaylen,Randi,Audley,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,65,55,71,55,74,58,67,61
+Camden,Xiomara,Trueman,11,16,Shady Willow,NA,NA,NA,NA,77,63,56,58,75,64,57,69,73,67,57,64
+Barrett,Takeshi,Küchler,10,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,77,77,66,69,79,71,69,68
+Ursula,Jeb,Willis,11,17,Shady Willow,NA,NA,NA,NA,63,52,59,72,66,52,64,70,69,47,60,74
+Myla,Kaleb,Appleby,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,56,36,29,29,57,33,32,34
+Cheyenne,Agnes,Juárez,10,18,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,81,69,76,80,80,72,70,81
+Cindy,Joaquina,Richard,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,69,59,73,67
+Anunciación,Désirée,Minett,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,91,68,87,99,87,74,87,97
+Miley,Évrard,Sanderson,9,13,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,69,53,71,64
+Roland,Ana,Yamazaki,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,84,76,70,81,84,80,71,80
+Trev,Magali,Nakano,10,17,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,68,56,56,48,65,59,53,48
+Salomon,Henrik,Blakeslee,9,14,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,64,55,64,60
+Thomas,Serrena,Gerber,10,16,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,64,47,57,56,69,49,61,61
+Homer,Minta,Beverley,10,16,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,78,75,80,84,80,73,86,83
+Ifiok,Alexandrie,Luther,11,16,Oakwood,NA,NA,NA,NA,50,47,56,54,50,49,50,48,54,47,57,52
+Charlee,Pancras,Leverenz,9,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,77,49,58,65
+Lindsie,Jaylyn,Shine,10,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,63,57,50,68,68,58,52,63
+Karl,Shufen,Zhu,12,16,Shady Willow,65,45,66,64,63,52,65,58,61,49,67,65,59,52,65,68
+Ricky,Constant,Millhouse,11,16,Oakwood,NA,NA,NA,NA,83,74,81,71,87,71,82,79,83,73,85,76
+Mattie,Nkechinyere,Ness,10,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,67,53,49,47,65,57,43,55
+Selwyn,Linsay,Braddock,12,18,Shady Willow,73,65,58,64,70,62,57,69,70,64,53,70,69,64,61,64
+Brandie,Chloe,Schuster,9,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,86,65,84,72
+Sara,Neil,Mathewson,9,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,69,57,58,59
+Xaver,Digby,Boone,12,17,Pine Field,71,52,68,69,71,53,73,69,72,49,70,69,78,49,70,77
+Elly,Maegan,Desroches,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,61,58,50,57,68,59,47,58
+Regina,Simba,Burrell,11,17,Pine Field,NA,NA,NA,NA,83,64,74,59,77,57,73,64,76,63,75,58
+Ernest,Yvan,Lavoie,9,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,71,52,50,48
+Hedy,Marwin,Cardozo,9,14,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,67,58,52,47
+Lavena,Jerrie,Raskob,11,17,Oakwood,NA,NA,NA,NA,77,50,59,48,75,38,59,46,74,45,64,45
+Patrice,Jin,Nishimura,11,16,Shady Willow,NA,NA,NA,NA,75,59,62,70,74,59,57,69,76,59,60,65
+Lola,Almudena,Kimura,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,76,58,53,55,76,58,53,50
+Lambert,Leopoldo,Myles,11,17,Pine Field,NA,NA,NA,NA,89,69,84,85,92,72,82,84,92,70,88,77
+Arianne,Lothaire,Jiang,9,15,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,84,72,74,87
+Leatrice,Clovis,Belanger,11,18,Oakwood,NA,NA,NA,NA,72,53,70,66,75,54,72,70,72,61,81,67
+Karenza,Ritchie,Kneib,11,15,Shady Willow,NA,NA,NA,NA,63,52,50,54,62,50,44,58,63,50,48,61
+Albert,Youta,Rimmer,11,17,Oakwood,NA,NA,NA,NA,66,46,64,56,70,46,59,57,72,47,60,54
+Kelsie,Fermín,Tachibana,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,57,45,54,54,54,46,54,55
+Moe,Yuuna,Krüger,12,18,Shady Willow,81,61,64,57,77,62,66,55,75,66,69,58,79,64,75,61
+Aiden,Olalla,Stern,11,17,Shady Willow,NA,NA,NA,NA,70,75,64,68,73,64,63,76,71,70,54,75
+Awotwi,Ren,Lawrenz,11,16,Shady Willow,NA,NA,NA,NA,65,59,51,72,64,60,55,76,62,63,50,71
+Alexandrea,Méline,Blanchett,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,73,58,62,71,78,58,59,68
+Fabian,Torsten,Earl,12,17,Shady Willow,81,80,72,91,82,70,74,87,80,69,69,88,88,76,78,89
+Heinrich,Kiaran,Bösch,11,15,Pine Field,NA,NA,NA,NA,98,79,100,90,90,77,95,96,95,82,100,94
+Lionel,Driscoll,Pawlitzki,12,18,Pine Field,74,66,74,80,74,65,79,78,71,73,81,83,71,66,79,82
+Muhammadu,Dafne,Abraham,11,16,Shady Willow,NA,NA,NA,NA,79,60,79,85,83,59,77,85,79,62,75,82
+Samuel,Primitivo,Michel,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,81,65,71,71,75,63,79,75
+Zikomo,Joffrey,Giménez,10,15,Pine Field,NA,NA,NA,NA,NA,NA,NA,NA,84,66,89,78,87,66,90,80
+Thorben,Bruno,Kato,10,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,45,50,47,41,43,59,45,48
+Keeley,Lynne,Hanson,12,19,Shady Willow,94,66,89,87,93,70,93,84,91,67,95,86,91,71,87,85
+Reine,Adolf,Wruck,11,18,Shady Willow,NA,NA,NA,NA,68,61,68,49,71,66,73,50,67,62,63,52
+Asunción,Fuyuko,Daniau,10,13,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,67,56,64,69,69,65,68,74
+Kizzie,Braxton,Stone,11,17,Oakwood,NA,NA,NA,NA,72,54,57,65,73,54,57,60,73,53,59,66
+Charleen,Hermine,Bonheur,10,17,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,65,48,59,54,66,53,66,54
+Sasha,Damon,Domínguez,11,17,Shady Willow,NA,NA,NA,NA,71,61,55,62,72,61,51,64,66,69,57,68
+Meriwether,Taro,Tolkien,12,19,Oakwood,77,55,75,70,77,56,72,74,74,58,76,71,72,60,75,73
+Benedikta,Timo,Tan,12,18,Oakwood,66,49,67,57,66,55,62,53,63,53,59,62,66,51,65,48
+Tony,Mayme,Fontaine,11,16,Shady Willow,NA,NA,NA,NA,62,48,53,60,68,51,54,66,60,56,51,63
+Simone,Margarethe,Honda,10,12,Oakwood,NA,NA,NA,NA,NA,NA,NA,NA,68,65,69,53,69,70,71,54
+Philis,Nolan,Xylander,12,20,Pine Field,82,72,87,90,85,80,93,87,86,73,90,83,85,75,89,83
+Baldwin,Farai,Abbott,12,18,Oakwood,75,48,57,55,73,49,58,52,78,49,63,58,73,50,62,56
+Bernd,Maria,Blake,11,17,Pine Field,NA,NA,NA,NA,74,66,62,69,71,71,65,75,72,62,62,70
+Liza,Liberty,Temitope,9,17,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,84,80,61,78
+Andre,Gaubert,Shine,10,16,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,83,79,67,74,83,80,71,75
+Bienvenida,Emmie,Chaves,9,15,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,83,66,71,68
+Afolabi,Leslie,Harman,11,16,Shady Willow,NA,NA,NA,NA,70,63,57,65,71,62,58,62,72,64,60,67
+Bernie,Edmund,Daniel,11,18,Oakwood,NA,NA,NA,NA,63,50,63,59,61,45,58,53,57,45,59,56
+Susan,Arnd,Vargas,12,18,Shady Willow,88,73,82,84,82,74,83,82,91,74,82,83,90,74,81,87
+Rico,Christophe,Corey,9,14,Shady Willow,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,60,43,56,48
+Albert,Sara,Wilson,12,18,Oakwood,68,54,51,37,73,50,48,44,70,55,44,43,67,51,48,47
+Wilmer,Alfreda,Lorenz,11,18,Shady Willow,NA,NA,NA,NA,84,50,81,59,86,53,81,55,82,48,80,66
+Garry,Felicie,Rye,11,16,Shady Willow,NA,NA,NA,NA,64,49,60,65,63,46,54,61,68,53,58,65
+Palmira,Christie,Von,11,15,Pine Field,NA,NA,NA,NA,72,41,61,54,66,43,58,53,65,43,58,51
