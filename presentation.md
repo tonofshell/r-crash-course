@@ -56,6 +56,7 @@ Rich package ecosystem   Performance can be slower
   - The help documentation will be your best friend, which goes for other packages and topics as well
 - You can page through the content of this presentation in the form of a regular webpage [here](presentation.md)
 
+
 # Getting Started
 
 ## R Studio's User Interface
@@ -169,6 +170,8 @@ fav_num + evens
 - Functions can be applied over vectors
   - However, how they are applied will vary (e.g. mean vs. +)
 
+
+
 # Data Structures
 
 ## Vector Basics
@@ -237,6 +240,75 @@ as.character(c(1, 0, 0, 1))
 ## [1] "1" "0" "0" "1"
 ```
 
+## Sequences
+- A sequence is a special way of generating a numeric vector
+- Each item in the vector increases or decreases a constant amount from the previous item
+- Sequences can be defined in two ways
+  - The `seq()` function
+    - The `by` argument specifies the amount to increment, by default it is 1
+  - The `:` operator
+
+```r
+1:5
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
+seq(1, 5)
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
+seq(1, 10, by = 3)
+```
+
+```
+## [1]  1  4  7 10
+```
+
+
+## Making Logical Vectors
+- Logical vectors can also be made using different comparison operators including `==`, `<`, `>`, `<=`, `>=`, `%in%`
+
+```r
+1:5 <= 3
+```
+
+```
+## [1]  TRUE  TRUE  TRUE FALSE FALSE
+```
+
+```r
+1:5 == 4
+```
+
+```
+## [1] FALSE FALSE FALSE  TRUE FALSE
+```
+
+```r
+c("hello", "there", "friend") == "there"
+```
+
+```
+## [1] FALSE  TRUE FALSE
+```
+
+```r
+"hello" %in% c("hello", "there", "friend")
+```
+
+```
+## [1] TRUE
+```
+
+
 ## Finding the Type of a Vector
 - You can test the type of a vector using the `typeof()` function
 
@@ -294,6 +366,8 @@ typeof(TRUE)
   - View all of the tibble by clicking on its information in the `Environment` tab
 - There are a few ways to select rows and / or columns to view / use
   - Get a column with `my_tibble$col_name`, `select(my_tibble, "col_name")`, `my_tibble["col_name"]`, or `my_tibble[col_index]`
+    - Selecting an individual column using the latter two methods will return a tibble __NOT__ a vector 
+      - For some functions like `mean()`, you may need to use `unlist()` to convert a single-columned tibble to a vector
   - Get a row with `my_tibble[row_index, ]` (notice the comma after `row_index`)
   - Get a value at a location as a tibble with `my_tibble[row_index, col_index]`
 - Get the dimensions of a tibble with `nrow(my_tibble)` for the number of rows and `ncol(my_tibble)` for the number of columns
@@ -352,3 +426,440 @@ table(iris_data$Species)
   - This is essentially a categorical variable
   - Factors have levels (categories) which each have a label assigned to them
   - Can be unordered (as in the case of species) or ordered (as in the case of a Likert scale)
+  
+
+# Data Wrangling
+
+## What is Data Wrangling?
+- The process of taking the data you have and putting it into the form you need for your analysis
+- Includes a wide range of processes and tools
+  - Importing / converting
+  - Variable creation
+  - Merging
+  - Reshaping 
+  - Cleaning
+- This is usually the most time consuming part of any data project
+
+## But First, the Humble Pipe
+- Data wrangling can get complex and messy pretty fast
+- In Base R, if you need to perform many operations on an object, you have three options
+  - Create lots of variables
+```
+a_1 = function_one(x)
+a_2 = function_two(a_2)
+a_3 = function_three(a_3)
+```
+  - Overwrite existing variables
+```
+a = function_one(x)
+a = function_two(a)
+a = function_three(a)
+```  
+  - Create many nested functions
+```
+a = function_three(function_two(function_one(x)))
+```
+  - This might be fine for a few operations, but more complex combinations quickly become an unreadable and hard to debug mess
+- In research, we want our analyses to be transparent and reproducible, in Base R this is difficult to achieve for complex code 
+- For these reasons the pipe operator was created and included in the tidyverse
+
+## Becoming an R Plumber
+- The pipe operator (`%>%`) directs a variable or the output of a function into the input arguments of another function
+
+*So our previous example of*
+```
+a = function_three(function_two(function_one(x)))
+```
+*...becomes...*
+```
+a = x %>% function_one() %>% function_two() %>% function_three()
+```
+- Wa-hoo! Much better! But what about functions with multiple arguments, like the `round()` function (which rounds numbers to a specified amount of decimal places)?
+
+*Simple!*
+
+```r
+round(pi, 3)
+```
+
+```
+## [1] 3.142
+```
+*...becomes...*
+
+```r
+pi %>% round(3)
+```
+
+```
+## [1] 3.142
+```
+  
+## Advanced R Piping
+- By default the output is piped into the first argument of the next function
+- However, sometimes we might need to pipe data elsewhere
+  - The dot (`.`) tells the pipe where else to pipe the data into, in addition to the first argument
+
+```r
+iris_data %>% select(Sepal.Length) %>% as_vector() %>% tibble(Standardized.Length = (. / mean(.)) ) %>% head(1)
+```
+
+```
+## # A tibble: 1 x 2
+##       . Standardized.Length
+##   <dbl>               <dbl>
+## 1   5.1               0.873
+```
+  - A dot at the beginning of the chain creates a function you can call later
+
+```r
+std_var = . %>% as_vector() %>% tibble(Standardized.Var = (. / mean(.)) )
+iris_data %>% select(Sepal.Length) %>% std_var() %>% head(1)
+```
+
+```
+## # A tibble: 1 x 2
+##       . Standardized.Var
+##   <dbl>            <dbl>
+## 1   5.1            0.873
+```
+  - Putting curly brackets (`{}`) around a function, causes the data to __*ONLY*__ be piped to the dots
+
+```r
+iris_data %>% select(Sepal.Length) %>% as_vector() %>% {tibble(Standardized.Length = (. / mean(.)) )} %>% head(1)
+```
+
+```
+## # A tibble: 1 x 1
+##   Standardized.Length
+##                 <dbl>
+## 1               0.873
+```
+  - Other pipe operators and functions to pair with pipes exist in the `magrittr` package
+
+## Tidy Data
+- Data is easiest to work with when it is tidy, defined by [R for Data Science](https://r4ds.had.co.nz/tidy-data.html#tidy-data-1) when:
+  1. Each variable has its own column.
+  1. Each observation has its own row.
+  1. Each value has its own cell.
+- You will commonly need to convert from long to wide tibbles or vice versa to tidy data
+  - `spread()` converts from long data to wide data
+  - `gather()` converts from wide to long data
+  - `unite()` combines multiple columns into a single new column
+  - `separate()` splits a column into multiple new columns
+- Functions from the `stringr` package can be used to modify character vectors before or after this process
+  
+## Using `spread()`
+
+```r
+table2 %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year type          count
+##   <chr>       <int> <chr>         <int>
+## 1 Afghanistan  1999 cases           745
+## 2 Afghanistan  1999 population 19987071
+## 3 Afghanistan  2000 cases          2666
+## 4 Afghanistan  2000 population 20595360
+```
+
+```r
+table2 %>% spread(key = "type", value = "count") %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year cases population
+##   <chr>       <int> <int>      <int>
+## 1 Afghanistan  1999   745   19987071
+## 2 Afghanistan  2000  2666   20595360
+## 3 Brazil       1999 37737  172006362
+## 4 Brazil       2000 80488  174504898
+```
+
+## Using `gather()`
+
+```r
+table1 %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year cases population
+##   <chr>       <int> <int>      <int>
+## 1 Afghanistan  1999   745   19987071
+## 2 Afghanistan  2000  2666   20595360
+## 3 Brazil       1999 37737  172006362
+## 4 Brazil       2000 80488  174504898
+```
+
+```r
+table1 %>% gather(key = "type", value = "count") %>% head(4)
+```
+
+```
+## # A tibble: 4 x 2
+##   type    count      
+##   <chr>   <chr>      
+## 1 country Afghanistan
+## 2 country Afghanistan
+## 3 country Brazil     
+## 4 country Brazil
+```
+
+## Using `unite()`
+- Specifying the separator is optional but can be specified with the `sep` argument (e.g. `sep = "_")
+
+```r
+table1 %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year cases population
+##   <chr>       <int> <int>      <int>
+## 1 Afghanistan  1999   745   19987071
+## 2 Afghanistan  2000  2666   20595360
+## 3 Brazil       1999 37737  172006362
+## 4 Brazil       2000 80488  174504898
+```
+
+```r
+table1 %>% unite("info", cases, population) %>% head(4)
+```
+
+```
+## # A tibble: 4 x 3
+##   country      year info           
+##   <chr>       <int> <chr>          
+## 1 Afghanistan  1999 745_19987071   
+## 2 Afghanistan  2000 2666_20595360  
+## 3 Brazil       1999 37737_172006362
+## 4 Brazil       2000 80488_174504898
+```
+## Using `separate()`
+- Specifying the separator is optional but can be specified with the `sep` argument (e.g. `sep = "/")
+
+```r
+table3 %>% head(4)
+```
+
+```
+## # A tibble: 4 x 3
+##   country      year rate           
+##   <chr>       <int> <chr>          
+## 1 Afghanistan  1999 745/19987071   
+## 2 Afghanistan  2000 2666/20595360  
+## 3 Brazil       1999 37737/172006362
+## 4 Brazil       2000 80488/174504898
+```
+
+```r
+table3 %>% separate(rate, c("cases", "population")) %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year cases population
+##   <chr>       <int> <chr> <chr>     
+## 1 Afghanistan  1999 745   19987071  
+## 2 Afghanistan  2000 2666  20595360  
+## 3 Brazil       1999 37737 172006362 
+## 4 Brazil       2000 80488 174504898
+```
+
+## Excluding Variables
+- Commonly in R, the dash (`-`) is used to specify "all but this", as with
+  - Negative indices: `my_vector[-5]` would return all the items in the vector except the one at index 5
+  - Negative variables: `my_tibble %>% select(-age)` would return a tibble with every variable from `my_tibble` except `age`
+- Most functions in the tidyverse allow the exclusion of variables from a process by passing their names with a dash in front as the last arguments
+
+```r
+table1 %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year cases population
+##   <chr>       <int> <int>      <int>
+## 1 Afghanistan  1999   745   19987071
+## 2 Afghanistan  2000  2666   20595360
+## 3 Brazil       1999 37737  172006362
+## 4 Brazil       2000 80488  174504898
+```
+
+```r
+table1 %>% gather(key = "type", value = "count", -country, - year) %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year type  count
+##   <chr>       <int> <chr> <int>
+## 1 Afghanistan  1999 cases   745
+## 2 Afghanistan  2000 cases  2666
+## 3 Brazil       1999 cases 37737
+## 4 Brazil       2000 cases 80488
+```
+
+## Filtering a Dataset
+- Filtering allows to subset data by the specific values of a given variable
+- The `filter()` function takes a comparison of a variable and a value and returns each row where that comparison is `TRUE`
+
+```r
+table1 %>% filter(country == "China")
+```
+
+```
+## # A tibble: 2 x 4
+##   country  year  cases population
+##   <chr>   <int>  <int>      <int>
+## 1 China    1999 212258 1272915272
+## 2 China    2000 213766 1280428583
+```
+
+```r
+table1 %>% filter(cases > 3000)
+```
+
+```
+## # A tibble: 4 x 4
+##   country  year  cases population
+##   <chr>   <int>  <int>      <int>
+## 1 Brazil   1999  37737  172006362
+## 2 Brazil   2000  80488  174504898
+## 3 China    1999 212258 1272915272
+## 4 China    2000 213766 1280428583
+```
+
+## Creating or Modifying Variables
+- While there are many ways to create or modify variables, the recommended way is to use the `mutate()` function
+- The `mutate()` function takes a name for a variable and any code to generate that variable
+
+```r
+table1 %>% mutate(rate = cases / population)
+```
+
+```
+## # A tibble: 6 x 5
+##   country      year  cases population      rate
+##   <chr>       <int>  <int>      <int>     <dbl>
+## 1 Afghanistan  1999    745   19987071 0.0000373
+## 2 Afghanistan  2000   2666   20595360 0.000129 
+## 3 Brazil       1999  37737  172006362 0.000219 
+## 4 Brazil       2000  80488  174504898 0.000461 
+## 5 China        1999 212258 1272915272 0.000167 
+## 6 China        2000 213766 1280428583 0.000167
+```
+
+```r
+table1 %>% mutate(year = year %>% as.character() %>% str_sub(3))
+```
+
+```
+## # A tibble: 6 x 4
+##   country     year   cases population
+##   <chr>       <chr>  <int>      <int>
+## 1 Afghanistan 99       745   19987071
+## 2 Afghanistan 00      2666   20595360
+## 3 Brazil      99     37737  172006362
+## 4 Brazil      00     80488  174504898
+## 5 China       99    212258 1272915272
+## 6 China       00    213766 1280428583
+```
+
+## Importing Data
+- Most likely the data you need to analyze will not come as a tibble built-in to an R package
+- Included in the tidyverse are the `readr`, `haven`, and `readxl` packages for importing different file types directly to tibbles in R
+  - `reader` includes functions to read standard delimited file types such as CSV and TSV files
+  - `haven` includes functions to read files from other stats programs such as Stata, SPSS, and SAS 
+  - `readxl` includes functions to read Excel files 
+- Other packages can add support for reading other types of files
+  - `sf` provides tools for working with GIS data such as shapefiles
+  - `jsonlite` adds functionality for reading and writing to JSONs
+  - If it exists, there's probably an R package to open it
+    - However, some packages read data as a data frame and will need to be converted to a tibble before proceeding
+- The `here()` function in the `here` package makes specifying a file path much easier
+  - There is a good example of its benefits and uses [on GitHub](https://github.com/jennybc/here_here)
+
+## Everything Else
+- Datasets are rarely complete, and may be explicitly or implicitly missing values
+  - Explicitly missing values are defined in R by `NA`
+  - Oftentimes missing values will need to be omitted, the `na.omit()` function will remove any rows that have any missing values
+  - More about accounting for missing values is covered in [this chapter](https://r4ds.had.co.nz/tidy-data.html#missing-values-3) of R for Data Science
+- Joining different datasets is a common problem, but unfortunately it was too time consuming to include here
+  - The [chapter on relational data](https://r4ds.had.co.nz/relational-data.html), covers this in detail by using data on flights in and out of NYC airports 
+  
+## Analyzing Student Data
+1. Download the CSV file [student_data.csv](student_data.csv) and copy it to your project directory
+1. Install and import the `here` package
+1. Import the data using the appropriate function from the `readr` package (learn more about the package on the [tidyverse website](https://readr.tidyverse.org/))
+1. Rearrange the data to only have variables for first, middle, and last names, school, year, and math, english, science, and social studies grades
+1. Calculate the GPA for each student for each year (Hint: it may be easier to __NOT__ use the `mean()` function)
+1. Find the average GPA for each school in 2018 (This can be done all in one step with the `aggregate()` function for bonus points)
+
+## Analyzing Student Data | Answers
+
+```r
+library(here)
+student_data = read_csv(here("student_data.csv"))
+```
+
+
+```r
+gathered_student_data = student_data %>% select(-age, -grade) %>% 
+  gather("key", "grade", - first, - middle, -last, -school) %>% 
+  separate(key, c("class", "year"), sep = "__") 
+gathered_student_data %>% head(4)
+```
+
+```
+## # A tibble: 4 x 7
+##   first    middle last    school       class      year  grade
+##   <chr>    <chr>  <chr>   <chr>        <chr>      <chr> <dbl>
+## 1 Lucas    Joyce  Otis    Shady Willow math_grade 2015     NA
+## 2 Ruprecht Ora    Lehr    Pine Field   math_grade 2015     NA
+## 3 Hellen   Reed   Sorg    Pine Field   math_grade 2015     NA
+## 4 Mu       Allie  Britton Shady Willow math_grade 2015     NA
+```
+
+```r
+final_student_data = gathered_student_data %>% spread("class", "grade") %>% 
+  mutate(gpa = (math_grade + english_grade + science_grade + social_studies_grade) / 4)
+final_student_data %>% head(4)
+```
+
+```
+## # A tibble: 4 x 10
+##   first middle last  school year  english_grade math_grade science_grade
+##   <chr> <chr>  <chr> <chr>  <chr>         <dbl>      <dbl>         <dbl>
+## 1 Abbie Berna~ Bass  Oakwo~ 2015             63         77            81
+## 2 Abbie Berna~ Bass  Oakwo~ 2016             59         73            83
+## 3 Abbie Berna~ Bass  Oakwo~ 2017             60         74            81
+## 4 Abbie Berna~ Bass  Oakwo~ 2018             63         73            81
+## # ... with 2 more variables: social_studies_grade <dbl>, gpa <dbl>
+```
+
+```r
+# the easy way, repeat for each school
+final_student_data %>% filter(year == 2018, school == "Oakwood") %>% select(gpa) %>% unlist() %>% mean()
+```
+
+```
+## [1] 61.23106
+```
+
+```r
+# the harder way
+final_student_data %>% filter(year == 2018) %>% {aggregate(.$gpa, by = list(school = .$school), mean)}
+```
+
+```
+##         school        x
+## 1      Oakwood 61.23106
+## 2   Pine Field 65.69048
+## 3 Shady Willow 68.58471
+```
+
