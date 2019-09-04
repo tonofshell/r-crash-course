@@ -793,7 +793,7 @@ table1 %>% mutate(year = year %>% as.character() %>% str_sub(3))
   - The [chapter on relational data](https://r4ds.had.co.nz/relational-data.html), covers this in detail by using data on flights in and out of NYC airports 
   
 ## Analyzing Student Data
-1. Download the CSV file [student_data.csv](student_data.csv) and copy it to your project directory
+1. Download the CSV file [student_data.csv](https://github.com/tonofshell/r-crash-course/releases/latest/download/student_data.csv) and copy it to your project directory
 1. Install and import the `here` package
 1. Import the data using the appropriate function from the `readr` package (learn more about the package on the [tidyverse website](https://readr.tidyverse.org/))
 1. Rearrange the data to only have variables for first, middle, and last names, school, year, and math, english, science, and social studies grades
