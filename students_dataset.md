@@ -67,7 +67,7 @@ get_last_school_year = function(x) {
 
 last_sch_yr = Sys.Date() %>% get_last_school_year()
 years_back = 4
-school_grade_adjustment = 5
+school_grade_adjustment = 7
 
 student_data$grade = nrow(student_data) %>% runif(9, 12) %>% round()
 student_data$age = (student_data$grade + 5.5 + rnorm(nrow(student_data))) %>% round()
@@ -91,7 +91,7 @@ more_grades = function(year, data_set, min_year, year_grade_bump, grade_names = 
   for (n in grade_names) {
   new_grades = data_set[[n]] %>% add_error(3) %>% (function(x) x + year_grade_bump ) %>% round()
   missing_grades = rep(NA, length(new_grades))
-  data_set[[paste(n, year, sep = "_")]] = ifelse(grade_dif <= year_dif, new_grades, missing_grades) %>% {ifelse(. < 100, ., rep(100, length(.)) )}
+  data_set[[paste(n, year, sep = "__")]] = ifelse(grade_dif <= year_dif, new_grades, missing_grades) %>% {ifelse(. < 100, ., rep(100, length(.)) )}
   }
   return(data_set)
 }
@@ -101,10 +101,10 @@ for (year in (last_sch_yr - years_back + 1):last_sch_yr) {
 }
 
 student_data = student_data %>% select(-math_grade, -english_grade, -science_grade, -social_studies_grade)
-plot_grid(student_data %>% ggplot(aes(x = school, y = math_grade_2018, color = school, fill = school)) + geom_violin() + theme(axis.text.x = element_blank()),
-          student_data %>% ggplot(aes(x = school, y = english_grade_2018, color = school, fill = school)) + geom_violin() + theme(axis.text.x = element_blank()),
-          student_data %>% ggplot(aes(x = school, y = science_grade_2018, color = school, fill = school)) + geom_violin() + theme(axis.text.x = element_blank()),
-          student_data %>% ggplot(aes(x = school, y = social_studies_grade_2018, color = school, fill = school)) + geom_violin() + theme(axis.text.x = element_blank()))
+plot_grid(student_data %>% ggplot(aes(x = school, y = math_grade__2018, color = school, fill = school)) + geom_violin() + theme(axis.text.x = element_blank()),
+          student_data %>% ggplot(aes(x = school, y = english_grade__2018, color = school, fill = school)) + geom_violin() + theme(axis.text.x = element_blank()),
+          student_data %>% ggplot(aes(x = school, y = science_grade__2018, color = school, fill = school)) + geom_violin() + theme(axis.text.x = element_blank()),
+          student_data %>% ggplot(aes(x = school, y = social_studies_grade__2018, color = school, fill = school)) + geom_violin() + theme(axis.text.x = element_blank()))
 ```
 
 ![](students_dataset_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
