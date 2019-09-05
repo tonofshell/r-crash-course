@@ -1,5 +1,5 @@
 ---
-title: "R Crash Course"
+title: "A Crash Course in R"
 author: "Adam Shelton"
 date: "8/29/2019"
 output: 
@@ -9,6 +9,9 @@ output:
 ---
 
 
+
+## About the Course
+- 
 
 # Introduction
 
@@ -809,7 +812,7 @@ student_data = read_csv(here("student_data.csv"))
 
 
 ```r
-gathered_student_data = student_data %>% select(-age, -grade) %>% 
+gathered_student_data = student_data %>% select(-age, -grade_level) %>% 
   gather("key", "grade", - first, - middle, -last, -school) %>% 
   separate(key, c("class", "year"), sep = "__") 
 gathered_student_data %>% head(4)
@@ -817,12 +820,12 @@ gathered_student_data %>% head(4)
 
 ```
 ## # A tibble: 4 x 7
-##   first    middle last    school       class      year  grade
-##   <chr>    <chr>  <chr>   <chr>        <chr>      <chr> <dbl>
-## 1 Lucas    Joyce  Otis    Shady Willow math_grade 2015     NA
-## 2 Ruprecht Ora    Lehr    Pine Field   math_grade 2015     NA
-## 3 Hellen   Reed   Sorg    Pine Field   math_grade 2015     NA
-## 4 Mu       Allie  Britton Shady Willow math_grade 2015     NA
+##   first    middle   last     school       class      year  grade
+##   <chr>    <chr>    <chr>    <chr>        <chr>      <chr> <dbl>
+## 1 Krystina Bettina  Reeve    Shady Willow math_grade 2015     NA
+## 2 Idir     Carleton Kitchen  Shady Willow math_grade 2015     NA
+## 3 Tatiana  Finlay   Kurz     Shady Willow math_grade 2015     NA
+## 4 Ida      Isadora  Herschel Oakwood      math_grade 2015     NA
 ```
 
 ```r
@@ -835,10 +838,10 @@ final_student_data %>% head(4)
 ## # A tibble: 4 x 10
 ##   first middle last  school year  english_grade math_grade science_grade
 ##   <chr> <chr>  <chr> <chr>  <chr>         <dbl>      <dbl>         <dbl>
-## 1 Abbie Berna~ Bass  Oakwo~ 2015             63         77            81
-## 2 Abbie Berna~ Bass  Oakwo~ 2016             59         73            83
-## 3 Abbie Berna~ Bass  Oakwo~ 2017             60         74            81
-## 4 Abbie Berna~ Bass  Oakwo~ 2018             63         73            81
+## 1 Abel  Yoshi~ Davi~ Shady~ 2015             NA         NA            NA
+## 2 Abel  Yoshi~ Davi~ Shady~ 2016             70         81            60
+## 3 Abel  Yoshi~ Davi~ Shady~ 2017             69         87            61
+## 4 Abel  Yoshi~ Davi~ Shady~ 2018             70         79            57
 ## # ... with 2 more variables: social_studies_grade <dbl>, gpa <dbl>
 ```
 
@@ -848,7 +851,7 @@ final_student_data %>% filter(year == 2018, school == "Oakwood") %>% select(gpa)
 ```
 
 ```
-## [1] 61.23106
+## [1] 63.54528
 ```
 
 ```r
@@ -858,8 +861,115 @@ final_student_data %>% filter(year == 2018) %>% {aggregate(.$gpa, by = list(scho
 
 ```
 ##         school        x
-## 1      Oakwood 61.23106
-## 2   Pine Field 65.69048
-## 3 Shady Willow 68.58471
+## 1      Oakwood 63.54528
+## 2   Pine Field 66.88519
+## 3 Shady Willow 67.66176
 ```
 
+# Data Visualization
+
+## What is data visualization?
+- The process of creating visual representations of data
+- Aims to aid in the discovery and understanding of relationships in the data
+- Data visualization is an essential part of the data science process, and an important method for conveying results, especially to other researchers without data science experience
+- In R, there are functions for data visualization in the built-in `graphics` package, such as the `plot()` and `hist()` functions
+  - While these can be sufficient for basic visualizations, generating complex visualizations is much more difficult
+- In response to this learning curve Hadley Wickham, author of most of the tidyverse packages, created `ggplot2` a data visualization package which follows a "grammar of graphics"
+  - `ggplot2` is one of the world's most popular data visualization tools, used by world renowned organiations such as the New York Times and FiveThirtyEight, and has been downloaded millions of times
+  - Its simplicity in building and customizing visualizations is desirable to ameteurs and professionals alike, and numerous packages have expanded its philosophy to other aspects of data visualization
+  
+## `ggplot2` Basics
+- `ggplot2` layers components on top of each other to build a visualization
+- The process is started with the `ggplot()` function which specifies a data source and any default aesthetic mappings or settings to use
+  - `ggplot()` accepts data in data frame or tibble form
+  - Aesthetic mappings, generated with the `aes()` function, connect a dimension of data to a dimension of the visualization
+- Next comes one or more geometry layers, each corresponding to a type of visualization to include    
+    - Each additional geometry layer can inherit the default aesthetic mappings and settings, if possible, or specify different ones
+- Other layers can be added to adjust other parameters, such as facets, labels, scales, and themes
+- All of these layers are linked together to form one vizualization using the addition operator(`+`)
+
+## Making a Simple Visualization
+1. Select a data source - this can be piped in, which is useful if the data needs to be wrangled into the correct form for the visualization
+2. Specify default aesthetic mappings - `x`, `y`, `color`, and `fill` are the most common, but some geometries will use more or only a portion of these
+3. Select a geometry function (or several) - each of these are prefaced by `geom_` (e.g. `geom_point()`)
+4. Save to a variable to add more layers or view later
+
+```r
+displ_year_plot = ggplot(mpg, aes(x = displ, y = hwy)) + geom_point()
+displ_year_plot
+```
+
+![](presentation_files/figure-html/simple-viz-1.svg)<!-- -->
+
+## Making a Slightly Less Simple Visualization
+- Specifying `color` in an aesthetic maps changes in color based to a variable, creating a legend
+- Specifying `color` in a geometry simply sets the same color for all elements in that geometry
+
+
+```r
+displ_year_plot = ggplot(mpg, aes(x = displ, y = hwy)) + geom_point(aes(color = class))
+displ_year_plot
+```
+
+![](presentation_files/figure-html/less-simple-viz-1.svg)<!-- -->
+
+```r
+displ_year_plot + geom_smooth(color = "grey60")
+```
+
+![](presentation_files/figure-html/less-simple-viz-2.svg)<!-- -->
+
+## Making a Complicated Visualization
+- Functions prefixed in `scale_` can alter the scale used for a specific dimension
+  - Here `scale_radius()` adjusts the `size` aesthetic by the radius, the default `scale_size()` adjusts the area
+- The `labs()` function allows for the definition of labels
+- A facet arranges multiple visualizations which each use a different subset based on a variable
+- Themes alter the position, size, and other attributes of objects
+- This is probably a bad vizualization because __*too much*__ has been stuffed into it
+
+```r
+mpg %>% arrange(-cyl) %>% ggplot(aes(x = displ, y = hwy)) + 
+  geom_point(aes(color = class, size = cyl)) + 
+  geom_smooth(color = "grey60") + 
+  scale_radius(range = c(2, 7)) + 
+  facet_wrap(~ year) + theme(legend.position = "bottom") + 
+  labs(title = "Cars with Larger Engines get Worse Fuel Efficency", subtitle = "At highway speeds in both 1999 and 2008", 
+       x = "Engine Displacement  (L)", y = "Highway Fuel Efficiency (mpg)", color = "Vehicle \nClass", size = "Number of \nCylinders")
+```
+
+![](presentation_files/figure-html/complicated-viz-1.svg)<!-- -->
+
+## Visualizing Student Data
+Create visualizations to answer the following questions:
+
+1. Is one school overrepesented in the dataset?
+1. Is there a relationship between math and english grades?
+1. Which school has the highest GPAs?
+1. Do grades by subject vary by school?
+
+
+## Visualizing Student Data | Answers
+
+```r
+final_student_data %>% ggplot(aes(x = school)) + geom_bar()
+```
+
+![](presentation_files/figure-html/visualizing-student-data-1.svg)<!-- -->
+
+```r
+final_student_data %>% ggplot(aes(x = math_grade, y = english_grade, color = school)) + geom_point() + geom_smooth(color = "grey60")
+```
+
+![](presentation_files/figure-html/visualizing-student-data-2.svg)<!-- -->
+
+```r
+final_student_data %>% ggplot(aes(x = school, y = gpa, fill = school)) + geom_violin()
+```
+
+![](presentation_files/figure-html/visualizing-student-data-3.svg)<!-- -->
+
+```r
+gathered_student_data %>% ggplot(aes(x = school, y = grade, fill = school)) + geom_violin() + facet_wrap(~class)
+```
+
+![](presentation_files/figure-html/visualizing-student-data-4.svg)<!-- -->

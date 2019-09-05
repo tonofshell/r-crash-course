@@ -40,8 +40,17 @@ code, pre, .prettyprint {
   background: -moz-linear-gradient(45deg,  #ffffff 0%, #ffffff 40%, #eb5028 70%, #0fa0f5 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(45deg,  #ffffff 0%,#ffffff 40%,#eb5028 70%,#0fa0f5 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(45deg,  #ffffff 0%,#ffffff 40%,#eb5028 70%,#0fa0f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#0fa0f5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#0fa0f5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
+}
+
+slides >  slide.dark {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#515151+0,515151+36,8e1511+75,003e7c+100 */
+  background: #515151 !important; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #515151 0%, #515151 40%, #8e1511 70%, #003e7c 100%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #515151 0%,#515151 40%,#8e1511 70%,#003e7c 100%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #515151 0%,#515151 40%,#8e1511 70%,#003e7c 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#515151', endColorstr='#003e7c',GradientType=1 ) !important;
 }
 
 .segue h2 {
