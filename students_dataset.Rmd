@@ -77,8 +77,8 @@ last_sch_yr = Sys.Date() %>% get_last_school_year()
 years_back = 4
 school_grade_adjustment = 7
 
-student_data$grade = nrow(student_data) %>% runif(9, 12) %>% round()
-student_data$age = (student_data$grade + 5.5 + rnorm(nrow(student_data))) %>% round()
+student_data$grade_level = nrow(student_data) %>% runif(9, 12) %>% round()
+student_data$age = (student_data$grade_level + 5.5 + rnorm(nrow(student_data))) %>% round()
 student_data$school = nrow(student_data) %>% runif(1, 3) %>% round() %>% factor(levels = c(1,2,3), labels = c("Oakwood", "Shady Willow", "Pine Field"))
 base_grades =  nrow(student_data) %>% rnorm(72, 9) %>%  add_error(0.5)
 student_data$math_grade = base_grades %>% {ifelse(student_data$school == "Oakwood", . - rnorm(length(.), school_grade_adjustment), .)} %>% round()
@@ -91,7 +91,7 @@ student_data %>% mutate(school = as.numeric(school)) %>% select(-first, -middle,
 ## Generate Additional Grades
 ```{r}
 more_grades = function(year, data_set, min_year, year_grade_bump, grade_names = c("math_grade", "english_grade", "science_grade", "social_studies_grade")) {
-  grade_dif = max(data_set$grade)  - data_set$grade
+  grade_dif = max(data_set$grade_level)  - data_set$grade_level
   year_dif = year - min_year
   for (n in grade_names) {
   new_grades = data_set[[n]] %>% add_error(3) %>% (function(x) x + year_grade_bump ) %>% round()
