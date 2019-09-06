@@ -1,7 +1,6 @@
 ---
 title: "A Crash Course in R"
 author: "Adam Shelton"
-date: "8/29/2019"
 output: 
   ioslides_presentation:
     keep_md: TRUE
@@ -11,8 +10,13 @@ output:
 
 
 ## About the Course
-- 
-
+- All the code for the course and a document version of the presentation are available at [https://github.com/tonofshell/r-crash-course/](https://github.com/tonofshell/r-crash-course/)
+- The course covers four broad areas of Data Science in R (plus setting up R)
+  - Data Structures
+  - Data Wrangling
+  - Communicating Results
+  - Programming
+  
 # Introduction
 
 ## What is R?
@@ -51,7 +55,7 @@ Rich package ecosystem   Performance can be slower
     - R Studio Cloud is built off of [R Studio Server](https://www.rstudio.com/products/rstudio/download-server/) which anyone (with the right motivation and technical skills) can use to run their own browser-accessible R Studio experience
     
 ## Additional Resources
-- This presentation is geared to providing a sturdy base to get you working in R and R Studio
+- This course is geared to providing a sturdy base to get you working in R and R Studio
 - However, the world of R is immense, with many more topics and packages than we could ever hope to cover
 - Many references will be made to [R for Data Science](https://r4ds.had.co.nz/) by Garrett Grolemund and Hadley Wickham
   - Links to relevant sections will be provided whenever possible, but feel free to read the entire eBook at your leisure (it's free)!
@@ -184,7 +188,7 @@ fav_num + evens
 - Vectors have two properties
   - A length
   - A type
-- While vectors can have any length, there are six basic types called Atomic Vectors
+- While vectors can have any length, there are only six basic types called Atomic Vectors
   - Numeric (e.g. `1` or `5.37`)
     - There are two types of numeric vectors
       - Integer (e.g. `1`)
@@ -193,7 +197,7 @@ fav_num + evens
   - Logical (e.g. `TRUE` or `FALSE`)
 
 ## Working with Atomic Vectors
-- Vectors can be converted or coereced to a different compatible type
+- Vectors can be converted or coerced to a different compatible type
 
 ```r
 as.logical(c(1, 0, 0, 1))
@@ -277,7 +281,7 @@ seq(1, 10, by = 3)
 
 
 ## Making Logical Vectors
-- Logical vectors can also be made using different comparison operators including `==`, `<`, `>`, `<=`, `>=`, `%in%`
+- Logical vectors can also be made using different comparison operators including `==`, `!=`, `<`, `>`, `<=`, `>=`, `%in%`
 
 ```r
 1:5 <= 3
@@ -311,8 +315,48 @@ c("hello", "there", "friend") == "there"
 ## [1] TRUE
 ```
 
+## Logical Operators
+- There are special operators for logical values
+  - The 'and' operator (`&`) returns `TRUE` when two both values evaluate to `TRUE`
+  - The 'or' operator (`|`) returns `TRUE` when either of two values evaluate to `TRUE`
+  - The 'not' operator (`!`) returns true when a value evaluates to `FALSE`
+- These operations are vectorized
+
+```r
+c(TRUE & TRUE, TRUE & FALSE)
+```
+
+```
+## [1]  TRUE FALSE
+```
+
+```r
+c(TRUE | TRUE, TRUE | FALSE)
+```
+
+```
+## [1] TRUE TRUE
+```
+
+```r
+c(!TRUE, !FALSE)
+```
+
+```
+## [1] FALSE  TRUE
+```
+
+```r
+rep(TRUE, 5) & rep(TRUE, 5)
+```
+
+```
+## [1] TRUE TRUE TRUE TRUE TRUE
+```
+
 
 ## Finding the Type of a Vector
+- Typically R automatically assigns a type to the vector
 - You can test the type of a vector using the `typeof()` function
 
 ```r
@@ -339,21 +383,21 @@ typeof(TRUE)
 ## [1] "logical"
 ```
 
-## Vector-ception
+## A Vector Inside a Vector
 - Other objects are made up vectors
   - Lists 
     - A list can contain an unlimited number of vectors or other lists (multi-dimensional)
-  - Dataframe / Tibble / Matrix
+  - Data-frame / Tibble / Matrix
     - A list of vectors, where each vector is the same length and represents a column of values (two-dimensional)
-    - Dataframes or Tibbles can have different types for each column
+    - Data-frames or Tibbles can have different types for each column
     - For matrices all columns must be the same type (typically numeric)
 - To learn more about vectors and vector-based objects in [R for Data Science: Chapter 20](https://r4ds.had.co.nz/vectors.html)
 
 ## Tibbles
-- Data is usually distributed / imported in the form of a dataframe or tibble
-  - A tibble is an updated version of the dataframe included in the `tidyverse` package
-    - Tibbles only display the first 10 rows when printed to the console and do not convert column types, unlike dataframes
-    - A dataframe can be coerced to a tibble with the `as_tibble()` function 
+- Data is usually distributed / imported in the form of a data-frame or tibble
+  - A tibble is an updated version of the data-frame included in the `tidyverse` package
+    - Tibbles only display the first 10 rows when printed to the console and do not convert column types, unlike data-frames
+    - A data-frame can be coerced to a tibble with the `as_tibble()` function 
 - Since the tibble is __NOT__ included with the base R packages we must install and load the `tidyverse` package
   - In the `Packages` tab there is an `Install` button, click that and type "tidyverse" and install it
   - Once a package is installed you can load it using the `library()` function, run `library(tidyverse)` from a script or the console to load the `tidyverse` package
@@ -376,8 +420,8 @@ typeof(TRUE)
 - Get the dimensions of a tibble with `nrow(my_tibble)` for the number of rows and `ncol(my_tibble)` for the number of columns
 
 ## Trying a Tibble
-- The `iris` dataset gives different measurements for 150 different irises of 3 species
-- Create a tibble of the iris dataset using `as_tibble(iris)` with the variable name `iris_data`
+- The `iris` data-set gives different measurements for 150 different irises of 3 species
+- Create a tibble of the iris data-set using `as_tibble(iris)` with the variable name `iris_data`
 - Answer the following questions:
   1. What is the mean sepal length?
   1. What is the median petal width?
@@ -424,8 +468,8 @@ table(iris_data$Species)
 ## Trying a Tibble | Takeaways
 - Oftentimes there are many ways to do the same thing
 - There are __*MANY*__ different packages and functions to make your life easier
-  - To learn more about a function, package, or included dataset, search for it in the `Help` tab or, if you know the name, use the `?` function (e.g. `?iris`)
-- The `iris` dataset contains a special kind of vector for the species variable - called a factor
+  - To learn more about a function, package, or included data-set, search for it in the `Help` tab or, if you know the name, use the `?` function (e.g. `?iris`)
+- The `iris` data-set contains a special kind of vector for the species variable - called a factor
   - This is essentially a categorical variable
   - Factors have levels (categories) which each have a label assigned to them
   - Can be unordered (as in the case of species) or ordered (as in the case of a Likert scale)
@@ -707,7 +751,7 @@ table1 %>% gather(key = "type", value = "count", -country, - year) %>% head(4)
 ## 4 Brazil       2000 cases 80488
 ```
 
-## Filtering a Dataset
+## Filtering a Data-set
 - Filtering allows to subset data by the specific values of a given variable
 - The `filter()` function takes a comparison of a variable and a value and returns each row where that comparison is `TRUE`
 
@@ -788,18 +832,18 @@ table1 %>% mutate(year = year %>% as.character() %>% str_sub(3))
   - There is a good example of its benefits and uses [on GitHub](https://github.com/jennybc/here_here)
 
 ## Everything Else
-- Datasets are rarely complete, and may be explicitly or implicitly missing values
+- Data-sets are rarely complete, and may be explicitly or implicitly missing values
   - Explicitly missing values are defined in R by `NA`
   - Oftentimes missing values will need to be omitted, the `na.omit()` function will remove any rows that have any missing values
   - More about accounting for missing values is covered in [this chapter](https://r4ds.had.co.nz/tidy-data.html#missing-values-3) of R for Data Science
-- Joining different datasets is a common problem, but unfortunately it was too time consuming to include here
+- Joining different data-sets is a common problem, but unfortunately it was too time consuming to include here
   - The [chapter on relational data](https://r4ds.had.co.nz/relational-data.html), covers this in detail by using data on flights in and out of NYC airports 
   
 ## Analyzing Student Data
 1. Download the CSV file [student_data.csv](https://github.com/tonofshell/r-crash-course/releases/latest/download/student_data.csv) and copy it to your project directory
 1. Install and import the `here` package
 1. Import the data using the appropriate function from the `readr` package (learn more about the package on the [tidyverse website](https://readr.tidyverse.org/))
-1. Rearrange the data to only have variables for first, middle, and last names, school, year, and math, english, science, and social studies grades
+1. Rearrange the data to only have variables for first, middle, and last names, school, year, and math, English, science, and social studies grades
 1. Calculate the GPA for each student for each year (Hint: it may be easier to __NOT__ use the `mean()` function)
 1. Find the average GPA for each school in 2018 (This can be done all in one step with the `aggregate()` function for bonus points)
 
@@ -866,17 +910,16 @@ final_student_data %>% filter(year == 2018) %>% {aggregate(.$gpa, by = list(scho
 ## 3 Shady Willow 67.66176
 ```
 
-# Data Visualization
+# Communicating Results
 
-## What is data visualization?
-- The process of creating visual representations of data
-- Aims to aid in the discovery and understanding of relationships in the data
+## Data Visualization
+- Aids in the discovery and understanding of relationships in the data
 - Data visualization is an essential part of the data science process, and an important method for conveying results, especially to other researchers without data science experience
 - In R, there are functions for data visualization in the built-in `graphics` package, such as the `plot()` and `hist()` functions
   - While these can be sufficient for basic visualizations, generating complex visualizations is much more difficult
 - In response to this learning curve Hadley Wickham, author of most of the tidyverse packages, created `ggplot2` a data visualization package which follows a "grammar of graphics"
-  - `ggplot2` is one of the world's most popular data visualization tools, used by world renowned organiations such as the New York Times and FiveThirtyEight, and has been downloaded millions of times
-  - Its simplicity in building and customizing visualizations is desirable to ameteurs and professionals alike, and numerous packages have expanded its philosophy to other aspects of data visualization
+  - `ggplot2` is one of the world's most popular data visualization tools, used by world renowned organisations such as the New York Times and FiveThirtyEight, and has been downloaded millions of times
+  - Its simplicity in building and customizing visualizations is desirable to amateurs and professionals alike, and numerous packages have expanded its philosophy to other aspects of data visualization
   
 ## `ggplot2` Basics
 - `ggplot2` layers components on top of each other to build a visualization
@@ -886,7 +929,7 @@ final_student_data %>% filter(year == 2018) %>% {aggregate(.$gpa, by = list(scho
 - Next comes one or more geometry layers, each corresponding to a type of visualization to include    
     - Each additional geometry layer can inherit the default aesthetic mappings and settings, if possible, or specify different ones
 - Other layers can be added to adjust other parameters, such as facets, labels, scales, and themes
-- All of these layers are linked together to form one vizualization using the addition operator(`+`)
+- All of these layers are linked together to form one visualization using the addition operator(`+`)
 
 ## Making a Simple Visualization
 1. Select a data source - this can be piped in, which is useful if the data needs to be wrangled into the correct form for the visualization
@@ -925,7 +968,7 @@ displ_year_plot + geom_smooth(color = "grey60")
 - The `labs()` function allows for the definition of labels
 - A facet arranges multiple visualizations which each use a different subset based on a variable
 - Themes alter the position, size, and other attributes of objects
-- This is probably a bad vizualization because __*too much*__ has been stuffed into it
+- This is probably a bad visualization because __*too much*__ has been stuffed into it
 
 ```r
 mpg %>% arrange(-cyl) %>% ggplot(aes(x = displ, y = hwy)) + 
@@ -933,20 +976,64 @@ mpg %>% arrange(-cyl) %>% ggplot(aes(x = displ, y = hwy)) +
   geom_smooth(color = "grey60") + 
   scale_radius(range = c(2, 7)) + 
   facet_wrap(~ year) + theme(legend.position = "bottom") + 
-  labs(title = "Cars with Larger Engines get Worse Fuel Efficency", subtitle = "At highway speeds in both 1999 and 2008", 
+  labs(title = "Cars with Larger Engines get Worse Fuel Efficiency", subtitle = "At highway speeds in both 1999 and 2008", 
        x = "Engine Displacement  (L)", y = "Highway Fuel Efficiency (mpg)", color = "Vehicle \nClass", size = "Number of \nCylinders")
 ```
 
 ![](presentation_files/figure-html/complicated-viz-1.svg)<!-- -->
 
-## Visualizing Student Data
-Create visualizations to answer the following questions:
+## Introduction to R Markdown
+- R scripts are great for saving code, but if you want to make a document or report, it involves a tedious process of exporting results to be inserted into a Word or Latex document 
+- R Markdown attempts to solve this problem by combining R code with a formatted document
+- R Markdown code can still be easily read while also allowing for detailed formatting options
+- R Markdown files are "knitted" into a common document type such as HTML (webpage), PDF, Word document, and others (this presentation was completely made with R Markdown!)
+- It allows for a completely reproducible document of which any changes can easily be tracked by version control software - ideal for research purposes
+- A R Markdown file is broken into three basic parts
+  - The header defines a title, author, and date, as well as the options for knitting into a final document
+  - Markdown sections allow for rich formatted text
+  - Code blocks allow for sections of code, where the code and output can be made viewable in the final knitted document
 
-1. Is one school overrepesented in the dataset?
-1. Is there a relationship between math and english grades?
+## Making an R Markdown document
+- R Studio will generate a blank R Markdown file with some basic parts by selecting `R Markdown` from the `File` > `New File...` menu
+  - A dialog box will give you some basic options for your R Markdown file
+- Create a new code block by pressing `Ctrl` + `Alt` + `i` or on macOS `Cmd` + `Opt` + `i`
+- Name a code block by adding a space and a name after the r in the code block header (e.g. `{r code-block-name}`)
+- The gear to the right of the code block gives options for displaying code and/or the output of code
+- The play button allows for an individual code block to be run, or all code blocks can be run from the `Run` menu
+  - When the R Markdown file is knitted all the code blocks are run except for any that are cached (learn about caching and other code block options [here](https://bookdown.org/yihui/rmarkdown/r-code.html))
+
+## Basic Markdown
+- R Markdown is based off of Markdown which is a basic syntax markup language for formatting text
+- A line of header text is started with an octothorp (`#`) followed by a space (e.g. `# My Big Fancy Header`)
+  - Subheadings can be created by adding more octothorps 
+  ```
+    # Main Heading 1
+    ## Sub-heading 1.1
+    ### Sub-heading 1.1.1
+  ```
+- Unordered lists can be made by starting each line with a dash (`-`), asterisk, (`*`), or addition signs (`+`) followed by a space
+- Ordered lists can be made by starting each line with a number and a period (e.g `1.`) followed by a space
+  - The number you use does not matter, R changes it to the correct number if it is wrong
+- Text can be *italicized* by surrounding it in single asterisks or underscores (e.g. `*italics*` or `_also italics_`)
+- Text is __bolded__ by surrounding it in double asterisks or underscores (e.g. `**bold**` or `__also bold__`)
+  - Combine them to __*do both*__ (e.g. `__*bold and italics*__`)
+- ~~Strikethrough text~~ can be displayed by using double tildes (e.g. `~~strikethrough~~`)
+- Make a horizontal rule by placing three or more hyphens, asterisks, or underscores on a line
+
+## Links and Things
+- Links can be made with a display text surrounded by square brackets followed by the URL surrounded by a set of parentheses (e.g. `[A Link to Google](http://google.com)`) [A Link to Google](http://google.com)
+- Pictures can be added in a similar manner but an exclamation mark is added first (e.g `![A Cat Picture](cat_picture.jpg)`)
+![A Cat Picture](cat_picture.jpg)
+- Links and pictures can be linked to a file on your computer, the web, or even to another section of the document.
+- R Markdown can do a lot more! The free eBook [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/), spills all of its secrets
+
+## Visualizing Student Data
+Create an R Markdown document knitted into HTML with visualizations to answer the following questions:
+
+1. Is one school overrepesented in the data-set?
+1. Is there a relationship between math and English grades?
 1. Which school has the highest GPAs?
 1. Do grades by subject vary by school?
-
 
 ## Visualizing Student Data | Answers
 
@@ -973,3 +1060,338 @@ gathered_student_data %>% ggplot(aes(x = school, y = grade, fill = school)) + ge
 ```
 
 ![](presentation_files/figure-html/visualizing-student-data-4.svg)<!-- -->
+
+# Programming
+
+## Programming in R
+- R is not only a statistical environment but a programming language
+  - While R is not a general purpose programming language like Python or Java, it has many of the same components
+- In certain circumstances the `print()` function may be necessary to print to the console
+  - In most loops or functions only the `print()` function outputs to the console, in contrast to the rest of 
+- R is an interpreted language which means the R console must convert R code into a language that the operating system can understand
+- R code can include comments, lines are not executed that explain what code does, by starting a line with an octothorp (`#`)
+
+## `if` Statement
+- An `if` statement executes code if a logical condition evaluates to true
+
+```r
+grade_level = 12
+
+if (grade_level > 8) {
+  print("high school")
+}
+```
+
+```
+## [1] "high school"
+```
+
+## `if else` Statement
+- An `if else` statement executes a section of code if a logical condition evaluates to true, or a different section of code if it does not
+  - ``if else` statements can be strung together to test for multiple conditions
+
+```r
+grade_level = 7
+
+if (grade_level > 8) {
+  print("high school")
+} else if(grade_level > 5) {
+  print("middle school")
+} else {
+  print("elementary school")
+}
+```
+
+```
+## [1] "middle school"
+```
+## `while` Loops
+- `while` loops continue to run a section of code as long as a logical condition continues to evaluate to true
+  - If the condition will always evaluate to be true, then the code will run forever without manual intervention
+- Conducting data analysis tasks in R do not usually use `while` loops
+
+```r
+grade_level = 6
+while (grade_level < 12) {
+  print(grade_level)
+  grade_level = grade_level + 1
+}
+```
+
+```
+## [1] 6
+## [1] 7
+## [1] 8
+## [1] 9
+## [1] 10
+## [1] 11
+```
+
+## `for` Loops
+- `for` loops in R are technically for each loops which loop a section of code for every element in a vector
+  - A local variable is defined which contains the value of the current object for each iteration
+- This process of looping through data is commonly used in data analysis
+
+```r
+for (cur_grade_level in 6:12) {
+  print(cur_grade_level)
+}
+```
+
+```
+## [1] 6
+## [1] 7
+## [1] 8
+## [1] 9
+## [1] 10
+## [1] 11
+## [1] 12
+```
+
+## The `apply` Family
+- The `apply` family corresponds to the `apply()`, `lapply()`, and `sapply()` functions which execute a function for each element in a vector or list
+- This is the preferred alternative to using `for` loops in R
+
+
+
+## Performance Comparisons
+- `for` loops in R, while intuitive due to their similarity to other languages, are not the best for performance
+- Wherever possible, loops should be avoided for vectorized operations
+- If vectorized functions do not exist to complete the intended task, an `apply` function should be used
+
+```r
+library(tictoc)
+rand_numbers = runif(10^6, 0, 10) %>% matrix(ncol = 1000) %>% as_tibble()
+```
+
+```
+## Warning: `as_tibble.matrix()` requires a matrix with column names or a `.name_repair` argument. Using compatibility `.name_repair`.
+## This warning is displayed once per session.
+```
+
+```r
+tic()
+output = double(nrow(rand_numbers))
+for (i in 1:nrow(rand_numbers)) {
+  output[i] = rand_numbers[i, ] %>% unlist() %>% mean()
+}
+toc()
+```
+
+```
+## 1.92 sec elapsed
+```
+
+```r
+tic()
+output = apply(rand_numbers, 1, mean)
+toc()
+```
+
+```
+## 0.03 sec elapsed
+```
+
+```r
+tic()
+output = rowMeans(rand_numbers)
+toc()
+```
+
+```
+## 0.02 sec elapsed
+```
+
+## Functions
+- Functions allow the repetition of code efficiently
+  - Generally if a section of code is copied and pasted more than twice, it should be turned into a function
+- Functions not only save time, they make code easier to read and understand
+- Debugging also becomes easier, and if there is a bug in the function, fixing it once fixes it in every place the function is called
+- Functions have 4 parts
+  - Function (variable) name
+  - Argument(s)
+  - Function body
+  - Return statement (optional)
+
+
+## Starting a Function
+- A function is defined like any other variable with a variable name which is set to a value, in this case a `function()` (e.g. `function_name = function()`)
+- Just like already-made functions, arguments are passed to the function by variable names inside the parentheses
+  - Unlike using a function, these arguments create variables to be referenced __*inside*__ the function
+- Curly brackets define the body of the function, where the lines of code that make the function go
+
+```r
+my_function = function(argument1, argument2) {
+  # adds argument1 and argument2
+  result = argument1 + argument2
+}
+```
+
+## More About Arguments
+- The values stored in arguments are only available inside the function
+- Any argument with the same name of an existing variable overrides the value of the variable that already exists
+- A "default" value for an argument can be set with the `=` operator
+- The ellipses (`...`) operator allows unlimited additional arguments to be passed into the function
+
+```r
+a = 3
+# ... passes additional arguments to the print function
+do_something_weird = function(a, ..., b = 5) {
+  print(rep(a, times = b), ...)
+}
+
+do_something_weird(1)
+```
+
+```
+## [1] 1 1 1 1 1
+```
+
+```r
+do_something_weird(9, 7)
+```
+
+```
+## [1] 9 9 9 9 9
+```
+
+```r
+do_something_weird(5.63, digits = 1)
+```
+
+```
+## [1] 6 6 6 6 6
+```
+
+## Ending a Function
+- Since any variables or data created within a function are not available from the rest of the R script, data must be passed back to the script or the user
+  - Data can be printed to the console using the `print()` function
+  - Data can be returned to the r script using the `return()` function, which also exits the function when it is called
+- Returned data can be saved to a variable or passed along a pipe to another function
+
+
+```r
+# now returns the value instead of printing it to the console
+do_something_weird = function(a, ..., b = 5) {
+  return(rep(a, times = b, ...))
+}
+
+ones = do_something_weird(1)
+ones
+```
+
+```
+## [1] 1 1 1 1 1
+```
+
+```r
+do_something_weird(9, 7) %>% sum()
+```
+
+```
+## [1] 63
+```
+
+## Converting Grades
+- Create a function that can convert 100 point numeric grades and 4 point numeric grades to letter grades (no pluses or minuses)
+- The first argument should take a vector of grade(s), with additional arguments as you see fit
+- Easily vectorize a function using the `Vectorize()` function
+- Functions can be nested in another function if necessary
+- Bonus points if you check for errors and use the `warning()` or `stop()` functions to convey that something has gone wrong, or the `message()` when something else has happened
+
+## Converting Grades | Answer
+
+```r
+convert_grade = function(grade, input_type = "default") {
+  grade = as.vector(unlist(grade))
+  if (min(grade) < 0 | !is.numeric(grade)) stop("Invalid grade")
+  
+  if (input_type == "default") {
+    if (max(grade) < 4) {
+      input_type = "four"
+      message("Converting to 4 point scale")
+    } else {
+      input_type = "hundred"
+      message("Converting to 100 point scale")
+    }
+  }
+  
+  conv_gr = Vectorize(function(grade, input_type) {
+    if (input_type == "hundred") {
+      if (grade > 100) stop("Invalid grade")
+      if (grade > 89) return("A")
+      if (grade > 79) return("B")
+      if (grade > 69) return("C")
+      if (grade > 59) return("D")
+      return("F")
+    }
+    if (input_type == "hundred") {
+      if (grade > 4) stop("Invalid grade")
+      if (grade > 3.7) return("A")
+      if (grade > 2.7) return("B")
+      if (grade > 1.7) return("C")
+      if (grade > 1.0) return("D")
+      return("F")
+    }
+  })
+  
+  return(conv_gr(grade, input_type))
+}
+
+student_data %>% select(math_grade__2018) %>% convert_grade()
+```
+
+```
+## Converting to 100 point scale
+```
+
+```
+##   [1] "C" "C" "F" "D" "C" "D" "F" "D" "B" "A" "C" "D" "B" "B" "B" "D" "C"
+##  [18] "D" "C" "F" "B" "D" "D" "C" "D" "C" "C" "D" "C" "C" "C" "C" "C" "F"
+##  [35] "F" "D" "B" "D" "C" "C" "C" "D" "C" "C" "D" "C" "D" "C" "F" "D" "D"
+##  [52] "C" "C" "C" "D" "C" "D" "D" "D" "D" "D" "D" "B" "C" "C" "F" "B" "D"
+##  [69] "B" "B" "B" "A" "C" "F" "D" "A" "A" "C" "D" "F" "C" "D" "B" "C" "D"
+##  [86] "F" "C" "D" "C" "C" "C" "F" "D" "D" "D" "B" "F" "F" "B" "B" "B" "F"
+## [103] "D" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "D" "F" "C" "B" "C" "B"
+## [120] "B" "C" "C" "C" "C" "C" "C" "D" "C" "D" "C" "F" "B" "D" "B" "B" "D"
+## [137] "C" "C" "D" "C" "D" "C" "B" "B" "D" "F" "C" "C" "D" "D" "F" "D" "C"
+## [154] "D" "C" "C" "D" "B" "D" "C" "B" "C" "B" "C" "D" "C" "D" "D" "C" "A"
+## [171] "F" "C" "C" "F" "D" "C" "F" "D" "C" "B" "D" "C" "D" "D" "C" "D" "F"
+## [188] "C" "B" "F" "C" "D" "F" "C" "C" "C" "D" "F" "C" "C" "B" "F" "B" "C"
+## [205] "D" "D" "F" "F" "F" "C" "D" "C" "D" "C" "F" "D" "D" "C" "D" "F" "F"
+## [222] "C" "D" "D" "C" "C" "C" "D" "D" "C" "D" "C" "D" "F" "C" "C" "D" "C"
+## [239] "F" "C" "D" "D" "C" "C" "D" "D" "A" "D" "D" "B" "C" "B" "C" "F" "C"
+## [256] "F" "F" "F" "B" "B" "C" "B" "C" "C" "D" "F" "D" "C" "D" "C" "C" "D"
+## [273] "C" "C" "F" "D" "C" "C" "C" "B" "C" "C" "D" "D" "F" "D" "C" "D" "D"
+## [290] "D" "B" "A" "C" "D" "C" "B" "C" "B" "D" "F" "B" "C" "C" "F" "F" "B"
+## [307] "C" "A" "D" "A" "D" "C" "C" "C" "C" "C" "D" "F" "D" "D" "C" "C" "F"
+## [324] "B" "F" "C" "D" "F" "C" "D" "C" "D" "F" "F" "D" "B" "F" "B" "F" "F"
+## [341] "D" "D" "F" "C" "D" "B" "D" "C" "D" "D" "C" "C" "D" "A" "D" "D" "C"
+## [358] "F" "D" "C" "C" "D" "D" "C" "C" "F" "D" "B" "B" "C" "D" "C" "C" "C"
+## [375] "C" "B" "C" "C" "D" "C" "B" "C" "F" "C" "D" "F" "C" "D" "C" "D" "B"
+## [392] "D" "D" "F" "D" "F" "C" "D" "B" "C" "B" "B" "D" "D" "F" "F" "C" "C"
+## [409] "F" "D" "F" "B" "C" "D" "C" "C" "B" "A" "C" "B" "B" "D" "D" "B" "D"
+## [426] "B" "D" "D" "C" "C" "F" "C" "D" "D" "A" "D" "C" "C" "C" "C" "D" "C"
+## [443] "D" "D" "D" "D" "F" "B" "D" "C" "F" "B" "A" "D" "C" "B" "A" "C" "F"
+## [460] "D" "D" "C" "C" "D" "B" "F" "C" "D" "F" "C" "D" "C" "F" "A" "C" "B"
+## [477] "B" "C" "D" "C" "D" "C" "B" "C" "B" "D" "D" "F" "B" "D" "A" "F" "F"
+## [494] "C" "F" "C" "C" "A" "C" "D"
+```
+
+```r
+convert_grade(103)
+```
+
+```
+## Converting to 100 point scale
+```
+
+```
+## Error in (function (grade, input_type) : Invalid grade
+```
+
+## Wrapping Up
+- R provides a wide range of tools for every part of the data analysis process
+- While hopefully this presentation has been a useful resource for learning about R, a myriad of free and fantastic resources exist online
+- R has its own unique quirks and features, but many of the underlying skills translate to other programming languages, especially Python
+  - Python code can even [be run from within R](https://rstudio.github.io/reticulate/index.html), for those times when Python is the better suited tool for the job
