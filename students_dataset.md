@@ -1,7 +1,6 @@
 Students Dataset
 ================
 Adam Shelton
-8/30/2019
 
 ## Generate Names
 

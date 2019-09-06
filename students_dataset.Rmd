@@ -1,7 +1,6 @@
 ---
 title: "Students Dataset"
 author: "Adam Shelton"
-date: "8/30/2019"
 output: github_document
 ---
 
