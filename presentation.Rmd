@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = TRUE, dev = "svg")
 ## What is R?
 
 - According to [official R Project website](https://www.r-project.org/), *"R is a free software environment for statistical computing and graphics."*
-- While the typical R environment is typically called just "R", it is actually made of several components from different sources
+- While the typical R environment is typically called just 'R', it is actually made of several components from different sources
   - __R Language and Interpreter__ 
     - These define the rules and syntax for the language, and converts R code into code your computer can understand
     - Distributed by the R Project on The Comprehensive R Archive Network (CRAN) repository
@@ -48,7 +48,7 @@ tibble(Pros = c("Open Source", "Highly reproducible", "Free to use", "Rich packa
 
 - R is primarily for researchers in the data science realm
   - However, R includes tools for working with a wide range of data, even more qualitative methods
-  - The `ggplot2` package in R is often referred to as the "gold standard" for data visualization
+  - The `ggplot2` package in R is often referred to as the 'gold standard' for data visualization
 - Due in part to their open source nature, R and R Studio are available for macOS, Windows, Linux and web(!?)
   - On a personal computer you can install the appropriate r-base files from [the CRAN](https://cran.r-project.org/) and R Studio from [the R Studio website](https://www.rstudio.com/products/rstudio/download/#download)
   - You can also use R and R Studio from any web browser using [R Studio Cloud](https://rstudio.cloud)
@@ -105,7 +105,7 @@ tibble(Pros = c("Open Source", "Highly reproducible", "Free to use", "Rich packa
 ## Your First R Script
 - __Make a new project__
   - Go to `File` > `New Project...` > `New Directory` > `New Project`
-  - Give your first project a name, like *"First Project"*
+  - Give your first project a name, like *'First Project'*
   - Select the folder you want to save this project in
   - Keep all other options unchecked
   - Click `Create Project`
@@ -259,9 +259,9 @@ typeof(TRUE)
     - Tibbles only display the first 10 rows when printed to the console and do not convert column types, unlike data-frames
     - A data-frame can be coerced to a tibble with the `as_tibble()` function 
 - Since the tibble is __NOT__ included with the base R packages we must install and load the `tidyverse` package
-  - In the `Packages` tab there is an `Install` button, click that and type "tidyverse" and install it
+  - In the `Packages` tab there is an `Install` button, click that and type 'tidyverse' and install it
   - Once a package is installed you can load it using the `library()` function, run `library(tidyverse)` from a script or the console to load the `tidyverse` package
-  - The `tidyverse` package is actually several data science packages that follow a common "tidy" analysis philosophy and are all installed and loaded together 
+  - The `tidyverse` package is actually several data science packages that follow a common 'tidy' analysis philosophy and are all installed and loaded together 
     - You can learn more about it on the [tidyverse website](https://www.tidyverse.org/)
     
 ## Using a Tibble
@@ -410,20 +410,20 @@ table1 %>% gather(key = "type", value = "count") %>% head(4)
 ```
 
 ## Using `unite()`
-- Specifying the separator is optional but can be specified with the `sep` argument (e.g. `sep = "_")
+- Specifying the separator is optional but can be specified with the `sep` argument (e.g. `sep = "_"`)
 ```{r unite}
 table1 %>% head(4)
 table1 %>% unite("info", cases, population) %>% head(4)
 ```
 ## Using `separate()`
-- Specifying the separator is optional but can be specified with the `sep` argument (e.g. `sep = "/")
+- Specifying the separator is optional but can be specified with the `sep` argument (e.g. `sep = "/"`)
 ```{r separate}
 table3 %>% head(4)
 table3 %>% separate(rate, c("cases", "population")) %>% head(4)
 ```
 
 ## Excluding Variables
-- Commonly in R, the dash (`-`) is used to specify "all but this", as with
+- Commonly in R, the dash (`-`) is used to specify 'all but this', as with
   - Negative indices: `my_vector[-5]` would return all the items in the vector except the one at index 5
   - Negative variables: `my_tibble %>% select(-age)` would return a tibble with every variable from `my_tibble` except `age`
 - Most functions in the tidyverse allow the exclusion of variables from a process by passing their names with a dash in front as the last arguments
@@ -507,7 +507,7 @@ final_student_data %>% filter(year == 2018) %>% {aggregate(.$gpa, by = list(scho
 - Data visualization is an essential part of the data science process, and an important method for conveying results, especially to other researchers without data science experience
 - In R, there are functions for data visualization in the built-in `graphics` package, such as the `plot()` and `hist()` functions
   - While these can be sufficient for basic visualizations, generating complex visualizations is much more difficult
-- In response to this learning curve Hadley Wickham, author of most of the tidyverse packages, created `ggplot2` a data visualization package which follows a "grammar of graphics"
+- In response to this learning curve Hadley Wickham, author of most of the tidyverse packages, created `ggplot2` a data visualization package which follows a 'grammar of graphics'
   - `ggplot2` is one of the world's most popular data visualization tools, used by world renowned organisations such as the New York Times and FiveThirtyEight, and has been downloaded millions of times
   - Its simplicity in building and customizing visualizations is desirable to amateurs and professionals alike, and numerous packages have expanded its philosophy to other aspects of data visualization
   
@@ -563,7 +563,7 @@ mpg %>% arrange(-cyl) %>% ggplot(aes(x = displ, y = hwy)) +
 - R scripts are great for saving code, but if you want to make a document or report, it involves a tedious process of exporting results to be inserted into a Word or Latex document 
 - R Markdown attempts to solve this problem by combining R code with a formatted document
 - R Markdown code can still be easily read while also allowing for detailed formatting options
-- R Markdown files are "knitted" into a common document type such as HTML (webpage), PDF, Word document, and others (this presentation was completely made with R Markdown!)
+- R Markdown files are 'knitted' into a common document type such as HTML (webpage), PDF, Word document, and others (this presentation was completely made with R Markdown!)
 - It allows for a completely reproducible document of which any changes can easily be tracked by version control software - ideal for research purposes
 - A R Markdown file is broken into three basic parts
   - The header defines a title, author, and date, as well as the options for knitting into a final document
@@ -736,7 +736,7 @@ my_function = function(argument1, argument2) {
 ## More About Arguments
 - The values stored in arguments are only available inside the function
 - Any argument with the same name of an existing variable overrides the value of the variable that already exists
-- An argument can be made optional by setting a "default" value with the `=` operator
+- An argument can be made optional by setting a 'default' value with the `=` operator
 - The ellipses (`...`) operator allows unlimited additional arguments to be passed into the function
 ```{r more-about-arguments}
 a = 3

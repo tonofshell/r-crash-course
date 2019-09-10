@@ -3139,7 +3139,7 @@ slide:not(.current) .plotly.html-widget{
 
 <ul>
 <li>According to <a href='https://www.r-project.org/' title=''>official R Project website</a>, <em>&ldquo;R is a free software environment for statistical computing and graphics.&rdquo;</em></li>
-<li>While the typical R environment is typically called just &ldquo;R&rdquo;, it is actually made of several components from different sources
+<li>While the typical R environment is typically called just &lsquo;R&rsquo;, it is actually made of several components from different sources
 
 <ul>
 <li><strong>R Language and Interpreter</strong>
@@ -3199,7 +3199,7 @@ slide:not(.current) .plotly.html-widget{
 
 <ul>
 <li>However, R includes tools for working with a wide range of data, even more qualitative methods</li>
-<li>The <code>ggplot2</code> package in R is often referred to as the &ldquo;gold standard&rdquo; for data visualization</li>
+<li>The <code>ggplot2</code> package in R is often referred to as the &lsquo;gold standard&rsquo; for data visualization</li>
 </ul></li>
 <li>Due in part to their open source nature, R and R Studio are available for macOS, Windows, Linux and web(!?)
 
@@ -3291,7 +3291,7 @@ slide:not(.current) .plotly.html-widget{
 
 <ul>
 <li>Go to <code>File</code> &gt; <code>New Project...</code> &gt; <code>New Directory</code> &gt; <code>New Project</code></li>
-<li>Give your first project a name, like <em>&ldquo;First Project&rdquo;</em></li>
+<li>Give your first project a name, like <em>&lsquo;First Project&rsquo;</em></li>
 <li>Select the folder you want to save this project in</li>
 <li>Keep all other options unchecked</li>
 <li>Click <code>Create Project</code></li>
@@ -3601,9 +3601,9 @@ fav_num + evens</pre>
 <li>Since the tibble is <strong>NOT</strong> included with the base R packages we must install and load the <code>tidyverse</code> package
 
 <ul>
-<li>In the <code>Packages</code> tab there is an <code>Install</code> button, click that and type &ldquo;tidyverse&rdquo; and install it</li>
+<li>In the <code>Packages</code> tab there is an <code>Install</code> button, click that and type &lsquo;tidyverse&rsquo; and install it</li>
 <li>Once a package is installed you can load it using the <code>library()</code> function, run <code>library(tidyverse)</code> from a script or the console to load the <code>tidyverse</code> package</li>
-<li>The <code>tidyverse</code> package is actually several data science packages that follow a common &ldquo;tidy&rdquo; analysis philosophy and are all installed and loaded together
+<li>The <code>tidyverse</code> package is actually several data science packages that follow a common &lsquo;tidy&rsquo; analysis philosophy and are all installed and loaded together
 
 <ul>
 <li>You can learn more about it on the <a href='https://www.tidyverse.org/' title=''>tidyverse website</a></li>
@@ -3903,7 +3903,7 @@ iris_data %&gt;% select(Sepal.Length) %&gt;% std_var() %&gt;% head(1)</pre>
 </article></slide><slide class=""><hgroup><h2>Using <code>unite()</code></h2></hgroup><article  id="using-unite">
 
 <ul>
-<li>Specifying the separator is optional but can be specified with the <code>sep</code> argument (e.g. `sep = &quot;_&quot;)</li>
+<li>Specifying the separator is optional but can be specified with the <code>sep</code> argument (e.g. <code>sep = &quot;_&quot;</code>)</li>
 </ul>
 
 <pre class = 'prettyprint lang-r'>table1 %&gt;% head(4)</pre>
@@ -3929,7 +3929,7 @@ iris_data %&gt;% select(Sepal.Length) %&gt;% std_var() %&gt;% head(1)</pre>
 </article></slide><slide class=""><hgroup><h2>Using <code>separate()</code></h2></hgroup><article  id="using-separate">
 
 <ul>
-<li>Specifying the separator is optional but can be specified with the <code>sep</code> argument (e.g. `sep = &ldquo;/&rdquo;)</li>
+<li>Specifying the separator is optional but can be specified with the <code>sep</code> argument (e.g. <code>sep = &quot;/&quot;</code>)</li>
 </ul>
 
 <pre class = 'prettyprint lang-r'>table3 %&gt;% head(4)</pre>
@@ -3955,7 +3955,7 @@ iris_data %&gt;% select(Sepal.Length) %&gt;% std_var() %&gt;% head(1)</pre>
 </article></slide><slide class=""><hgroup><h2>Excluding Variables</h2></hgroup><article  id="excluding-variables">
 
 <ul>
-<li>Commonly in R, the dash (<code>-</code>) is used to specify &ldquo;all but this&rdquo;, as with
+<li>Commonly in R, the dash (<code>-</code>) is used to specify &lsquo;all but this&rsquo;, as with
 
 <ul>
 <li>Negative indices: <code>my_vector[-5]</code> would return all the items in the vector except the one at index 5</li>
@@ -4153,7 +4153,7 @@ final_student_data %&gt;% filter(year == 2018) %&gt;% {aggregate(.$gpa, by = lis
 <ul>
 <li>While these can be sufficient for basic visualizations, generating complex visualizations is much more difficult</li>
 </ul></li>
-<li>In response to this learning curve Hadley Wickham, author of most of the tidyverse packages, created <code>ggplot2</code> a data visualization package which follows a &ldquo;grammar of graphics&rdquo;
+<li>In response to this learning curve Hadley Wickham, author of most of the tidyverse packages, created <code>ggplot2</code> a data visualization package which follows a &lsquo;grammar of graphics&rsquo;
 
 <ul>
 <li><code>ggplot2</code> is one of the world’s most popular data visualization tools, used by world renowned organisations such as the New York Times and FiveThirtyEight, and has been downloaded millions of times</li>
@@ -4240,7 +4240,7 @@ displ_year_plot</pre>
 <li>R scripts are great for saving code, but if you want to make a document or report, it involves a tedious process of exporting results to be inserted into a Word or Latex document</li>
 <li>R Markdown attempts to solve this problem by combining R code with a formatted document</li>
 <li>R Markdown code can still be easily read while also allowing for detailed formatting options</li>
-<li>R Markdown files are &ldquo;knitted&rdquo; into a common document type such as HTML (webpage), PDF, Word document, and others (this presentation was completely made with R Markdown!)</li>
+<li>R Markdown files are &lsquo;knitted&rsquo; into a common document type such as HTML (webpage), PDF, Word document, and others (this presentation was completely made with R Markdown!)</li>
 <li>It allows for a completely reproducible document of which any changes can easily be tracked by version control software - ideal for research purposes</li>
 <li>A R Markdown file is broken into three basic parts
 
@@ -4466,13 +4466,13 @@ for (i in 1:nrow(rand_numbers)) {
 }
 toc()</pre>
 
-<pre >## 1.7 sec elapsed</pre>
+<pre >## 1.97 sec elapsed</pre>
 
 <pre class = 'prettyprint lang-r'>tic()
 output = apply(rand_numbers, 1, mean)
 toc()</pre>
 
-<pre >## 0.01 sec elapsed</pre>
+<pre >## 0.03 sec elapsed</pre>
 
 <pre class = 'prettyprint lang-r'>tic()
 output = rowMeans(rand_numbers)
@@ -4522,7 +4522,7 @@ toc()</pre>
 <ul>
 <li>The values stored in arguments are only available inside the function</li>
 <li>Any argument with the same name of an existing variable overrides the value of the variable that already exists</li>
-<li>An argument can be made optional by setting a &ldquo;default&rdquo; value with the <code>=</code> operator</li>
+<li>An argument can be made optional by setting a &lsquo;default&rsquo; value with the <code>=</code> operator</li>
 <li>The ellipses (<code>...</code>) operator allows unlimited additional arguments to be passed into the function</li>
 </ul>
 
