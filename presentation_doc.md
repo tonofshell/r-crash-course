@@ -178,7 +178,6 @@ fav_num + evens
   - However, how they are applied will vary (e.g. mean vs. +)
 
 
-
 # Data Structures
 
 ## Vector Basics
@@ -279,6 +278,45 @@ seq(1, 10, by = 3)
 ## [1]  1  4  7 10
 ```
 
+## Manipulating Character Vectors
+- There are some special functions to work with character vectors
+- The most notable is `paste()` which concatenates (combines) multiple character vectors
+- There are other built-in functions for working with character vectors, however it is suggested to use their alternatives from the `stringr` tidyverse package (named after 'strings' which is what many other languages call a single-length character vectors)
+  - These functions are vectorized and return a list of the results
+  - The most used `stringr` functions are likely `str_sub()` which returns a portion of a character vector and `str_split()` which splits a character vector into multiple parts by a sequence of characters
+
+```r
+paste("hello", "there", "friends")
+```
+
+```
+## [1] "hello there friends"
+```
+
+```r
+paste("hello", "there", "friends", sep = "_")
+```
+
+```
+## [1] "hello_there_friends"
+```
+
+```r
+str_sub("grades_2020", start = 8)
+```
+
+```
+## [1] "2020"
+```
+
+```r
+str_split("grades_2020", pattern = "_")
+```
+
+```
+## [[1]]
+## [1] "grades" "2020"
+```
 
 ## Making Logical Vectors
 - Logical vectors can also be made using different comparison operators including `==`, `!=`, `<`, `>`, `<=`, `>=`, `%in%`
@@ -487,9 +525,12 @@ table(iris_data$Species)
   - Cleaning
 - This is usually the most time consuming part of any data project
 
-## But First, the Humble Pipe
+## But First, Some Programming Basics
 - Data wrangling can get complex and messy pretty fast
-- In Base R, if you need to perform many operations on an object, you have three options
+- Functions in R are passed arguments which are the 'inputs' of the function
+  - Arguments must be passed into the function in the same order they are defined (e.g. for `my_function(a, b, c)` executing `my_function(1, 2, 3)` defines `a` as `1`, `b` as `2`, and `c` as 3)
+  - Arguments can be specified in any order if the name of the argument is included with it (e.g. `my_function(b = 2, c = 3, a = 1)` is the same as before, even though the order does not match the function's definition)
+- In Base R, if you need to use many functions in succession, you have three options
   - Create lots of variables
 ```
 a_1 = function_one(x)
@@ -864,12 +905,12 @@ gathered_student_data %>% head(4)
 
 ```
 ## # A tibble: 4 x 7
-##   first    middle   last     school       class      year  grade
-##   <chr>    <chr>    <chr>    <chr>        <chr>      <chr> <dbl>
-## 1 Krystina Bettina  Reeve    Shady Willow math_grade 2015     NA
-## 2 Idir     Carleton Kitchen  Shady Willow math_grade 2015     NA
-## 3 Tatiana  Finlay   Kurz     Shady Willow math_grade 2015     NA
-## 4 Ida      Isadora  Herschel Oakwood      math_grade 2015     NA
+##   first     middle last     school       class      year  grade
+##   <chr>     <chr>  <chr>    <chr>        <chr>      <chr> <dbl>
+## 1 Krimhilde Yuri   Hierro   Oakwood      math_grade 2015     NA
+## 2 Koby      Jayson Cookson  Shady Willow math_grade 2015     NA
+## 3 Landyn    Edmund Baumer   Pine Field   math_grade 2015     NA
+## 4 Cybill    Liana  Woodcock Pine Field   math_grade 2015     NA
 ```
 
 ```r
@@ -882,10 +923,10 @@ final_student_data %>% head(4)
 ## # A tibble: 4 x 10
 ##   first middle last  school year  english_grade math_grade science_grade
 ##   <chr> <chr>  <chr> <chr>  <chr>         <dbl>      <dbl>         <dbl>
-## 1 Abel  Yoshi~ Davi~ Shady~ 2015             NA         NA            NA
-## 2 Abel  Yoshi~ Davi~ Shady~ 2016             70         81            60
-## 3 Abel  Yoshi~ Davi~ Shady~ 2017             69         87            61
-## 4 Abel  Yoshi~ Davi~ Shady~ 2018             70         79            57
+## 1 Abe   Booker Bris~ Pine ~ 2015             NA         NA            NA
+## 2 Abe   Booker Bris~ Pine ~ 2016             NA         NA            NA
+## 3 Abe   Booker Bris~ Pine ~ 2017             NA         NA            NA
+## 4 Abe   Booker Bris~ Pine ~ 2018             62         75            65
 ## # ... with 2 more variables: social_studies_grade <dbl>, gpa <dbl>
 ```
 
@@ -895,7 +936,7 @@ final_student_data %>% filter(year == 2018, school == "Oakwood") %>% select(gpa)
 ```
 
 ```
-## [1] 63.54528
+## [1] 60.55165
 ```
 
 ```r
@@ -905,9 +946,9 @@ final_student_data %>% filter(year == 2018) %>% {aggregate(.$gpa, by = list(scho
 
 ```
 ##         school        x
-## 1      Oakwood 63.54528
-## 2   Pine Field 66.88519
-## 3 Shady Willow 67.66176
+## 1      Oakwood 60.55165
+## 2   Pine Field 62.76240
+## 3 Shady Willow 66.17926
 ```
 
 # Communicating Results
@@ -1179,7 +1220,7 @@ toc()
 ```
 
 ```
-## 1.92 sec elapsed
+## 1.7 sec elapsed
 ```
 
 ```r
@@ -1189,7 +1230,7 @@ toc()
 ```
 
 ```
-## 0.03 sec elapsed
+## 0.01 sec elapsed
 ```
 
 ```r
@@ -1230,7 +1271,7 @@ my_function = function(argument1, argument2) {
 ## More About Arguments
 - The values stored in arguments are only available inside the function
 - Any argument with the same name of an existing variable overrides the value of the variable that already exists
-- A "default" value for an argument can be set with the `=` operator
+- An argument can be made optional by setting a "default" value with the `=` operator
 - The ellipses (`...`) operator allows unlimited additional arguments to be passed into the function
 
 ```r
@@ -1346,36 +1387,36 @@ student_data %>% select(math_grade__2018) %>% convert_grade()
 ```
 
 ```
-##   [1] "C" "C" "F" "D" "C" "D" "F" "D" "B" "A" "C" "D" "B" "B" "B" "D" "C"
-##  [18] "D" "C" "F" "B" "D" "D" "C" "D" "C" "C" "D" "C" "C" "C" "C" "C" "F"
-##  [35] "F" "D" "B" "D" "C" "C" "C" "D" "C" "C" "D" "C" "D" "C" "F" "D" "D"
-##  [52] "C" "C" "C" "D" "C" "D" "D" "D" "D" "D" "D" "B" "C" "C" "F" "B" "D"
-##  [69] "B" "B" "B" "A" "C" "F" "D" "A" "A" "C" "D" "F" "C" "D" "B" "C" "D"
-##  [86] "F" "C" "D" "C" "C" "C" "F" "D" "D" "D" "B" "F" "F" "B" "B" "B" "F"
-## [103] "D" "C" "C" "C" "C" "C" "C" "C" "C" "C" "C" "D" "F" "C" "B" "C" "B"
-## [120] "B" "C" "C" "C" "C" "C" "C" "D" "C" "D" "C" "F" "B" "D" "B" "B" "D"
-## [137] "C" "C" "D" "C" "D" "C" "B" "B" "D" "F" "C" "C" "D" "D" "F" "D" "C"
-## [154] "D" "C" "C" "D" "B" "D" "C" "B" "C" "B" "C" "D" "C" "D" "D" "C" "A"
-## [171] "F" "C" "C" "F" "D" "C" "F" "D" "C" "B" "D" "C" "D" "D" "C" "D" "F"
-## [188] "C" "B" "F" "C" "D" "F" "C" "C" "C" "D" "F" "C" "C" "B" "F" "B" "C"
-## [205] "D" "D" "F" "F" "F" "C" "D" "C" "D" "C" "F" "D" "D" "C" "D" "F" "F"
-## [222] "C" "D" "D" "C" "C" "C" "D" "D" "C" "D" "C" "D" "F" "C" "C" "D" "C"
-## [239] "F" "C" "D" "D" "C" "C" "D" "D" "A" "D" "D" "B" "C" "B" "C" "F" "C"
-## [256] "F" "F" "F" "B" "B" "C" "B" "C" "C" "D" "F" "D" "C" "D" "C" "C" "D"
-## [273] "C" "C" "F" "D" "C" "C" "C" "B" "C" "C" "D" "D" "F" "D" "C" "D" "D"
-## [290] "D" "B" "A" "C" "D" "C" "B" "C" "B" "D" "F" "B" "C" "C" "F" "F" "B"
-## [307] "C" "A" "D" "A" "D" "C" "C" "C" "C" "C" "D" "F" "D" "D" "C" "C" "F"
-## [324] "B" "F" "C" "D" "F" "C" "D" "C" "D" "F" "F" "D" "B" "F" "B" "F" "F"
-## [341] "D" "D" "F" "C" "D" "B" "D" "C" "D" "D" "C" "C" "D" "A" "D" "D" "C"
-## [358] "F" "D" "C" "C" "D" "D" "C" "C" "F" "D" "B" "B" "C" "D" "C" "C" "C"
-## [375] "C" "B" "C" "C" "D" "C" "B" "C" "F" "C" "D" "F" "C" "D" "C" "D" "B"
-## [392] "D" "D" "F" "D" "F" "C" "D" "B" "C" "B" "B" "D" "D" "F" "F" "C" "C"
-## [409] "F" "D" "F" "B" "C" "D" "C" "C" "B" "A" "C" "B" "B" "D" "D" "B" "D"
-## [426] "B" "D" "D" "C" "C" "F" "C" "D" "D" "A" "D" "C" "C" "C" "C" "D" "C"
-## [443] "D" "D" "D" "D" "F" "B" "D" "C" "F" "B" "A" "D" "C" "B" "A" "C" "F"
-## [460] "D" "D" "C" "C" "D" "B" "F" "C" "D" "F" "C" "D" "C" "F" "A" "C" "B"
-## [477] "B" "C" "D" "C" "D" "C" "B" "C" "B" "D" "D" "F" "B" "D" "A" "F" "F"
-## [494] "C" "F" "C" "C" "A" "C" "D"
+##   [1] "D" "C" "D" "B" "D" "F" "B" "C" "D" "D" "D" "C" "D" "F" "C" "D" "C"
+##  [18] "C" "C" "D" "D" "B" "C" "D" "D" "C" "C" "F" "D" "D" "D" "C" "C" "D"
+##  [35] "B" "C" "D" "C" "C" "B" "D" "D" "C" "D" "C" "C" "F" "C" "B" "D" "A"
+##  [52] "C" "F" "F" "F" "D" "C" "F" "F" "B" "D" "C" "C" "C" "F" "D" "D" "D"
+##  [69] "C" "D" "C" "C" "B" "B" "D" "C" "C" "C" "F" "D" "C" "C" "D" "F" "D"
+##  [86] "C" "C" "D" "B" "B" "B" "C" "D" "C" "F" "D" "B" "C" "C" "D" "C" "D"
+## [103] "D" "C" "A" "B" "D" "C" "D" "D" "B" "C" "B" "F" "D" "C" "B" "B" "D"
+## [120] "C" "B" "D" "C" "D" "C" "C" "C" "F" "F" "D" "C" "C" "D" "C" "C" "B"
+## [137] "C" "F" "C" "C" "C" "B" "C" "D" "D" "F" "B" "B" "B" "C" "D" "D" "D"
+## [154] "C" "C" "B" "C" "D" "C" "B" "B" "A" "C" "D" "D" "C" "D" "D" "C" "B"
+## [171] "C" "A" "D" "D" "C" "D" "F" "C" "D" "F" "C" "C" "D" "D" "D" "D" "C"
+## [188] "F" "C" "D" "C" "C" "C" "B" "B" "C" "D" "D" "D" "F" "C" "C" "D" "C"
+## [205] "C" "C" "C" "D" "B" "C" "B" "C" "D" "C" "F" "C" "D" "F" "A" "B" "D"
+## [222] "D" "C" "C" "F" "D" "D" "C" "C" "D" "F" "C" "C" "D" "C" "D" "D" "B"
+## [239] "F" "B" "F" "D" "D" "C" "C" "C" "D" "C" "B" "C" "D" "F" "C" "F" "C"
+## [256] "D" "D" "D" "C" "D" "D" "C" "D" "D" "C" "D" "C" "C" "C" "C" "D" "D"
+## [273] "C" "D" "C" "A" "D" "D" "F" "D" "C" "D" "C" "F" "D" "C" "D" "C" "B"
+## [290] "C" "A" "C" "D" "C" "F" "F" "D" "C" "A" "C" "B" "B" "C" "D" "F" "B"
+## [307] "C" "C" "D" "D" "C" "D" "B" "B" "C" "C" "C" "D" "D" "B" "D" "C" "C"
+## [324] "C" "C" "B" "B" "C" "B" "D" "B" "D" "D" "B" "F" "C" "F" "B" "F" "B"
+## [341] "D" "D" "C" "D" "C" "D" "D" "A" "D" "F" "C" "A" "C" "C" "C" "D" "D"
+## [358] "A" "C" "D" "C" "C" "F" "C" "F" "A" "D" "C" "C" "D" "F" "F" "C" "C"
+## [375] "B" "D" "C" "B" "B" "B" "F" "B" "C" "D" "C" "C" "B" "B" "A" "B" "C"
+## [392] "C" "C" "D" "F" "B" "B" "C" "C" "C" "C" "D" "D" "D" "D" "B" "B" "C"
+## [409] "D" "D" "C" "B" "D" "C" "D" "C" "B" "C" "F" "D" "D" "D" "D" "D" "F"
+## [426] "C" "D" "C" "F" "D" "C" "B" "C" "D" "F" "B" "D" "D" "C" "D" "D" "C"
+## [443] "C" "D" "B" "C" "C" "D" "C" "C" "C" "D" "D" "D" "D" "C" "D" "C" "F"
+## [460] "F" "D" "F" "C" "B" "D" "D" "B" "D" "B" "C" "C" "C" "B" "F" "A" "C"
+## [477] "D" "C" "F" "F" "D" "F" "D" "C" "C" "D" "B" "C" "C" "C" "D" "B" "C"
+## [494] "C" "D" "C" "F" "C" "C" "C"
 ```
 
 ```r

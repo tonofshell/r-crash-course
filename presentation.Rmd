@@ -155,7 +155,6 @@ fav_num + evens
   - However, how they are applied will vary (e.g. mean vs. +)
 
 
-
 # Data Structures
 
 ## Vector Basics
@@ -199,6 +198,18 @@ seq(1, 5)
 seq(1, 10, by = 3)
 ```
 
+## Manipulating Character Vectors
+- There are some special functions to work with character vectors
+- The most notable is `paste()` which concatenates (combines) multiple character vectors
+- There are other built-in functions for working with character vectors, however it is suggested to use their alternatives from the `stringr` tidyverse package (named after 'strings' which is what many other languages call a single-length character vectors)
+  - These functions are vectorized and return a list of the results
+  - The most used `stringr` functions are likely `str_sub()` which returns a portion of a character vector and `str_split()` which splits a character vector into multiple parts by a sequence of characters
+```{r manipulating-char-vectors}
+paste("hello", "there", "friends")
+paste("hello", "there", "friends", sep = "_")
+str_sub("grades_2020", start = 8)
+str_split("grades_2020", pattern = "_")
+```
 
 ## Making Logical Vectors
 - Logical vectors can also be made using different comparison operators including `==`, `!=`, `<`, `>`, `<=`, `>=`, `%in%`
@@ -308,9 +319,12 @@ table(iris_data$Species)
   - Cleaning
 - This is usually the most time consuming part of any data project
 
-## But First, the Humble Pipe
+## But First, Some Programming Basics
 - Data wrangling can get complex and messy pretty fast
-- In Base R, if you need to perform many operations on an object, you have three options
+- Functions in R are passed arguments which are the 'inputs' of the function
+  - Arguments must be passed into the function in the same order they are defined (e.g. for `my_function(a, b, c)` executing `my_function(1, 2, 3)` defines `a` as `1`, `b` as `2`, and `c` as 3)
+  - Arguments can be specified in any order if the name of the argument is included with it (e.g. `my_function(b = 2, c = 3, a = 1)` is the same as before, even though the order does not match the function's definition)
+- In Base R, if you need to use many functions in succession, you have three options
   - Create lots of variables
 ```
 a_1 = function_one(x)
@@ -722,7 +736,7 @@ my_function = function(argument1, argument2) {
 ## More About Arguments
 - The values stored in arguments are only available inside the function
 - Any argument with the same name of an existing variable overrides the value of the variable that already exists
-- A "default" value for an argument can be set with the `=` operator
+- An argument can be made optional by setting a "default" value with the `=` operator
 - The ellipses (`...`) operator allows unlimited additional arguments to be passed into the function
 ```{r more-about-arguments}
 a = 3
