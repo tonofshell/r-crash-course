@@ -7,12 +7,7 @@ output:
     css: style.css
 ---
 
-```{r setup, include=FALSE}
-library(tidyverse)
-library(knitr)
-library(magrittr)
-knitr::opts_chunk$set(echo = TRUE, dev = "svg")
-```
+
 
 ## About the Course
 - All the code for the course and a document version of the presentation are available at [https://github.com/tonofshell/r-crash-course/](https://github.com/tonofshell/r-crash-course/)
@@ -40,9 +35,13 @@ knitr::opts_chunk$set(echo = TRUE, dev = "svg")
       - R Studio is a third party open source IDE that is widely considered the best (and default) IDE for R
       
 ## What is so great about R?
-```{r pros-cons-table, echo=FALSE, message=FALSE, warning=FALSE}
-tibble(Pros = c("Open Source", "Highly reproducible", "Free to use", "Rich package ecosystem"), Cons = c("Provides a specific tool-set", "Not always intuitive", "Variance in quality", "Performance can be slower")) %>% kable()
-```
+
+Pros                     Cons                         
+-----------------------  -----------------------------
+Open Source              Provides a specific tool-set 
+Highly reproducible      Not always intuitive         
+Free to use              Variance in quality          
+Rich package ecosystem   Performance can be slower    
 
 ## Who is R for? (and where do I get it?)
 
@@ -116,31 +115,55 @@ tibble(Pros = c("Open Source", "Highly reproducible", "Free to use", "Rich packa
   - In the upper right corner of the source tab, click `Run` > `Run All`
   - "Hello world" should print out in the `Console` tab below
 - __The Result__
-```{r hello-world, echo=FALSE}
-"Hello world"
+
+```
+## [1] "Hello world"
 ```
 
 ## More Things to Try
 - Enter each of these into a line in your script and run it or type each into the console and hit enter to run each command individually
-```{r samples-1}
+
+```r
 # Arithmetic
 (2 + 2) * 4^2
+```
 
+```
+## [1] 64
+```
+
+```r
 # Create a variable for your favorite number
 fav_num = 7
 
 # ...or your favorite color
 fav_color = "blue"
 fav_color
+```
 
+```
+## [1] "blue"
+```
+
+```r
 # Save a vector (a group) of numbers
 evens = c(2, 4, 6, 8, 10)
 
 # Use a function
 mean(evens)
+```
 
+```
+## [1] 6
+```
+
+```r
 # Use variables
 fav_num + evens
+```
+
+```
+## [1]  9 11 13 15 17
 ```
 
 ## What did we learn?
@@ -174,15 +197,53 @@ fav_num + evens
 
 ## Working with Atomic Vectors
 - Vectors can be converted or coerced to a different compatible type
-```{r working-vectors}
+
+```r
 as.logical(c(1, 0, 0, 1))
+```
+
+```
+## [1]  TRUE FALSE FALSE  TRUE
+```
+
+```r
 as.logical(c("TRUE", "FALSE", "F", "T"))
+```
 
+```
+## [1]  TRUE FALSE FALSE  TRUE
+```
+
+```r
 as.numeric(c(TRUE, FALSE, F, T))
-as.numeric(c("1", "0", "0", "1"))
+```
 
+```
+## [1] 1 0 0 1
+```
+
+```r
+as.numeric(c("1", "0", "0", "1"))
+```
+
+```
+## [1] 1 0 0 1
+```
+
+```r
 as.character(c(TRUE, FALSE, F, T))
+```
+
+```
+## [1] "TRUE"  "FALSE" "FALSE" "TRUE"
+```
+
+```r
 as.character(c(1, 0, 0, 1))
+```
+
+```
+## [1] "1" "0" "0" "1"
 ```
 
 ## Sequences
@@ -192,10 +253,29 @@ as.character(c(1, 0, 0, 1))
   - The `seq()` function
     - The `by` argument specifies the amount to increment, by default it is 1
   - The `:` operator
-```{r sequences}
+
+```r
 1:5
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
 seq(1, 5)
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
 seq(1, 10, by = 3)
+```
+
+```
+## [1]  1  4  7 10
 ```
 
 ## Manipulating Character Vectors
@@ -204,20 +284,73 @@ seq(1, 10, by = 3)
 - There are other built-in functions for working with character vectors, however it is suggested to use their alternatives from the `stringr` tidyverse package (named after 'strings' which is what many other languages call a single-length character vectors)
   - These functions are vectorized and return a list of the results
   - The most used `stringr` functions are likely `str_sub()` which returns a portion of a character vector and `str_split()` which splits a character vector into multiple parts by a sequence of characters
-```{r manipulating-char-vectors}
+
+```r
 paste("hello", "there", "friends")
+```
+
+```
+## [1] "hello there friends"
+```
+
+```r
 paste("hello", "there", "friends", sep = "_")
+```
+
+```
+## [1] "hello_there_friends"
+```
+
+```r
 str_sub("grades_2020", start = 8)
+```
+
+```
+## [1] "2020"
+```
+
+```r
 str_split("grades_2020", pattern = "_")
+```
+
+```
+## [[1]]
+## [1] "grades" "2020"
 ```
 
 ## Making Logical Vectors
 - Logical vectors can also be made using different comparison operators including `==`, `!=`, `<`, `>`, `<=`, `>=`, `%in%`
-```{r making-logical-vectors}
+
+```r
 1:5 <= 3
+```
+
+```
+## [1]  TRUE  TRUE  TRUE FALSE FALSE
+```
+
+```r
 1:5 == 4
+```
+
+```
+## [1] FALSE FALSE FALSE  TRUE FALSE
+```
+
+```r
 c("hello", "there", "friend") == "there"
+```
+
+```
+## [1] FALSE  TRUE FALSE
+```
+
+```r
 "hello" %in% c("hello", "there", "friend")
+```
+
+```
+## [1] TRUE
 ```
 
 ## Logical Operators
@@ -226,21 +359,66 @@ c("hello", "there", "friend") == "there"
   - The 'or' operator (`|`) returns `TRUE` when either of two values evaluate to `TRUE`
   - The 'not' operator (`!`) returns true when a value evaluates to `FALSE`
 - These operations are vectorized
-```{r logical-operators, error=TRUE}
+
+```r
 c(TRUE & TRUE, TRUE & FALSE)
+```
+
+```
+## [1]  TRUE FALSE
+```
+
+```r
 c(TRUE | TRUE, TRUE | FALSE)
+```
+
+```
+## [1] TRUE TRUE
+```
+
+```r
 c(!TRUE, !FALSE)
+```
+
+```
+## [1] FALSE  TRUE
+```
+
+```r
 rep(TRUE, 5) & rep(TRUE, 5)
+```
+
+```
+## [1] TRUE TRUE TRUE TRUE TRUE
 ```
 
 
 ## Finding the Type of a Vector
 - Typically R automatically assigns a type to the vector
 - You can test the type of a vector using the `typeof()` function
-```{r test-vector-type}
+
+```r
 typeof("hello")
+```
+
+```
+## [1] "character"
+```
+
+```r
 typeof(6)
+```
+
+```
+## [1] "double"
+```
+
+```r
 typeof(TRUE)
+```
+
+```
+## [1] "logical"
 ```
 
 ## A Vector Inside a Vector
@@ -289,12 +467,40 @@ typeof(TRUE)
   1. Are there an equal number of each species? (Hint: the `table()` function might be useful)
 
 ## Trying a Tibble | Answers
-```{r trying-tibble}
+
+```r
 iris_data = as_tibble(iris)
 mean(iris_data$Sepal.Length)
+```
+
+```
+## [1] 5.843333
+```
+
+```r
 median(iris_data$Petal.Width)
+```
+
+```
+## [1] 1.3
+```
+
+```r
 mean((iris_data$Petal.Length * iris_data$Petal.Length))
+```
+
+```
+## [1] 17.21807
+```
+
+```r
 table(iris_data$Species)
+```
+
+```
+## 
+##     setosa versicolor  virginica 
+##         50         50         50
 ```
 
 ## Trying a Tibble | Takeaways
@@ -359,29 +565,63 @@ a = x %>% function_one() %>% function_two() %>% function_three()
 - Wa-hoo! Much better! But what about functions with multiple arguments, like the `round()` function (which rounds numbers to a specified amount of decimal places)?
 
 *Simple!*
-```{r pi-3-old}
+
+```r
 round(pi, 3)
 ```
+
+```
+## [1] 3.142
+```
 *...becomes...*
-```{r pi-3-new}
+
+```r
 pi %>% round(3)
+```
+
+```
+## [1] 3.142
 ```
   
 ## Advanced R Piping
 - By default the output is piped into the first argument of the next function
 - However, sometimes we might need to pipe data elsewhere
   - The dot (`.`) tells the pipe where else to pipe the data into, in addition to the first argument
-```{r dot-pipe}
+
+```r
 iris_data %>% select(Sepal.Length) %>% as_vector() %>% tibble(Standardized.Length = (. / mean(.)) ) %>% head(1)
 ```
+
+```
+## # A tibble: 1 x 2
+##       . Standardized.Length
+##   <dbl>               <dbl>
+## 1   5.1               0.873
+```
   - A dot at the beginning of the chain creates a function you can call later
-```{r dot-pipe-2}
+
+```r
 std_var = . %>% as_vector() %>% tibble(Standardized.Var = (. / mean(.)) )
 iris_data %>% select(Sepal.Length) %>% std_var() %>% head(1)
 ```
+
+```
+## # A tibble: 1 x 2
+##       . Standardized.Var
+##   <dbl>            <dbl>
+## 1   5.1            0.873
+```
   - Putting curly brackets (`{}`) around a function, causes the data to __*ONLY*__ be piped to the dots
-```{r curly-pipe}
+
+```r
 iris_data %>% select(Sepal.Length) %>% as_vector() %>% {tibble(Standardized.Length = (. / mean(.)) )} %>% head(1)
+```
+
+```
+## # A tibble: 1 x 1
+##   Standardized.Length
+##                 <dbl>
+## 1               0.873
 ```
   - Other pipe operators and functions to pair with pipes exist in the `magrittr` package
 
@@ -398,28 +638,124 @@ iris_data %>% select(Sepal.Length) %>% as_vector() %>% {tibble(Standardized.Leng
 - Functions from the `stringr` package can be used to modify character vectors before or after this process
   
 ## Using `pivot_wider()`
-```{r pivot_wider}
+
+```r
 table2 %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year type          count
+##   <chr>       <int> <chr>         <int>
+## 1 Afghanistan  1999 cases           745
+## 2 Afghanistan  1999 population 19987071
+## 3 Afghanistan  2000 cases          2666
+## 4 Afghanistan  2000 population 20595360
+```
+
+```r
 table2 %>% pivot_wider(names_from = "type", values_from = "count") %>% head(4)
 ```
 
+```
+## # A tibble: 4 x 4
+##   country      year cases population
+##   <chr>       <int> <int>      <int>
+## 1 Afghanistan  1999   745   19987071
+## 2 Afghanistan  2000  2666   20595360
+## 3 Brazil       1999 37737  172006362
+## 4 Brazil       2000 80488  174504898
+```
+
 ## Using `pivot_longer()`
-```{r pivot_longer}
+
+```r
 table1 %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year cases population
+##   <chr>       <int> <int>      <int>
+## 1 Afghanistan  1999   745   19987071
+## 2 Afghanistan  2000  2666   20595360
+## 3 Brazil       1999 37737  172006362
+## 4 Brazil       2000 80488  174504898
+```
+
+```r
 table1 %>% mutate_all(as.character) %>% pivot_longer(cols = everything()) %>% head(4)
+```
+
+```
+## # A tibble: 4 x 2
+##   name       value      
+##   <chr>      <chr>      
+## 1 country    Afghanistan
+## 2 year       1999       
+## 3 cases      745        
+## 4 population 19987071
 ```
 
 ## Using `unite()`
 - Specifying the separator is optional but can be specified with the `sep` argument (e.g. `sep = "_"`)
-```{r unite}
+
+```r
 table1 %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year cases population
+##   <chr>       <int> <int>      <int>
+## 1 Afghanistan  1999   745   19987071
+## 2 Afghanistan  2000  2666   20595360
+## 3 Brazil       1999 37737  172006362
+## 4 Brazil       2000 80488  174504898
+```
+
+```r
 table1 %>% unite("info", cases, population) %>% head(4)
+```
+
+```
+## # A tibble: 4 x 3
+##   country      year info           
+##   <chr>       <int> <chr>          
+## 1 Afghanistan  1999 745_19987071   
+## 2 Afghanistan  2000 2666_20595360  
+## 3 Brazil       1999 37737_172006362
+## 4 Brazil       2000 80488_174504898
 ```
 ## Using `separate()`
 - Specifying the separator is optional but can be specified with the `sep` argument (e.g. `sep = "/"`)
-```{r separate}
+
+```r
 table3 %>% head(4)
+```
+
+```
+## # A tibble: 4 x 3
+##   country      year rate           
+##   <chr>       <int> <chr>          
+## 1 Afghanistan  1999 745/19987071   
+## 2 Afghanistan  2000 2666/20595360  
+## 3 Brazil       1999 37737/172006362
+## 4 Brazil       2000 80488/174504898
+```
+
+```r
 table3 %>% separate(rate, c("cases", "population")) %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year cases population
+##   <chr>       <int> <chr> <chr>     
+## 1 Afghanistan  1999 745   19987071  
+## 2 Afghanistan  2000 2666  20595360  
+## 3 Brazil       1999 37737 172006362 
+## 4 Brazil       2000 80488 174504898
 ```
 
 ## Excluding Variables
@@ -427,25 +763,99 @@ table3 %>% separate(rate, c("cases", "population")) %>% head(4)
   - Negative indices: `my_vector[-5]` would return all the items in the vector except the one at index 5
   - Negative variables: `my_tibble %>% select(-age)` would return a tibble with every variable from `my_tibble` except `age`
 - Most functions in the tidyverse allow the exclusion of variables from a process by passing their names with a dash in front as the last arguments
-```{r exclude}
+
+```r
 table1 %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year cases population
+##   <chr>       <int> <int>      <int>
+## 1 Afghanistan  1999   745   19987071
+## 2 Afghanistan  2000  2666   20595360
+## 3 Brazil       1999 37737  172006362
+## 4 Brazil       2000 80488  174504898
+```
+
+```r
 table1 %>% pivot_longer(cols = -c(country, year), names_to = "type", values_to = "count",) %>% head(4)
+```
+
+```
+## # A tibble: 4 x 4
+##   country      year type          count
+##   <chr>       <int> <chr>         <int>
+## 1 Afghanistan  1999 cases           745
+## 2 Afghanistan  1999 population 19987071
+## 3 Afghanistan  2000 cases          2666
+## 4 Afghanistan  2000 population 20595360
 ```
 
 ## Filtering a Data-set
 - Filtering allows to subset data by the specific values of a given variable
 - The `filter()` function takes a comparison of a variable and a value and returns each row where that comparison is `TRUE`
-```{r filtering}
+
+```r
 table1 %>% filter(country == "China")
+```
+
+```
+## # A tibble: 2 x 4
+##   country  year  cases population
+##   <chr>   <int>  <int>      <int>
+## 1 China    1999 212258 1272915272
+## 2 China    2000 213766 1280428583
+```
+
+```r
 table1 %>% filter(cases > 3000)
+```
+
+```
+## # A tibble: 4 x 4
+##   country  year  cases population
+##   <chr>   <int>  <int>      <int>
+## 1 Brazil   1999  37737  172006362
+## 2 Brazil   2000  80488  174504898
+## 3 China    1999 212258 1272915272
+## 4 China    2000 213766 1280428583
 ```
 
 ## Creating or Modifying Variables
 - While there are many ways to create or modify variables, the recommended way is to use the `mutate()` function
 - The `mutate()` function takes a name for a variable and any code to generate that variable
-```{r mutate}
+
+```r
 table1 %>% mutate(rate = cases / population)
+```
+
+```
+## # A tibble: 6 x 5
+##   country      year  cases population      rate
+##   <chr>       <int>  <int>      <int>     <dbl>
+## 1 Afghanistan  1999    745   19987071 0.0000373
+## 2 Afghanistan  2000   2666   20595360 0.000129 
+## 3 Brazil       1999  37737  172006362 0.000219 
+## 4 Brazil       2000  80488  174504898 0.000461 
+## 5 China        1999 212258 1272915272 0.000167 
+## 6 China        2000 213766 1280428583 0.000167
+```
+
+```r
 table1 %>% mutate(year = year %>% as.character() %>% str_sub(3))
+```
+
+```
+## # A tibble: 6 x 4
+##   country     year   cases population
+##   <chr>       <chr>  <int>      <int>
+## 1 Afghanistan 99       745   19987071
+## 2 Afghanistan 00      2666   20595360
+## 3 Brazil      99     37737  172006362
+## 4 Brazil      00     80488  174504898
+## 5 China       99    212258 1272915272
+## 6 China       00    213766 1280428583
 ```
 
 ## Importing Data
@@ -479,25 +889,66 @@ table1 %>% mutate(year = year %>% as.character() %>% str_sub(3))
 1. Find the average GPA for each school in 2018 (This can be done all in one step with the `aggregate()` function for bonus points)
 
 ## Analyzing Student Data | Answers
-```{r analyzing-student-data1, echo=TRUE, message=FALSE, warning=FALSE}
+
+```r
 library(here)
 student_data = read_csv(here("student_data.csv"))
 ```
 
-```{r analyzing-student-data2}
+
+```r
 gathered_student_data = student_data %>% select(-age, -grade_level) %>% 
   pivot_longer(c(-first, -middle, -last, -school), names_to = "key", values_to = "grade") %>%
   separate(key, c("class", "year"), sep = "__") 
 gathered_student_data %>% head(4)
+```
 
+```
+## # A tibble: 4 x 7
+##   first     middle last   school  class                year  grade
+##   <chr>     <chr>  <chr>  <chr>   <chr>                <chr> <dbl>
+## 1 Krimhilde Yuri   Hierro Oakwood math_grade           2015     NA
+## 2 Krimhilde Yuri   Hierro Oakwood english_grade        2015     NA
+## 3 Krimhilde Yuri   Hierro Oakwood science_grade        2015     NA
+## 4 Krimhilde Yuri   Hierro Oakwood social_studies_grade 2015     NA
+```
+
+```r
 final_student_data = gathered_student_data %>% pivot_wider(names_from = "class", values_from = "grade") %>% 
   mutate(gpa = (math_grade + english_grade + science_grade + social_studies_grade) / 4)
 final_student_data %>% head(4)
+```
 
+```
+## # A tibble: 4 x 10
+##   first middle last  school year  math_grade english_grade science_grade
+##   <chr> <chr>  <chr> <chr>  <chr>      <dbl>         <dbl>         <dbl>
+## 1 Krim~ Yuri   Hier~ Oakwo~ 2015          NA            NA            NA
+## 2 Krim~ Yuri   Hier~ Oakwo~ 2016          72            64            64
+## 3 Krim~ Yuri   Hier~ Oakwo~ 2017          72            58            63
+## 4 Krim~ Yuri   Hier~ Oakwo~ 2018          65            57            62
+## # ... with 2 more variables: social_studies_grade <dbl>, gpa <dbl>
+```
+
+```r
 # the easy way, repeat for each school
 final_student_data %>% filter(year == 2018, school == "Oakwood") %>% select(gpa) %>% unlist() %>% mean()
+```
+
+```
+## [1] 60.55165
+```
+
+```r
 # the harder way
 final_student_data %>% filter(year == 2018) %>% {aggregate(.$gpa, by = list(school = .$school), mean)}
+```
+
+```
+##         school        x
+## 1      Oakwood 60.55165
+## 2   Pine Field 62.76240
+## 3 Shady Willow 66.17926
 ```
 
 # Communicating Results
@@ -526,21 +977,31 @@ final_student_data %>% filter(year == 2018) %>% {aggregate(.$gpa, by = list(scho
 2. Specify default aesthetic mappings - `x`, `y`, `color`, and `fill` are the most common, but some geometries will use more or only a portion of these
 3. Select a geometry function (or several) - each of these are prefaced by `geom_` (e.g. `geom_point()`)
 4. Save to a variable to add more layers or view later
-```{r simple-viz}
+
+```r
 displ_year_plot = ggplot(mpg, aes(x = displ, y = hwy)) + geom_point()
 displ_year_plot
 ```
+
+![](presentation_files/figure-html/simple-viz-1.svg)<!-- -->
 
 ## Making a Slightly Less Simple Visualization
 - Specifying `color` in an aesthetic maps changes in color based to a variable, creating a legend
 - Specifying `color` in a geometry simply sets the same color for all elements in that geometry
 
-```{r less-simple-viz, message=FALSE, warning=FALSE}
+
+```r
 displ_year_plot = ggplot(mpg, aes(x = displ, y = hwy)) + geom_point(aes(color = class))
 displ_year_plot
+```
 
+![](presentation_files/figure-html/less-simple-viz-1.svg)<!-- -->
+
+```r
 displ_year_plot + geom_smooth(color = "grey60")
 ```
+
+![](presentation_files/figure-html/less-simple-viz-2.svg)<!-- -->
 
 ## Making a Complicated Visualization
 - Functions prefixed in `scale_` can alter the scale used for a specific dimension
@@ -549,7 +1010,8 @@ displ_year_plot + geom_smooth(color = "grey60")
 - A facet arranges multiple visualizations which each use a different subset based on a variable
 - Themes alter the position, size, and other attributes of objects
 - This is probably a bad visualization because __*too much*__ has been stuffed into it
-```{r complicated-viz, message=FALSE, warning=FALSE}
+
+```r
 mpg %>% arrange(-cyl) %>% ggplot(aes(x = displ, y = hwy)) + 
   geom_point(aes(color = class, size = cyl)) + 
   geom_smooth(color = "grey60") + 
@@ -558,6 +1020,8 @@ mpg %>% arrange(-cyl) %>% ggplot(aes(x = displ, y = hwy)) +
   labs(title = "Cars with Larger Engines get Worse Fuel Efficiency", subtitle = "At highway speeds in both 1999 and 2008", 
        x = "Engine Displacement  (L)", y = "Highway Fuel Efficiency (mpg)", color = "Vehicle \nClass", size = "Number of \nCylinders")
 ```
+
+![](presentation_files/figure-html/complicated-viz-1.svg)<!-- -->
 
 ## Introduction to R Markdown
 - R scripts are great for saving code, but if you want to make a document or report, it involves a tedious process of exporting results to be inserted into a Word or Latex document 
@@ -613,12 +1077,30 @@ Create an R Markdown document knitted into HTML with visualizations to answer th
 1. Do grades by subject vary by school?
 
 ## Visualizing Student Data | Answers
-```{r visualizing-student-data, message=FALSE, warning=FALSE}
+
+```r
 final_student_data %>% ggplot(aes(x = school)) + geom_bar()
+```
+
+![](presentation_files/figure-html/visualizing-student-data-1.svg)<!-- -->
+
+```r
 final_student_data %>% ggplot(aes(x = math_grade, y = english_grade, color = school)) + geom_point() + geom_smooth(color = "grey60")
+```
+
+![](presentation_files/figure-html/visualizing-student-data-2.svg)<!-- -->
+
+```r
 final_student_data %>% ggplot(aes(x = school, y = gpa, fill = school)) + geom_violin()
+```
+
+![](presentation_files/figure-html/visualizing-student-data-3.svg)<!-- -->
+
+```r
 gathered_student_data %>% ggplot(aes(x = school, y = grade, fill = school)) + geom_violin() + facet_wrap(~class)
 ```
+
+![](presentation_files/figure-html/visualizing-student-data-4.svg)<!-- -->
 
 # Programming
 
@@ -632,19 +1114,24 @@ gathered_student_data %>% ggplot(aes(x = school, y = grade, fill = school)) + ge
 
 ## `if` Statement
 - An `if` statement executes code if a logical condition evaluates to true
-```{r if-statement}
+
+```r
 grade_level = 12
 
 if (grade_level > 8) {
   print("high school")
 }
+```
 
+```
+## [1] "high school"
 ```
 
 ## `if else` Statement
 - An `if else` statement executes a section of code if a logical condition evaluates to true, or a different section of code if it does not
   - ``if else` statements can be strung together to test for multiple conditions
-```{r if-else-statement}
+
+```r
 grade_level = 7
 
 if (grade_level > 8) {
@@ -654,13 +1141,17 @@ if (grade_level > 8) {
 } else {
   print("elementary school")
 }
+```
 
+```
+## [1] "middle school"
 ```
 ## `while` Loops
 - `while` loops continue to run a section of code as long as a logical condition continues to evaluate to true
   - If the condition will always evaluate to be true, then the code will run forever without manual intervention
 - Conducting data analysis tasks in R do not usually use `while` loops
-```{r while-loop}
+
+```r
 grade_level = 6
 while (grade_level < 12) {
   print(grade_level)
@@ -668,14 +1159,34 @@ while (grade_level < 12) {
 }
 ```
 
+```
+## [1] 6
+## [1] 7
+## [1] 8
+## [1] 9
+## [1] 10
+## [1] 11
+```
+
 ## `for` Loops
 - `for` loops in R are technically for each loops which loop a section of code for every element in a vector
   - A local variable is defined which contains the value of the current object for each iteration
 - This process of looping through data is commonly used in data analysis
-```{r for-loop}
+
+```r
 for (cur_grade_level in 6:12) {
   print(cur_grade_level)
 }
+```
+
+```
+## [1] 6
+## [1] 7
+## [1] 8
+## [1] 9
+## [1] 10
+## [1] 11
+## [1] 12
 ```
 
 ## The `apply` Family
@@ -688,24 +1199,48 @@ for (cur_grade_level in 6:12) {
 - `for` loops in R, while intuitive due to their similarity to other languages, are not the best for performance
 - Wherever possible, loops should be avoided for vectorized operations
 - If vectorized functions do not exist to complete the intended task, an `apply` function should be used
-```{r performance}
+
+```r
 library(tictoc)
 rand_numbers = runif(10^6, 0, 10) %>% matrix(ncol = 1000) %>% as_tibble()
+```
 
+```
+## Warning: `as_tibble.matrix()` requires a matrix with column names or a `.name_repair` argument. Using compatibility `.name_repair`.
+## This warning is displayed once per session.
+```
+
+```r
 tic()
 output = double(nrow(rand_numbers))
 for (i in 1:nrow(rand_numbers)) {
   output[i] = rand_numbers[i, ] %>% unlist() %>% mean()
 }
 toc()
+```
 
+```
+## 2.13 sec elapsed
+```
+
+```r
 tic()
 output = apply(rand_numbers, 1, mean)
 toc()
+```
 
+```
+## 0.04 sec elapsed
+```
+
+```r
 tic()
 output = rowMeans(rand_numbers)
 toc()
+```
+
+```
+## 0.03 sec elapsed
 ```
 
 ## Functions
@@ -725,12 +1260,12 @@ toc()
 - Just like already-made functions, arguments are passed to the function by variable names inside the parentheses
   - Unlike using a function, these arguments create variables to be referenced __*inside*__ the function
 - Curly brackets define the body of the function, where the lines of code that make the function go
-```{r starting-function}
+
+```r
 my_function = function(argument1, argument2) {
   # adds argument1 and argument2
   result = argument1 + argument2
 }
-
 ```
 
 ## More About Arguments
@@ -738,7 +1273,8 @@ my_function = function(argument1, argument2) {
 - Any argument with the same name of an existing variable overrides the value of the variable that already exists
 - An argument can be made optional by setting a 'default' value with the `=` operator
 - The ellipses (`...`) operator allows unlimited additional arguments to be passed into the function
-```{r more-about-arguments}
+
+```r
 a = 3
 # ... passes additional arguments to the print function
 do_something_weird = function(a, ..., b = 5) {
@@ -746,10 +1282,26 @@ do_something_weird = function(a, ..., b = 5) {
 }
 
 do_something_weird(1)
+```
 
+```
+## [1] 1 1 1 1 1
+```
+
+```r
 do_something_weird(9, 7)
+```
 
+```
+## [1] 9 9 9 9 9
+```
+
+```r
 do_something_weird(5.63, digits = 1)
+```
+
+```
+## [1] 6 6 6 6 6
 ```
 
 ## Ending a Function
@@ -758,7 +1310,8 @@ do_something_weird(5.63, digits = 1)
   - Data can be returned to the r script using the `return()` function, which also exits the function when it is called
 - Returned data can be saved to a variable or passed along a pipe to another function
 
-```{r ending-function}
+
+```r
 # now returns the value instead of printing it to the console
 do_something_weird = function(a, ..., b = 5) {
   return(rep(a, times = b, ...))
@@ -766,8 +1319,18 @@ do_something_weird = function(a, ..., b = 5) {
 
 ones = do_something_weird(1)
 ones
+```
 
+```
+## [1] 1 1 1 1 1
+```
+
+```r
 do_something_weird(9, 7) %>% sum()
+```
+
+```
+## [1] 63
 ```
 
 ## Converting Grades
@@ -778,7 +1341,8 @@ do_something_weird(9, 7) %>% sum()
 - Bonus points if you check for errors and use the `warning()` or `stop()` functions to convey that something has gone wrong, or the `message()` when something else has happened
 
 ## Converting Grades | Answer
-```{r converting-grades, error=TRUE}
+
+```r
 convert_grade = function(grade, input_type = "default") {
   grade = as.vector(unlist(grade))
   if (min(grade) < 0 | !is.numeric(grade)) stop("Invalid grade")
@@ -816,7 +1380,55 @@ convert_grade = function(grade, input_type = "default") {
 }
 
 student_data %>% select(math_grade__2018) %>% convert_grade()
+```
+
+```
+## Converting to 100 point scale
+```
+
+```
+##   [1] "D" "C" "D" "B" "D" "F" "B" "C" "D" "D" "D" "C" "D" "F" "C" "D" "C"
+##  [18] "C" "C" "D" "D" "B" "C" "D" "D" "C" "C" "F" "D" "D" "D" "C" "C" "D"
+##  [35] "B" "C" "D" "C" "C" "B" "D" "D" "C" "D" "C" "C" "F" "C" "B" "D" "A"
+##  [52] "C" "F" "F" "F" "D" "C" "F" "F" "B" "D" "C" "C" "C" "F" "D" "D" "D"
+##  [69] "C" "D" "C" "C" "B" "B" "D" "C" "C" "C" "F" "D" "C" "C" "D" "F" "D"
+##  [86] "C" "C" "D" "B" "B" "B" "C" "D" "C" "F" "D" "B" "C" "C" "D" "C" "D"
+## [103] "D" "C" "A" "B" "D" "C" "D" "D" "B" "C" "B" "F" "D" "C" "B" "B" "D"
+## [120] "C" "B" "D" "C" "D" "C" "C" "C" "F" "F" "D" "C" "C" "D" "C" "C" "B"
+## [137] "C" "F" "C" "C" "C" "B" "C" "D" "D" "F" "B" "B" "B" "C" "D" "D" "D"
+## [154] "C" "C" "B" "C" "D" "C" "B" "B" "A" "C" "D" "D" "C" "D" "D" "C" "B"
+## [171] "C" "A" "D" "D" "C" "D" "F" "C" "D" "F" "C" "C" "D" "D" "D" "D" "C"
+## [188] "F" "C" "D" "C" "C" "C" "B" "B" "C" "D" "D" "D" "F" "C" "C" "D" "C"
+## [205] "C" "C" "C" "D" "B" "C" "B" "C" "D" "C" "F" "C" "D" "F" "A" "B" "D"
+## [222] "D" "C" "C" "F" "D" "D" "C" "C" "D" "F" "C" "C" "D" "C" "D" "D" "B"
+## [239] "F" "B" "F" "D" "D" "C" "C" "C" "D" "C" "B" "C" "D" "F" "C" "F" "C"
+## [256] "D" "D" "D" "C" "D" "D" "C" "D" "D" "C" "D" "C" "C" "C" "C" "D" "D"
+## [273] "C" "D" "C" "A" "D" "D" "F" "D" "C" "D" "C" "F" "D" "C" "D" "C" "B"
+## [290] "C" "A" "C" "D" "C" "F" "F" "D" "C" "A" "C" "B" "B" "C" "D" "F" "B"
+## [307] "C" "C" "D" "D" "C" "D" "B" "B" "C" "C" "C" "D" "D" "B" "D" "C" "C"
+## [324] "C" "C" "B" "B" "C" "B" "D" "B" "D" "D" "B" "F" "C" "F" "B" "F" "B"
+## [341] "D" "D" "C" "D" "C" "D" "D" "A" "D" "F" "C" "A" "C" "C" "C" "D" "D"
+## [358] "A" "C" "D" "C" "C" "F" "C" "F" "A" "D" "C" "C" "D" "F" "F" "C" "C"
+## [375] "B" "D" "C" "B" "B" "B" "F" "B" "C" "D" "C" "C" "B" "B" "A" "B" "C"
+## [392] "C" "C" "D" "F" "B" "B" "C" "C" "C" "C" "D" "D" "D" "D" "B" "B" "C"
+## [409] "D" "D" "C" "B" "D" "C" "D" "C" "B" "C" "F" "D" "D" "D" "D" "D" "F"
+## [426] "C" "D" "C" "F" "D" "C" "B" "C" "D" "F" "B" "D" "D" "C" "D" "D" "C"
+## [443] "C" "D" "B" "C" "C" "D" "C" "C" "C" "D" "D" "D" "D" "C" "D" "C" "F"
+## [460] "F" "D" "F" "C" "B" "D" "D" "B" "D" "B" "C" "C" "C" "B" "F" "A" "C"
+## [477] "D" "C" "F" "F" "D" "F" "D" "C" "C" "D" "B" "C" "C" "C" "D" "B" "C"
+## [494] "C" "D" "C" "F" "C" "C" "C"
+```
+
+```r
 convert_grade(103)
+```
+
+```
+## Converting to 100 point scale
+```
+
+```
+## Error in (function (grade, input_type) : Invalid grade
 ```
 
 ## Wrapping Up
