@@ -219,7 +219,7 @@ fav_num + evens
   - Character (e.g. `"hello"` or `'hello'`)
   - Logical (e.g. `TRUE` or `FALSE`)
 
-## Working with Atomic Vectors
+## Working with Vectors
 - The `c()` function can append one vector to another
 - Brackets after a reference to a vector will select value(s) at specific indices
   - R is a one-indexed language, meaning the initial value in a vector is stored at index 1
@@ -1296,7 +1296,7 @@ toc()
 ```
 
 ```
-## 0.04 sec elapsed
+## 0.03 sec elapsed
 ```
 
 ```r
