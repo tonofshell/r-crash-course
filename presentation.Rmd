@@ -120,14 +120,21 @@ tibble(Pros = c("Open Source", "Highly reproducible", "Free to use", "Rich packa
 "Hello world"
 ```
 
-## More Things to Try
-- Enter each of these into a line in your script and run it or type each into the console and hit enter to run each command individually
-```{r samples-1}
-# Arithmetic
-(2 + 2) * 4^2
-
+## Variable Assignment
+- Assigning a variable allows for that value to be "saved" and referred to later in your code
+- It also makes your code more readable, by giving context to what each part is
+- Variable names must start with a letter and be followed by an assignment operator (either `=` or `<-`)
+  - Variable names should be all lower case, with words separated by a period (`.`) or underscore (`_`) 
+  - Both assignment operators work the same, but the equals sign can also refer to other operations in different contexts 
+  - Which should you use?
+    - Using a period in names and `<-` as an assignment operator is traditional in R, but most other languages do not follow this convention
+    - Using underscores in names and equals sign assignment operators is likely more readable to those familiar with other programming languages, but whatever you choose, pick a convention and use it consistently throughout a project
+- Just executing the variable name will print out its value(s)
+    
+```{r variable-assignment}
 # Create a variable for your favorite number
 fav_num = 7
+fav.num <- 7
 
 # ...or your favorite color
 fav_color = "blue"
@@ -135,11 +142,20 @@ fav_color
 
 # Save a vector (a group) of numbers
 evens = c(2, 4, 6, 8, 10)
+```
+
+
+## More Things to Try
+- Enter each of these into a line in your script and run it or type each into the console and hit enter to run each command individually
+```{r samples-1}
+# Arithmetic
+(2 + 2) * 4^2
 
 # Use a function
 mean(evens)
 
 # Use variables
+fav_num + 3
 fav_num + evens
 ```
 
@@ -158,13 +174,13 @@ fav_num + evens
 # Data Structures
 
 ## Vector Basics
-- Vectors are a collection of the same type of object (e.g. `c(1, 2, 3)` or `c("a", "b", "c")` )
-- Scalars are a single object (e.g. `1` or `"a"`)
+- Vectors are a collection of the same type of object, created using the `c()` function (e.g. `c(1, 2, 3)` or `c("a", "b", "c")`)
+- Scalars are a single value (e.g. `1` or `"a"`)
   - However in R scalars are just vectors of length one, so `1` is the same as `c(1)`
 - Vectors have two properties
   - A length
   - A type
-- While vectors can have any length, there are only six basic types called Atomic Vectors
+- While vectors can have any length, there are only six basic types called Atomic Vectors, four of which are commonly used
   - Numeric (e.g. `1` or `5.37`)
     - There are two types of numeric vectors
       - Integer (e.g. `1`)
@@ -173,8 +189,24 @@ fav_num + evens
   - Logical (e.g. `TRUE` or `FALSE`)
 
 ## Working with Atomic Vectors
-- Vectors can be converted or coerced to a different compatible type
+- The `c()` function can append one vector to another
+- Brackets after a reference to a vector will select value(s) at specific indices
+  - R is a one-indexed language, meaning the initial value in a vector is stored at index 1
 ```{r working-vectors}
+c(c(1,2), c(3,4))
+
+pets = c("dog", "fish", "cat", "frog", "hamster")
+first_pet = pets[1]
+first_pet
+
+mammals = pets[c(1,3,5)]
+mammals
+```
+
+## Converting Vectors
+- Vectors can be converted to a different compatible type
+- Some operations may convert vectors to a compatible type on the fly, called coercion
+```{r converting-vectors}
 as.logical(c(1, 0, 0, 1))
 as.logical(c("TRUE", "FALSE", "F", "T"))
 
@@ -183,7 +215,10 @@ as.numeric(c("1", "0", "0", "1"))
 
 as.character(c(TRUE, FALSE, F, T))
 as.character(c(1, 0, 0, 1))
+
+sum(c(T, F, T, F))
 ```
+
 
 ## Sequences
 - A sequence is a special way of generating a numeric vector
@@ -390,7 +425,7 @@ iris_data %>% select(Sepal.Length) %>% as_vector() %>% {tibble(Standardized.Leng
   1. Each variable has its own column.
   1. Each observation has its own row.
   1. Each value has its own cell.
-- You will commonly need to convert from long to wide tibbles or vice versa to tidy data
+- You will commonly need to convert from long to wide tibbles or vice-versa to tidy data
   - `pivot_wider()` converts from long data to wide data
   - `pivot_longer()` converts from wide to long data
   - `unite()` combines multiple columns into a single new column

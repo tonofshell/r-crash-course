@@ -23,8 +23,13 @@ body{
   font-size: 36pt;
 }
 
+.lang-r {
+  margin-top: 15px;
+}
+
 code, pre, .prettyprint {
   font-family: 'Roboto Mono', monospace;
+  margin-bottom: 0;
 }
 
 .title-slide hgroup h1 { 

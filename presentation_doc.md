@@ -120,21 +120,22 @@ Rich package ecosystem   Performance can be slower
 ## [1] "Hello world"
 ```
 
-## More Things to Try
-- Enter each of these into a line in your script and run it or type each into the console and hit enter to run each command individually
-
-```r
-# Arithmetic
-(2 + 2) * 4^2
-```
-
-```
-## [1] 64
-```
+## Variable Assignment
+- Assigning a variable allows for that value to be "saved" and referred to later in your code
+- It also makes your code more readable, by giving context to what each part is
+- Variable names must start with a letter and be followed by an assignment operator (either `=` or `<-`)
+  - Variable names should be all lower case, with words separated by a period (`.`) or underscore (`_`) 
+  - Both assignment operators work the same, but the equals sign can also refer to other operations in different contexts 
+  - Which should you use?
+    - Using a period in names and `<-` as an assignment operator is traditional in R, but most other languages do not follow this convention
+    - Using underscores in names and equals sign assignment operators is likely more readable to those familiar with other programming languages, but whatever you choose, pick a convention and use it consistently throughout a project
+- Just executing the variable name will print out its value(s)
+    
 
 ```r
 # Create a variable for your favorite number
 fav_num = 7
+fav.num <- 7
 
 # ...or your favorite color
 fav_color = "blue"
@@ -148,7 +149,22 @@ fav_color
 ```r
 # Save a vector (a group) of numbers
 evens = c(2, 4, 6, 8, 10)
+```
 
+
+## More Things to Try
+- Enter each of these into a line in your script and run it or type each into the console and hit enter to run each command individually
+
+```r
+# Arithmetic
+(2 + 2) * 4^2
+```
+
+```
+## [1] 64
+```
+
+```r
 # Use a function
 mean(evens)
 ```
@@ -159,6 +175,14 @@ mean(evens)
 
 ```r
 # Use variables
+fav_num + 3
+```
+
+```
+## [1] 10
+```
+
+```r
 fav_num + evens
 ```
 
@@ -181,13 +205,13 @@ fav_num + evens
 # Data Structures
 
 ## Vector Basics
-- Vectors are a collection of the same type of object (e.g. `c(1, 2, 3)` or `c("a", "b", "c")` )
-- Scalars are a single object (e.g. `1` or `"a"`)
+- Vectors are a collection of the same type of object, created using the `c()` function (e.g. `c(1, 2, 3)` or `c("a", "b", "c")`)
+- Scalars are a single value (e.g. `1` or `"a"`)
   - However in R scalars are just vectors of length one, so `1` is the same as `c(1)`
 - Vectors have two properties
   - A length
   - A type
-- While vectors can have any length, there are only six basic types called Atomic Vectors
+- While vectors can have any length, there are only six basic types called Atomic Vectors, four of which are commonly used
   - Numeric (e.g. `1` or `5.37`)
     - There are two types of numeric vectors
       - Integer (e.g. `1`)
@@ -196,7 +220,40 @@ fav_num + evens
   - Logical (e.g. `TRUE` or `FALSE`)
 
 ## Working with Atomic Vectors
-- Vectors can be converted or coerced to a different compatible type
+- The `c()` function can append one vector to another
+- Brackets after a reference to a vector will select value(s) at specific indices
+  - R is a one-indexed language, meaning the initial value in a vector is stored at index 1
+
+```r
+c(c(1,2), c(3,4))
+```
+
+```
+## [1] 1 2 3 4
+```
+
+```r
+pets = c("dog", "fish", "cat", "frog", "hamster")
+first_pet = pets[1]
+first_pet
+```
+
+```
+## [1] "dog"
+```
+
+```r
+mammals = pets[c(1,3,5)]
+mammals
+```
+
+```
+## [1] "dog"     "cat"     "hamster"
+```
+
+## Converting Vectors
+- Vectors can be converted to a different compatible type
+- Some operations may convert vectors to a compatible type on the fly, called coercion
 
 ```r
 as.logical(c(1, 0, 0, 1))
@@ -245,6 +302,15 @@ as.character(c(1, 0, 0, 1))
 ```
 ## [1] "1" "0" "0" "1"
 ```
+
+```r
+sum(c(T, F, T, F))
+```
+
+```
+## [1] 2
+```
+
 
 ## Sequences
 - A sequence is a special way of generating a numeric vector
@@ -630,14 +696,14 @@ iris_data %>% select(Sepal.Length) %>% as_vector() %>% {tibble(Standardized.Leng
   1. Each variable has its own column.
   1. Each observation has its own row.
   1. Each value has its own cell.
-- You will commonly need to convert from long to wide tibbles or vice versa to tidy data
-  - `spread()` converts from long data to wide data
-  - `gather()` converts from wide to long data
+- You will commonly need to convert from long to wide tibbles or vice-versa to tidy data
+  - `pivot_wider()` converts from long data to wide data
+  - `pivot_longer()` converts from wide to long data
   - `unite()` combines multiple columns into a single new column
   - `separate()` splits a column into multiple new columns
 - Functions from the `stringr` package can be used to modify character vectors before or after this process
   
-## Using `spread()`
+## Using `pivot_wider()`
 
 ```r
 table2 %>% head(4)
@@ -654,7 +720,7 @@ table2 %>% head(4)
 ```
 
 ```r
-table2 %>% spread(key = "type", value = "count") %>% head(4)
+table2 %>% pivot_wider(names_from = "type", values_from = "count") %>% head(4)
 ```
 
 ```
@@ -667,7 +733,7 @@ table2 %>% spread(key = "type", value = "count") %>% head(4)
 ## 4 Brazil       2000 80488  174504898
 ```
 
-## Using `gather()`
+## Using `pivot_longer()`
 
 ```r
 table1 %>% head(4)
@@ -684,17 +750,17 @@ table1 %>% head(4)
 ```
 
 ```r
-table1 %>% gather(key = "type", value = "count") %>% head(4)
+table1 %>% mutate_all(as.character) %>% pivot_longer(cols = everything()) %>% head(4)
 ```
 
 ```
 ## # A tibble: 4 x 2
-##   type    count      
-##   <chr>   <chr>      
-## 1 country Afghanistan
-## 2 country Afghanistan
-## 3 country Brazil     
-## 4 country Brazil
+##   name       value      
+##   <chr>      <chr>      
+## 1 country    Afghanistan
+## 2 year       1999       
+## 3 cases      745        
+## 4 population 19987071
 ```
 
 ## Using `unite()`
@@ -779,17 +845,17 @@ table1 %>% head(4)
 ```
 
 ```r
-table1 %>% gather(key = "type", value = "count", -country, - year) %>% head(4)
+table1 %>% pivot_longer(cols = -c(country, year), names_to = "type", values_to = "count",) %>% head(4)
 ```
 
 ```
 ## # A tibble: 4 x 4
-##   country      year type  count
-##   <chr>       <int> <chr> <int>
-## 1 Afghanistan  1999 cases   745
-## 2 Afghanistan  2000 cases  2666
-## 3 Brazil       1999 cases 37737
-## 4 Brazil       2000 cases 80488
+##   country      year type          count
+##   <chr>       <int> <chr>         <int>
+## 1 Afghanistan  1999 cases           745
+## 2 Afghanistan  1999 population 19987071
+## 3 Afghanistan  2000 cases          2666
+## 4 Afghanistan  2000 population 20595360
 ```
 
 ## Filtering a Data-set
@@ -898,35 +964,35 @@ student_data = read_csv(here("student_data.csv"))
 
 ```r
 gathered_student_data = student_data %>% select(-age, -grade_level) %>% 
-  gather("key", "grade", - first, - middle, -last, -school) %>% 
+  pivot_longer(c(-first, -middle, -last, -school), names_to = "key", values_to = "grade") %>%
   separate(key, c("class", "year"), sep = "__") 
 gathered_student_data %>% head(4)
 ```
 
 ```
 ## # A tibble: 4 x 7
-##   first     middle last     school       class      year  grade
-##   <chr>     <chr>  <chr>    <chr>        <chr>      <chr> <dbl>
-## 1 Krimhilde Yuri   Hierro   Oakwood      math_grade 2015     NA
-## 2 Koby      Jayson Cookson  Shady Willow math_grade 2015     NA
-## 3 Landyn    Edmund Baumer   Pine Field   math_grade 2015     NA
-## 4 Cybill    Liana  Woodcock Pine Field   math_grade 2015     NA
+##   first     middle last   school  class                year  grade
+##   <chr>     <chr>  <chr>  <chr>   <chr>                <chr> <dbl>
+## 1 Krimhilde Yuri   Hierro Oakwood math_grade           2015     NA
+## 2 Krimhilde Yuri   Hierro Oakwood english_grade        2015     NA
+## 3 Krimhilde Yuri   Hierro Oakwood science_grade        2015     NA
+## 4 Krimhilde Yuri   Hierro Oakwood social_studies_grade 2015     NA
 ```
 
 ```r
-final_student_data = gathered_student_data %>% spread("class", "grade") %>% 
+final_student_data = gathered_student_data %>% pivot_wider(names_from = "class", values_from = "grade") %>% 
   mutate(gpa = (math_grade + english_grade + science_grade + social_studies_grade) / 4)
 final_student_data %>% head(4)
 ```
 
 ```
 ## # A tibble: 4 x 10
-##   first middle last  school year  english_grade math_grade science_grade
-##   <chr> <chr>  <chr> <chr>  <chr>         <dbl>      <dbl>         <dbl>
-## 1 Abe   Booker Bris~ Pine ~ 2015             NA         NA            NA
-## 2 Abe   Booker Bris~ Pine ~ 2016             NA         NA            NA
-## 3 Abe   Booker Bris~ Pine ~ 2017             NA         NA            NA
-## 4 Abe   Booker Bris~ Pine ~ 2018             62         75            65
+##   first middle last  school year  math_grade english_grade science_grade
+##   <chr> <chr>  <chr> <chr>  <chr>      <dbl>         <dbl>         <dbl>
+## 1 Krim~ Yuri   Hier~ Oakwo~ 2015          NA            NA            NA
+## 2 Krim~ Yuri   Hier~ Oakwo~ 2016          72            64            64
+## 3 Krim~ Yuri   Hier~ Oakwo~ 2017          72            58            63
+## 4 Krim~ Yuri   Hier~ Oakwo~ 2018          65            57            62
 ## # ... with 2 more variables: social_studies_grade <dbl>, gpa <dbl>
 ```
 
@@ -1220,7 +1286,7 @@ toc()
 ```
 
 ```
-## 1.97 sec elapsed
+## 1.46 sec elapsed
 ```
 
 ```r
@@ -1230,7 +1296,7 @@ toc()
 ```
 
 ```
-## 0.03 sec elapsed
+## 0.04 sec elapsed
 ```
 
 ```r
@@ -1240,7 +1306,7 @@ toc()
 ```
 
 ```
-## 0.02 sec elapsed
+## 0.01 sec elapsed
 ```
 
 ## Functions
