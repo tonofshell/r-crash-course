@@ -18,7 +18,7 @@ If you already have RStudio and R installed
 
 1. Launch RStudio and check the version of R currently installed (it should show up at launch in the `Console` tab)
 2. Check if there is a newer version of R on [cran.r-project.org](https://cran.r-project.org/) and install if necessary
-3. Compare the currently installed version of RStudio in `Help` > `About RStudio` on Windows or `RStudio` > `About RStudio` on macOS to the latest release at [rstudio.com](https://www.rstudio.com/products/rstudio/download/#download) and update if necessary
+3. Verify that the latest version of RStudio is installed by going to `Help` > `Check for Updates`
 4. In RStudio, go to `Tools` > `Check for Package Updates` and install any package updates
 5. That's it, you're all set!
 
