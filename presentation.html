@@ -4103,7 +4103,7 @@ iris_data %&gt;% select(Sepal.Length) %&gt;% std_var() %&gt;% head(1)</pre>
 <li>Included in the tidyverse are the <code>readr</code>, <code>haven</code>, and <code>readxl</code> packages for importing different file types directly to tibbles in R
 
 <ul>
-<li><code>reader</code> includes functions to read standard delimited file types such as CSV and TSV files</li>
+<li><code>readr</code> includes functions to read standard delimited file types such as CSV and TSV files</li>
 <li><code>haven</code> includes functions to read files from other stats programs such as Stata, SPSS, and SAS</li>
 <li><code>readxl</code> includes functions to read Excel files</li>
 </ul></li>
@@ -4522,7 +4522,7 @@ for (i in 1:nrow(rand_numbers)) {
 }
 toc()</pre>
 
-<pre >## 1.46 sec elapsed</pre>
+<pre >## 2.38 sec elapsed</pre>
 
 <pre class = 'prettyprint lang-r'>tic()
 output = apply(rand_numbers, 1, mean)

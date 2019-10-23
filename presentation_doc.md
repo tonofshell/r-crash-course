@@ -927,7 +927,7 @@ table1 %>% mutate(year = year %>% as.character() %>% str_sub(3))
 ## Importing Data
 - Most likely the data you need to analyze will not come as a tibble built-in to an R package
 - Included in the tidyverse are the `readr`, `haven`, and `readxl` packages for importing different file types directly to tibbles in R
-  - `reader` includes functions to read standard delimited file types such as CSV and TSV files
+  - `readr` includes functions to read standard delimited file types such as CSV and TSV files
   - `haven` includes functions to read files from other stats programs such as Stata, SPSS, and SAS 
   - `readxl` includes functions to read Excel files 
 - Other packages can add support for reading other types of files
@@ -1286,7 +1286,7 @@ toc()
 ```
 
 ```
-## 1.46 sec elapsed
+## 2.38 sec elapsed
 ```
 
 ```r
