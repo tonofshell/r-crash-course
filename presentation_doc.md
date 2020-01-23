@@ -552,11 +552,11 @@ median(iris_data$Petal.Width)
 ```
 
 ```r
-mean((iris_data$Petal.Length * iris_data$Petal.Length))
+mean((iris_data$Petal.Width * iris_data$Petal.Length))
 ```
 
 ```
-## [1] 17.21807
+## [1] 5.794067
 ```
 
 ```r
@@ -1286,7 +1286,7 @@ toc()
 ```
 
 ```
-## 2.38 sec elapsed
+## 1.53 sec elapsed
 ```
 
 ```r
@@ -1296,7 +1296,7 @@ toc()
 ```
 
 ```
-## 0.03 sec elapsed
+## 0.06 sec elapsed
 ```
 
 ```r
@@ -1306,7 +1306,7 @@ toc()
 ```
 
 ```
-## 0.01 sec elapsed
+## 0.02 sec elapsed
 ```
 
 ## Functions
@@ -1453,36 +1453,34 @@ student_data %>% select(math_grade__2018) %>% convert_grade()
 ```
 
 ```
-##   [1] "D" "C" "D" "B" "D" "F" "B" "C" "D" "D" "D" "C" "D" "F" "C" "D" "C"
-##  [18] "C" "C" "D" "D" "B" "C" "D" "D" "C" "C" "F" "D" "D" "D" "C" "C" "D"
-##  [35] "B" "C" "D" "C" "C" "B" "D" "D" "C" "D" "C" "C" "F" "C" "B" "D" "A"
-##  [52] "C" "F" "F" "F" "D" "C" "F" "F" "B" "D" "C" "C" "C" "F" "D" "D" "D"
-##  [69] "C" "D" "C" "C" "B" "B" "D" "C" "C" "C" "F" "D" "C" "C" "D" "F" "D"
-##  [86] "C" "C" "D" "B" "B" "B" "C" "D" "C" "F" "D" "B" "C" "C" "D" "C" "D"
-## [103] "D" "C" "A" "B" "D" "C" "D" "D" "B" "C" "B" "F" "D" "C" "B" "B" "D"
-## [120] "C" "B" "D" "C" "D" "C" "C" "C" "F" "F" "D" "C" "C" "D" "C" "C" "B"
-## [137] "C" "F" "C" "C" "C" "B" "C" "D" "D" "F" "B" "B" "B" "C" "D" "D" "D"
-## [154] "C" "C" "B" "C" "D" "C" "B" "B" "A" "C" "D" "D" "C" "D" "D" "C" "B"
-## [171] "C" "A" "D" "D" "C" "D" "F" "C" "D" "F" "C" "C" "D" "D" "D" "D" "C"
-## [188] "F" "C" "D" "C" "C" "C" "B" "B" "C" "D" "D" "D" "F" "C" "C" "D" "C"
-## [205] "C" "C" "C" "D" "B" "C" "B" "C" "D" "C" "F" "C" "D" "F" "A" "B" "D"
-## [222] "D" "C" "C" "F" "D" "D" "C" "C" "D" "F" "C" "C" "D" "C" "D" "D" "B"
-## [239] "F" "B" "F" "D" "D" "C" "C" "C" "D" "C" "B" "C" "D" "F" "C" "F" "C"
-## [256] "D" "D" "D" "C" "D" "D" "C" "D" "D" "C" "D" "C" "C" "C" "C" "D" "D"
-## [273] "C" "D" "C" "A" "D" "D" "F" "D" "C" "D" "C" "F" "D" "C" "D" "C" "B"
-## [290] "C" "A" "C" "D" "C" "F" "F" "D" "C" "A" "C" "B" "B" "C" "D" "F" "B"
-## [307] "C" "C" "D" "D" "C" "D" "B" "B" "C" "C" "C" "D" "D" "B" "D" "C" "C"
-## [324] "C" "C" "B" "B" "C" "B" "D" "B" "D" "D" "B" "F" "C" "F" "B" "F" "B"
-## [341] "D" "D" "C" "D" "C" "D" "D" "A" "D" "F" "C" "A" "C" "C" "C" "D" "D"
-## [358] "A" "C" "D" "C" "C" "F" "C" "F" "A" "D" "C" "C" "D" "F" "F" "C" "C"
-## [375] "B" "D" "C" "B" "B" "B" "F" "B" "C" "D" "C" "C" "B" "B" "A" "B" "C"
-## [392] "C" "C" "D" "F" "B" "B" "C" "C" "C" "C" "D" "D" "D" "D" "B" "B" "C"
-## [409] "D" "D" "C" "B" "D" "C" "D" "C" "B" "C" "F" "D" "D" "D" "D" "D" "F"
-## [426] "C" "D" "C" "F" "D" "C" "B" "C" "D" "F" "B" "D" "D" "C" "D" "D" "C"
-## [443] "C" "D" "B" "C" "C" "D" "C" "C" "C" "D" "D" "D" "D" "C" "D" "C" "F"
-## [460] "F" "D" "F" "C" "B" "D" "D" "B" "D" "B" "C" "C" "C" "B" "F" "A" "C"
-## [477] "D" "C" "F" "F" "D" "F" "D" "C" "C" "D" "B" "C" "C" "C" "D" "B" "C"
-## [494] "C" "D" "C" "F" "C" "C" "C"
+##   [1] "D" "C" "D" "B" "D" "F" "B" "C" "D" "D" "D" "C" "D" "F" "C" "D" "C" "C"
+##  [19] "C" "D" "D" "B" "C" "D" "D" "C" "C" "F" "D" "D" "D" "C" "C" "D" "B" "C"
+##  [37] "D" "C" "C" "B" "D" "D" "C" "D" "C" "C" "F" "C" "B" "D" "A" "C" "F" "F"
+##  [55] "F" "D" "C" "F" "F" "B" "D" "C" "C" "C" "F" "D" "D" "D" "C" "D" "C" "C"
+##  [73] "B" "B" "D" "C" "C" "C" "F" "D" "C" "C" "D" "F" "D" "C" "C" "D" "B" "B"
+##  [91] "B" "C" "D" "C" "F" "D" "B" "C" "C" "D" "C" "D" "D" "C" "A" "B" "D" "C"
+## [109] "D" "D" "B" "C" "B" "F" "D" "C" "B" "B" "D" "C" "B" "D" "C" "D" "C" "C"
+## [127] "C" "F" "F" "D" "C" "C" "D" "C" "C" "B" "C" "F" "C" "C" "C" "B" "C" "D"
+## [145] "D" "F" "B" "B" "B" "C" "D" "D" "D" "C" "C" "B" "C" "D" "C" "B" "B" "A"
+## [163] "C" "D" "D" "C" "D" "D" "C" "B" "C" "A" "D" "D" "C" "D" "F" "C" "D" "F"
+## [181] "C" "C" "D" "D" "D" "D" "C" "F" "C" "D" "C" "C" "C" "B" "B" "C" "D" "D"
+## [199] "D" "F" "C" "C" "D" "C" "C" "C" "C" "D" "B" "C" "B" "C" "D" "C" "F" "C"
+## [217] "D" "F" "A" "B" "D" "D" "C" "C" "F" "D" "D" "C" "C" "D" "F" "C" "C" "D"
+## [235] "C" "D" "D" "B" "F" "B" "F" "D" "D" "C" "C" "C" "D" "C" "B" "C" "D" "F"
+## [253] "C" "F" "C" "D" "D" "D" "C" "D" "D" "C" "D" "D" "C" "D" "C" "C" "C" "C"
+## [271] "D" "D" "C" "D" "C" "A" "D" "D" "F" "D" "C" "D" "C" "F" "D" "C" "D" "C"
+## [289] "B" "C" "A" "C" "D" "C" "F" "F" "D" "C" "A" "C" "B" "B" "C" "D" "F" "B"
+## [307] "C" "C" "D" "D" "C" "D" "B" "B" "C" "C" "C" "D" "D" "B" "D" "C" "C" "C"
+## [325] "C" "B" "B" "C" "B" "D" "B" "D" "D" "B" "F" "C" "F" "B" "F" "B" "D" "D"
+## [343] "C" "D" "C" "D" "D" "A" "D" "F" "C" "A" "C" "C" "C" "D" "D" "A" "C" "D"
+## [361] "C" "C" "F" "C" "F" "A" "D" "C" "C" "D" "F" "F" "C" "C" "B" "D" "C" "B"
+## [379] "B" "B" "F" "B" "C" "D" "C" "C" "B" "B" "A" "B" "C" "C" "C" "D" "F" "B"
+## [397] "B" "C" "C" "C" "C" "D" "D" "D" "D" "B" "B" "C" "D" "D" "C" "B" "D" "C"
+## [415] "D" "C" "B" "C" "F" "D" "D" "D" "D" "D" "F" "C" "D" "C" "F" "D" "C" "B"
+## [433] "C" "D" "F" "B" "D" "D" "C" "D" "D" "C" "C" "D" "B" "C" "C" "D" "C" "C"
+## [451] "C" "D" "D" "D" "D" "C" "D" "C" "F" "F" "D" "F" "C" "B" "D" "D" "B" "D"
+## [469] "B" "C" "C" "C" "B" "F" "A" "C" "D" "C" "F" "F" "D" "F" "D" "C" "C" "D"
+## [487] "B" "C" "C" "C" "D" "B" "C" "C" "D" "C" "F" "C" "C" "C"
 ```
 
 ```r

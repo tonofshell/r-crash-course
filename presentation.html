@@ -1353,6 +1353,11 @@ opacity: 0;
 }
 @media print {
 
+@page {
+size: landscape;
+margin: 0;
+}
+
 slides slide {
 display: block !important;
 position: relative;
@@ -3729,9 +3734,9 @@ mean(iris_data$Sepal.Length)</pre>
 
 <pre >## [1] 1.3</pre>
 
-<pre class = 'prettyprint lang-r'>mean((iris_data$Petal.Length * iris_data$Petal.Length))</pre>
+<pre class = 'prettyprint lang-r'>mean((iris_data$Petal.Width * iris_data$Petal.Length))</pre>
 
-<pre >## [1] 17.21807</pre>
+<pre >## [1] 5.794067</pre>
 
 <pre class = 'prettyprint lang-r'>table(iris_data$Species)</pre>
 
@@ -4522,19 +4527,19 @@ for (i in 1:nrow(rand_numbers)) {
 }
 toc()</pre>
 
-<pre >## 2.38 sec elapsed</pre>
+<pre >## 1.53 sec elapsed</pre>
 
 <pre class = 'prettyprint lang-r'>tic()
 output = apply(rand_numbers, 1, mean)
 toc()</pre>
 
-<pre >## 0.03 sec elapsed</pre>
+<pre >## 0.06 sec elapsed</pre>
 
 <pre class = 'prettyprint lang-r'>tic()
 output = rowMeans(rand_numbers)
 toc()</pre>
 
-<pre >## 0.01 sec elapsed</pre>
+<pre >## 0.02 sec elapsed</pre>
 
 </article></slide><slide class=""><hgroup><h2>Functions</h2></hgroup><article  id="functions">
 
@@ -4678,36 +4683,34 @@ student_data %&gt;% select(math_grade__2018) %&gt;% convert_grade()</pre>
 
 <pre >## Converting to 100 point scale</pre>
 
-<pre >##   [1] &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;D&quot; &quot;F&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot;
-##  [18] &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot;
-##  [35] &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;A&quot;
-##  [52] &quot;C&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;F&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot;
-##  [69] &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;D&quot;
-##  [86] &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot;
-## [103] &quot;D&quot; &quot;C&quot; &quot;A&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;B&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;D&quot;
-## [120] &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot;
-## [137] &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;F&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot;
-## [154] &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;A&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot;
-## [171] &quot;C&quot; &quot;A&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot;
-## [188] &quot;F&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot;
-## [205] &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;A&quot; &quot;B&quot; &quot;D&quot;
-## [222] &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot;
-## [239] &quot;F&quot; &quot;B&quot; &quot;F&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot;
-## [256] &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot;
-## [273] &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;A&quot; &quot;D&quot; &quot;D&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot;
-## [290] &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;B&quot;
-## [307] &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot;
-## [324] &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;B&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;F&quot; &quot;C&quot; &quot;F&quot; &quot;B&quot; &quot;F&quot; &quot;B&quot;
-## [341] &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;A&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot;
-## [358] &quot;A&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;F&quot; &quot;A&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot;
-## [375] &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;F&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;C&quot;
-## [392] &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot;
-## [409] &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;F&quot;
-## [426] &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;B&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot;
-## [443] &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot;
-## [460] &quot;F&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;F&quot; &quot;A&quot; &quot;C&quot;
-## [477] &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;F&quot; &quot;D&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot;
-## [494] &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot;</pre>
+<pre >##   [1] &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;D&quot; &quot;F&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot;
+##  [19] &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot;
+##  [37] &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;A&quot; &quot;C&quot; &quot;F&quot; &quot;F&quot;
+##  [55] &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;F&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot;
+##  [73] &quot;B&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;B&quot;
+##  [91] &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;A&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot;
+## [109] &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;B&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot;
+## [127] &quot;C&quot; &quot;F&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot;
+## [145] &quot;D&quot; &quot;F&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;A&quot;
+## [163] &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;A&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot;
+## [181] &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot;
+## [199] &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot;
+## [217] &quot;D&quot; &quot;F&quot; &quot;A&quot; &quot;B&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot;
+## [235] &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;F&quot; &quot;B&quot; &quot;F&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot;
+## [253] &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot;
+## [271] &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;A&quot; &quot;D&quot; &quot;D&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot;
+## [289] &quot;B&quot; &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;B&quot;
+## [307] &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot;
+## [325] &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;B&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;F&quot; &quot;C&quot; &quot;F&quot; &quot;B&quot; &quot;F&quot; &quot;B&quot; &quot;D&quot; &quot;D&quot;
+## [343] &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;A&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;A&quot; &quot;C&quot; &quot;D&quot;
+## [361] &quot;C&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;F&quot; &quot;A&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot;
+## [379] &quot;B&quot; &quot;B&quot; &quot;F&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;B&quot;
+## [397] &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;C&quot;
+## [415] &quot;D&quot; &quot;C&quot; &quot;B&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;B&quot;
+## [433] &quot;C&quot; &quot;D&quot; &quot;F&quot; &quot;B&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot;
+## [451] &quot;C&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;F&quot; &quot;D&quot; &quot;F&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;D&quot; &quot;B&quot; &quot;D&quot;
+## [469] &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;F&quot; &quot;A&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;F&quot; &quot;D&quot; &quot;F&quot; &quot;D&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot;
+## [487] &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;D&quot; &quot;C&quot; &quot;F&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>convert_grade(103)</pre>
 

@@ -328,7 +328,7 @@ typeof(TRUE)
 iris_data = as_tibble(iris)
 mean(iris_data$Sepal.Length)
 median(iris_data$Petal.Width)
-mean((iris_data$Petal.Length * iris_data$Petal.Length))
+mean((iris_data$Petal.Width * iris_data$Petal.Length))
 table(iris_data$Species)
 ```
 
